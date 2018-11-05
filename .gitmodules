@@ -1,0 +1,3 @@
+[submodule "AS5600"]
+	path = AS5600
+	url = https://github.com/AlfredWilmot/AS5600.git
