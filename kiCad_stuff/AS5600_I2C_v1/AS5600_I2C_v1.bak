@@ -166,45 +166,45 @@ Wire Wire Line
 Wire Wire Line
 	6250 3050 6350 3050
 $Comp
-L Mechanical:MountingHole MH_TL1
+L Mechanical:MountingHole MH_TL
 U 1 1 5C1571F3
 P 4400 2650
-F 0 "MH_TL1" H 4500 2696 50  0000 L CNN
+F 0 "MH_TL" H 4500 2696 50  0000 L CNN
 F 1 "MountingHole" H 4500 2605 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm_Pad" H 4400 2650 50  0001 C CNN
+F 2 "" H 4400 2650 50  0001 C CNN
 F 3 "~" H 4400 2650 50  0001 C CNN
 	1    4400 2650
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole MH_TR1
+L Mechanical:MountingHole MH_TR
 U 1 1 5C15727F
 P 5350 2650
-F 0 "MH_TR1" H 5450 2696 50  0000 L CNN
+F 0 "MH_TR" H 5450 2696 50  0000 L CNN
 F 1 "MountingHole" H 5450 2605 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm_Pad" H 5350 2650 50  0001 C CNN
+F 2 "" H 5350 2650 50  0001 C CNN
 F 3 "~" H 5350 2650 50  0001 C CNN
 	1    5350 2650
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole MH_BL1
+L Mechanical:MountingHole MH_BL
 U 1 1 5C157343
 P 4400 4400
-F 0 "MH_BL1" H 4500 4446 50  0000 L CNN
+F 0 "MH_BL" H 4500 4446 50  0000 L CNN
 F 1 "MountingHole" H 4500 4355 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm_Pad" H 4400 4400 50  0001 C CNN
+F 2 "" H 4400 4400 50  0001 C CNN
 F 3 "~" H 4400 4400 50  0001 C CNN
 	1    4400 4400
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole MH_BR1
+L Mechanical:MountingHole MH_BR
 U 1 1 5C1573A5
 P 5450 4400
-F 0 "MH_BR1" H 5550 4446 50  0000 L CNN
+F 0 "MH_BR" H 5550 4446 50  0000 L CNN
 F 1 "MountingHole" H 5550 4355 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm_Pad" H 5450 4400 50  0001 C CNN
+F 2 "" H 5450 4400 50  0001 C CNN
 F 3 "~" H 5450 4400 50  0001 C CNN
 	1    5450 4400
 	1    0    0    -1  
