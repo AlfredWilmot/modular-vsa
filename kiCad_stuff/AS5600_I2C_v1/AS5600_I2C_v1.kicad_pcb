@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 0)
+    (drawings 8)
     (tracks 0)
     (zones 0)
     (modules 8)
@@ -40,7 +40,7 @@
     (zone_45_only no)
     (trace_min 0.2)
     (segment_width 0.2)
-    (edge_width 0.15)
+    (edge_width 0.1)
     (via_size 0.8)
     (via_drill 0.4)
     (via_min_size 0.4)
@@ -326,5 +326,14 @@
     )
     (pad "" np_thru_hole circle (at 0 0) (size 2.9 2.9) (drill 2.5) (layers *.Cu *.Mask))
   )
+
+  (gr_arc (start 178.48 69.58) (end 179.48 69.58) (angle -90) (layer Edge.Cuts) (width 0.1) (tstamp 5C3B648C))
+  (gr_arc (start 158.48 69.58) (end 158.48 68.58) (angle -90) (layer Edge.Cuts) (width 0.1) (tstamp 5C3B648A))
+  (gr_arc (start 158.48 85.98) (end 157.48 85.98) (angle -90) (layer Edge.Cuts) (width 0.1) (tstamp 5C3B6488))
+  (gr_arc (start 178.48 85.98) (end 178.48 86.98) (angle -90) (layer Edge.Cuts) (width 0.1))
+  (gr_line (start 157.48 69.58) (end 157.48 85.98) (layer Edge.Cuts) (width 0.1))
+  (gr_line (start 158.48 86.98) (end 178.48 86.98) (layer Edge.Cuts) (width 0.1))
+  (gr_line (start 179.48 85.98) (end 179.48 69.58) (layer Edge.Cuts) (width 0.1))
+  (gr_line (start 178.48 68.58) (end 158.48 68.58) (layer Edge.Cuts) (width 0.1))
 
 )
