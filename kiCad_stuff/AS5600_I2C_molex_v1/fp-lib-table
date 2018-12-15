@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name modular_segment_PCB_footprints)(type KiCad)(uri C:/Users/Alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/kiCad_stuff/AS5600_I2C_v1/modular_segment_PCB_footprints.pretty)(options "")(descr ""))
+)
