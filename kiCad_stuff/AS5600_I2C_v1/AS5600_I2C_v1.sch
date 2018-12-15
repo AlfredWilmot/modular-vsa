@@ -20,7 +20,7 @@ P 5200 4100
 F 0 "U1" H 5250 4965 50  0000 C CNN
 F 1 "AS5600_ASOM_v1" H 5250 4874 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5200 3900 50  0001 C CNN
-F 3 "" H 5200 3900 50  0001 C CNN
+F 3 "~" H 5200 3900 50  0001 C CNN
 	1    5200 4100
 	1    0    0    -1  
 $EndComp
@@ -31,7 +31,7 @@ P 4400 3750
 F 0 "C1" H 4300 3850 50  0000 L CNN
 F 1 "100nF" H 4100 3750 39  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 4400 3750 50  0001 C CNN
-F 3 "" H 4400 3750 50  0001 C CNN
+F 3 "~" H 4400 3750 50  0001 C CNN
 	1    4400 3750
 	1    0    0    -1  
 $EndComp
@@ -42,7 +42,7 @@ P 4600 3750
 F 0 "C2" H 4600 3850 50  0000 L CNN
 F 1 "1uF" H 4700 3750 39  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 4600 3750 50  0001 C CNN
-F 3 "" H 4600 3750 50  0001 C CNN
+F 3 "~" H 4600 3750 50  0001 C CNN
 	1    4600 3750
 	1    0    0    -1  
 $EndComp
@@ -122,8 +122,8 @@ U 1 1 5C155E4C
 P 6550 3150
 F 0 "J1" H 6630 3142 50  0000 L CNN
 F 1 "Conn_01x04" H 6630 3051 50  0000 L CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical" H 6550 3150 50  0001 C CNN
-F 3 "" H 6550 3150 50  0001 C CNN
+F 2 "modular_segment_PCB_footprints:EthernetWireConnectors_1x04_P2.00mm_1mmDiam" H 6550 3150 50  0001 C CNN
+F 3 "~" H 6550 3150 50  0001 C CNN
 	1    6550 3150
 	1    0    0    -1  
 $EndComp
@@ -165,48 +165,4 @@ Wire Wire Line
 	6250 3350 6350 3350
 Wire Wire Line
 	6250 3050 6350 3050
-$Comp
-L Mechanical:MountingHole MH_TL1
-U 1 1 5C1571F3
-P 4400 2650
-F 0 "MH_TL1" H 4500 2696 50  0000 L CNN
-F 1 "MountingHole" H 4500 2605 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm_Pad" H 4400 2650 50  0001 C CNN
-F 3 "~" H 4400 2650 50  0001 C CNN
-	1    4400 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole MH_TR1
-U 1 1 5C15727F
-P 5350 2650
-F 0 "MH_TR1" H 5450 2696 50  0000 L CNN
-F 1 "MountingHole" H 5450 2605 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm_Pad" H 5350 2650 50  0001 C CNN
-F 3 "~" H 5350 2650 50  0001 C CNN
-	1    5350 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole MH_BL1
-U 1 1 5C157343
-P 4400 4400
-F 0 "MH_BL1" H 4500 4446 50  0000 L CNN
-F 1 "MountingHole" H 4500 4355 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm_Pad" H 4400 4400 50  0001 C CNN
-F 3 "~" H 4400 4400 50  0001 C CNN
-	1    4400 4400
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole MH_BR1
-U 1 1 5C1573A5
-P 5450 4400
-F 0 "MH_BR1" H 5550 4446 50  0000 L CNN
-F 1 "MountingHole" H 5550 4355 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm_Pad" H 5450 4400 50  0001 C CNN
-F 3 "~" H 5450 4400 50  0001 C CNN
-	1    5450 4400
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC
