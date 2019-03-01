@@ -56,7 +56,7 @@
     (mod_text_size 1 1)
     (mod_text_width 0.15)
     (pad_size 2.9 2.9)
-    (pad_drill 2.5)
+    (pad_drill 2)
     (pad_to_mask_clearance 0.2)
     (aux_axis_origin 0 0)
     (grid_origin 152 59)
@@ -122,7 +122,7 @@
     (add_net SDA)
   )
 
-  (module modular_segment_PCB_footprints:MountingHole_2.5mm_Pad (layer F.Cu) (tedit 5C78F434) (tstamp 5C78F260)
+  (module modular_segment_PCB_footprints:MountingHole_2.5mm_Pad (layer F.Cu) (tedit 5C799F79) (tstamp 5C78F260)
     (at 172 61)
     (descr "Mounting Hole 2.5mm")
     (tags "mounting hole 2.5mm")
@@ -133,7 +133,7 @@
     (fp_text value Hole_BL (at 6.5 3.5) (layer F.Fab) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (pad "" np_thru_hole circle (at 0 -2) (size 2.9 2.9) (drill 2.5) (layers *.Cu *.Mask))
+    (pad "" np_thru_hole circle (at 0 -2) (size 2.9 2.9) (drill 2) (layers *.Cu *.Mask))
   )
 
   (module Symbol:OSHW-Logo_5.7x6mm_SilkScreen (layer F.Cu) (tedit 0) (tstamp 5C9F8F0F)
@@ -532,7 +532,7 @@
     )
   )
 
-  (module modular_segment_PCB_footprints:MountingHole_2.5mm_Pad (layer F.Cu) (tedit 5C78F415) (tstamp 5C84DD62)
+  (module modular_segment_PCB_footprints:MountingHole_2.5mm_Pad (layer F.Cu) (tedit 5C799F73) (tstamp 5C84DD62)
     (at 152 59)
     (descr "Mounting Hole 2.5mm")
     (tags "mounting hole 2.5mm")
@@ -543,7 +543,7 @@
     (fp_text value Hole_BL (at -0.5 -4.5) (layer F.Fab) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (pad "" np_thru_hole circle (at 0 0) (size 2.9 2.9) (drill 2.5) (layers *.Cu *.Mask))
+    (pad "" np_thru_hole circle (at 0 0) (size 2.9 2.9) (drill 2) (layers *.Cu *.Mask))
   )
 
   (module Package_TO_SOT_SMD:SOT-23-5_HandSoldering (layer F.Cu) (tedit 5C786A3E) (tstamp 5C971A48)
@@ -712,7 +712,7 @@
     )
   )
 
-  (module modular_segment_PCB_footprints:MountingHole_2.5mm_Pad (layer F.Cu) (tedit 5C78F645) (tstamp 5C3B609F)
+  (module modular_segment_PCB_footprints:MountingHole_2.5mm_Pad (layer F.Cu) (tedit 5C799F7F) (tstamp 5C3B609F)
     (at 172 73)
     (descr "Mounting Hole 2.5mm")
     (tags "mounting hole 2.5mm")
@@ -723,11 +723,11 @@
     (fp_text value Hole_BL (at 6.5 3.5) (layer F.Fab) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (pad "" np_thru_hole circle (at 0 -2) (size 2.9 2.9) (drill 2.5) (layers *.Cu *.Mask)
-      (clearance 4) (zone_connect 0))
+    (pad "" np_thru_hole circle (at 0 -2) (size 2.9 2.9) (drill 2) (layers *.Cu *.Mask)
+      (zone_connect 2))
   )
 
-  (module modular_segment_PCB_footprints:MountingHole_2.5mm_Pad (layer F.Cu) (tedit 5C78F426) (tstamp 5C78796A)
+  (module modular_segment_PCB_footprints:MountingHole_2.5mm_Pad (layer F.Cu) (tedit 5C799F82) (tstamp 5C78796A)
     (at 152 73)
     (descr "Mounting Hole 2.5mm")
     (tags "mounting hole 2.5mm")
@@ -738,7 +738,7 @@
     (fp_text value Hole_BR (at -3.25 3.75) (layer F.Fab) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (pad "" np_thru_hole circle (at 0 -2) (size 2.9 2.9) (drill 2.5) (layers *.Cu *.Mask))
+    (pad "" np_thru_hole circle (at 0 -2) (size 2.9 2.9) (drill 2) (layers *.Cu *.Mask))
   )
 
   (dimension 12 (width 0.3) (layer Dwgs.User)
