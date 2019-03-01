@@ -1,0 +1,56 @@
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,(5.0.0)*
+G04 #@! TF.CreationDate,2019-02-28T23:25:29+00:00*
+G04 #@! TF.ProjectId,AS5600_I2C_v1,4153353630305F4932435F76312E6B69,rev?*
+G04 #@! TF.SameCoordinates,Original*
+G04 #@! TF.FileFunction,Copper,L2,Bot,Signal*
+G04 #@! TF.FilePolarity,Positive*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW (5.0.0)) date 02/28/19 23:25:29*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+G04 #@! TA.AperFunction,ComponentPad*
+%ADD10O,1.350000X1.350000*%
+G04 #@! TD*
+G04 #@! TA.AperFunction,ComponentPad*
+%ADD11R,1.350000X1.350000*%
+G04 #@! TD*
+G04 #@! TA.AperFunction,WasherPad*
+%ADD12C,2.900000*%
+G04 #@! TD*
+G04 APERTURE END LIST*
+D10*
+G04 #@! TO.P,J1,4*
+G04 #@! TO.N,SDA*
+X152000000Y-63000000D03*
+G04 #@! TO.P,J1,3*
+G04 #@! TO.N,SCL*
+X152000000Y-65000000D03*
+G04 #@! TO.P,J1,2*
+G04 #@! TO.N,+5V*
+X152000000Y-67000000D03*
+D11*
+G04 #@! TO.P,J1,1*
+G04 #@! TO.N,GND*
+X152000000Y-69000000D03*
+G04 #@! TD*
+D12*
+G04 #@! TO.P,2.5mm ,*
+G04 #@! TO.N,*
+X152000000Y-59000000D03*
+G04 #@! TD*
+G04 #@! TO.P,2.5mm ,*
+G04 #@! TO.N,*
+X172000000Y-59000000D03*
+G04 #@! TD*
+G04 #@! TO.P,2.5mm ,*
+G04 #@! TO.N,*
+X172000000Y-73000000D03*
+G04 #@! TD*
+G04 #@! TO.P,2.5mm ,*
+G04 #@! TO.N,*
+X152000000Y-73000000D03*
+G04 #@! TD*
+M02*
