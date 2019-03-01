@@ -1,12 +1,12 @@
-(module MountingHole_2.5mm_Pad (layer F.Cu) (tedit 5C154B36)
+(module MountingHole_2.5mm_Pad (layer F.Cu) (tedit 5C78F41D)
   (descr "Mounting Hole 2.5mm")
   (tags "mounting hole 2.5mm")
   (attr virtual)
-  (fp_text reference "2.5mm " (at 0.1 -2.18) (layer F.SilkS) hide
+  (fp_text reference "2.5mm " (at 3.5 4) (layer F.SilkS) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (fp_text value MountingHole (at 0 2.34) (layer F.Fab) hide
+  (fp_text value Hole_BR (at -3.25 3.75) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (pad "" np_thru_hole circle (at 0 0) (size 2.9 2.9) (drill 2.5) (layers *.Cu *.Mask))
+  (pad "" np_thru_hole circle (at 0 -2) (size 2.9 2.9) (drill 2.5) (layers *.Cu *.Mask))
 )
