@@ -8,7 +8,7 @@
 //   (4) allow the Slave to stretch the clock pulse. Default true. Set to false for faster code.
 //
 // Using pin 2 (software sda) and 3 (software scl) in this example.
-SoftwareWire myWire( 8, 9);
+SoftwareWire myWire(2, 11);
 
 /* CODE is a combination of these two:
    AS5600.cpp			(https://github.com/kanestoboi/AS5600)
