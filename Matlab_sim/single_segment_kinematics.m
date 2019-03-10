@@ -15,18 +15,18 @@ pi = 3.14159;
 %NOTE: all measurements are in meters (as this significantly reduces robot-plot
 %rendering over-head compared to using cm).
 %Defining joint configurations.
-home = [0,0,0];
-active = [0,0,0];
+home = [0,pi/2,0];
+active = [0,pi/2,0];
 %Defining workspace (necesarry given prismatic joint):
-homeWorkVol = [0, 200*mm, -100*mm, 100*mm, -100*mm, 100*mm];
-activeWorkVol = [-100*mm, 100*mm, -100*mm, 100*mm, -100*mm, 200*mm];
+homeWorkVol = [0, 100*mm, -100*mm, 100*mm, -100*mm, 100*mm];
+activeWorkVol = [-100*mm, 100*mm, -100*mm, 100*mm, -100*mm, 100*mm];
 %% Defining DH parameters (m):
 a_1 = 0; a_2 = 60*mm; a_3 = 40*mm; 
 d_1 = 50*mm; d_2 = 0; d_3 = 0; 
-alpha_1 = pi/2; alpha_2 = pi/2; alpha_3 = 0;%pi/2; 
-theta_1 = pi; theta_2 = -pi/2; theta_3 = -pi/2; 
+alpha_1 = pi/2; alpha_2 = pi/2; alpha_3 = pi/2; 
+theta_1 = 0; theta_2 = 0; theta_3 = 0; 
 %% Defining Links:
-L(1) = Link([theta_1 d_1 a_1 alpha_1 0]);
+L(1) = Link([theta_1 d_1 a_1 alpha_1 1]); % Just an offset from base.
 L(2) = Link([theta_2 d_2 a_2 alpha_2 0]);
 L(3) = Link([theta_3 d_3 a_3 alpha_3 0]);
 
