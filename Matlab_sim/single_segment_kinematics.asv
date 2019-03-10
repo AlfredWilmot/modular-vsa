@@ -58,7 +58,7 @@ Z = [];
 proximal_joint_tau = [];
 
 % Loop through all possible joint configurations (in steps of 1 deg).
-one_deg = pi/180;
+one_deg = (pi/180)*10;
 for th1 = pi/4:one_deg:3*pi/4
     for th2 = -pi/4:one_deg:pi/4
         %RR_seg.plot([0, th1, th2], 'workspace', activeWorkVol);
@@ -81,13 +81,10 @@ for th1 = pi/4:one_deg:3*pi/4
 end
 
 %% Plot EE translation with proximal joint torque encoded as color 
-figure, scatter3(X, Y, Z, 10, abs(proximal_joint_tau), 'filled');
-%axis([min(X), max(X), min(Y), max(Y), min(Z), max(Z)]);
-%axis('manual');
-c = colorbar;
-c.Label.String = '\bf Nm';
-title('\fontsize{10}Torque on proximal joint given 10kg at EE, for all possible joint configurations');
-
+scatter3(X, Y, Z, 10, abs(proximal_joint_tau), 'filled');
+axis([min(X), max()])
+colorbar
+%figure,surf(X,Y,Z,'cdata',proximal_joint_tau);
 
 
     
