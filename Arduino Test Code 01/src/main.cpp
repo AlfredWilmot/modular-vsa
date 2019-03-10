@@ -32,7 +32,7 @@ void move_motor(int duty, int IN_A, int IN_B, int EN)
     digitalWrite(IN_A, LOW);
     digitalWrite(IN_B, HIGH);
 
-    /* Map range [0, thresh_lower] to [0, 255] */
+    /* Map range [0, thresh_lower] to [255, 0] */
     duty = map(duty, 0, thresh_lower, 255, 0);
     analogWrite(EN, duty);
 
