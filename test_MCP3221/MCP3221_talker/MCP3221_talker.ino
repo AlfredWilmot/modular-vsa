@@ -1,7 +1,8 @@
 #include <MCP3221.h>
 
 /* Reference code taken from here: https://github.com/nadavmatalon/MCP3221/blob/master/examples/MCP3221_Basic_Usage/MCP3221_Basic_Usage.ino */
-
+/* MCP3221 datasheet: http://ww1.microchip.com/downloads/en/DeviceDoc/20001732E.pdf */
+/* BEWARE THE DIFFERENT MCP3221AX VARIANTS REPRESENT THE 8 DIFFERENT DEVICE ADDRESSES!*/
 const byte prxml_encdr_addr = 0x4D;
 
 unsigned long timeNow;

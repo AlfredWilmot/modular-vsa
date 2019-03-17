@@ -19,6 +19,8 @@ include_directories(
 add_library(segment_joint_lib
   src/publish_segment_joint_values.cpp
   src/segment_joint.hpp
+  /Ard
+  src/MCP3221/MCP3221.h
   )
 
 #Creating encoder exe and then linking it with the relevant user-made and base libraries 
