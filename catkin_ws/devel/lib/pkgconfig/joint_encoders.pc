@@ -1,0 +1,8 @@
+prefix=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel
+
+Name: joint_encoders
+Description: Description of joint_encoders
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib 
+Requires: 

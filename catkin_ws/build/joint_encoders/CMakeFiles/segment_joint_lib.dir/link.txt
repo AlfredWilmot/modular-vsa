@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC   -shared -Wl,-soname,libsegment_joint_lib.so -o /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/libsegment_joint_lib.so CMakeFiles/segment_joint_lib.dir/src/publish_segment_joint_values.cpp.o 
