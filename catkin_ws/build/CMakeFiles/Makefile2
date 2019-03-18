@@ -387,921 +387,1009 @@ clean: gtest/gtest/CMakeFiles/gtest_main.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory joint_encoders
+# Directory level rules for directory arduino_joint_publisher
 
 # Convenience name for "all" pass in the directory.
-joint_encoders/all: joint_encoders/CMakeFiles/segment_joint_lib.dir/all
-joint_encoders/all: joint_encoders/CMakeFiles/segment_joint_node.dir/all
+arduino_joint_publisher/all:
 
-.PHONY : joint_encoders/all
+.PHONY : arduino_joint_publisher/all
 
 # Convenience name for "clean" pass in the directory.
-joint_encoders/clean: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/segment_joint_lib.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/segment_joint_node.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-joint_encoders/clean: joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+arduino_joint_publisher/clean: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 
-.PHONY : joint_encoders/clean
+.PHONY : arduino_joint_publisher/clean
 
 # Convenience name for "preinstall" pass in the directory.
-joint_encoders/preinstall:
+arduino_joint_publisher/preinstall:
 
-.PHONY : joint_encoders/preinstall
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_py"
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# clean rule for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
-
-.PHONY : clean
+.PHONY : arduino_joint_publisher/preinstall
 
 #=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
+# Target rules for target arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir
 
 # All Build rule for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_lisp"
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# clean rule for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_cpp"
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# clean rule for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# clean rule for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/segment_joint_lib.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/segment_joint_lib.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/segment_joint_lib.dir/build.make joint_encoders/CMakeFiles/segment_joint_lib.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/segment_joint_lib.dir/build.make joint_encoders/CMakeFiles/segment_joint_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num=12,13 "Built target segment_joint_lib"
-.PHONY : joint_encoders/CMakeFiles/segment_joint_lib.dir/all
-
-# Include target in all.
-all: joint_encoders/CMakeFiles/segment_joint_lib.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/segment_joint_lib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/segment_joint_lib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/segment_joint_lib.dir/rule
-
-# Convenience name for target.
-segment_joint_lib: joint_encoders/CMakeFiles/segment_joint_lib.dir/rule
-
-.PHONY : segment_joint_lib
-
-# clean rule for target.
-joint_encoders/CMakeFiles/segment_joint_lib.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/segment_joint_lib.dir/build.make joint_encoders/CMakeFiles/segment_joint_lib.dir/clean
-.PHONY : joint_encoders/CMakeFiles/segment_joint_lib.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/segment_joint_lib.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# clean rule for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/segment_joint_node.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/segment_joint_node.dir/all: joint_encoders/CMakeFiles/segment_joint_lib.dir/all
-	$(MAKE) -f joint_encoders/CMakeFiles/segment_joint_node.dir/build.make joint_encoders/CMakeFiles/segment_joint_node.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/segment_joint_node.dir/build.make joint_encoders/CMakeFiles/segment_joint_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num=14,15 "Built target segment_joint_node"
-.PHONY : joint_encoders/CMakeFiles/segment_joint_node.dir/all
-
-# Include target in all.
-all: joint_encoders/CMakeFiles/segment_joint_node.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/segment_joint_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/segment_joint_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/segment_joint_node.dir/rule
-
-# Convenience name for target.
-segment_joint_node: joint_encoders/CMakeFiles/segment_joint_node.dir/rule
-
-.PHONY : segment_joint_node
-
-# clean rule for target.
-joint_encoders/CMakeFiles/segment_joint_node.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/segment_joint_node.dir/build.make joint_encoders/CMakeFiles/segment_joint_node.dir/clean
-.PHONY : joint_encoders/CMakeFiles/segment_joint_node.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/segment_joint_node.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# clean rule for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_eus"
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# clean rule for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_py"
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# clean rule for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/clean
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/roscpp_generate_messages_py.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_eus"
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# clean rule for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_nodejs"
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# clean rule for target.
-joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
-.PHONY : joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_lisp"
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# clean rule for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_cpp"
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# clean rule for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_eus"
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# clean rule for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_cpp"
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# clean rule for target.
-joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-.PHONY : joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_lisp"
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# clean rule for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_cpp"
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# clean rule for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_eus"
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# clean rule for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_lisp"
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# clean rule for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_cpp"
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# clean rule for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_nodejs"
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# clean rule for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_py"
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# clean rule for target.
-joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
-.PHONY : joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_eus"
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# clean rule for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_nodejs"
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# clean rule for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_nodejs"
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# clean rule for target.
-joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-.PHONY : joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-
-# clean rule for target.
-clean: joint_encoders/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/build
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_py"
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/all
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_py: joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+std_msgs_generate_messages_py: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 .PHONY : std_msgs_generate_messages_py
 
 # clean rule for target.
-joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/build.make joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/clean
-.PHONY : joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 
 # clean rule for target.
-clean: joint_encoders/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+clean: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_nodejs"
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_nodejs: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : std_msgs_generate_messages_nodejs
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_eus"
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_eus: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+.PHONY : std_msgs_generate_messages_eus
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_py"
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_py: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_py
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_nodejs"
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_nodejs: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_nodejs
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_cpp"
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_cpp: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : std_msgs_generate_messages_cpp
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_lisp"
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_lisp: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_lisp
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_eus"
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_lisp"
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_lisp: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : std_msgs_generate_messages_lisp
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_cpp"
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_lisp"
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_lisp: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+.PHONY : roscpp_generate_messages_lisp
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_nodejs"
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_py"
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+.PHONY : roscpp_generate_messages_py
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_arduino_generate_messages_eus"
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosserial_arduino_generate_messages_eus: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/rule
+
+.PHONY : rosserial_arduino_generate_messages_eus
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_cpp"
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_cpp: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_arduino_generate_messages_lisp"
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+rosserial_arduino_generate_messages_lisp: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/rule
+
+.PHONY : rosserial_arduino_generate_messages_lisp
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_nodejs"
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_nodejs: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+.PHONY : roscpp_generate_messages_nodejs
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_eus"
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+.PHONY : roscpp_generate_messages_eus
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_eus"
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_arduino_generate_messages_nodejs"
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+rosserial_arduino_generate_messages_nodejs: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/rule
+
+.PHONY : rosserial_arduino_generate_messages_nodejs
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_arduino_generate_messages_cpp"
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+rosserial_arduino_generate_messages_cpp: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/rule
+
+.PHONY : rosserial_arduino_generate_messages_cpp
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_eus"
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_arduino_generate_messages_py"
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/rule
+
+# Convenience name for target.
+rosserial_arduino_generate_messages_py: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/rule
+
+.PHONY : rosserial_arduino_generate_messages_py
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_cpp"
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+.PHONY : roscpp_generate_messages_cpp
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_cpp"
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_lisp"
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_py"
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles 0
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# clean rule for target.
+arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+.PHONY : arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 
 .PHONY : clean
 

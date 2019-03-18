@@ -576,7 +576,6 @@ src/publish_segment_joint_values.o: src/publish_segment_joint_values.cpp.o
 
 # target to build an object file
 src/publish_segment_joint_values.cpp.o:
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f joint_encoders/CMakeFiles/segment_joint_lib.dir/build.make joint_encoders/CMakeFiles/segment_joint_lib.dir/src/publish_segment_joint_values.cpp.o
 	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f joint_encoders/CMakeFiles/segment_joint_node.dir/build.make joint_encoders/CMakeFiles/segment_joint_node.dir/src/publish_segment_joint_values.cpp.o
 .PHONY : src/publish_segment_joint_values.cpp.o
 
@@ -586,7 +585,6 @@ src/publish_segment_joint_values.i: src/publish_segment_joint_values.cpp.i
 
 # target to preprocess a source file
 src/publish_segment_joint_values.cpp.i:
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f joint_encoders/CMakeFiles/segment_joint_lib.dir/build.make joint_encoders/CMakeFiles/segment_joint_lib.dir/src/publish_segment_joint_values.cpp.i
 	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f joint_encoders/CMakeFiles/segment_joint_node.dir/build.make joint_encoders/CMakeFiles/segment_joint_node.dir/src/publish_segment_joint_values.cpp.i
 .PHONY : src/publish_segment_joint_values.cpp.i
 
@@ -596,7 +594,6 @@ src/publish_segment_joint_values.s: src/publish_segment_joint_values.cpp.s
 
 # target to generate assembly for a file
 src/publish_segment_joint_values.cpp.s:
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f joint_encoders/CMakeFiles/segment_joint_lib.dir/build.make joint_encoders/CMakeFiles/segment_joint_lib.dir/src/publish_segment_joint_values.cpp.s
 	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f joint_encoders/CMakeFiles/segment_joint_node.dir/build.make joint_encoders/CMakeFiles/segment_joint_node.dir/src/publish_segment_joint_values.cpp.s
 .PHONY : src/publish_segment_joint_values.cpp.s
 
