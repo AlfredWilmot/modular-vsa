@@ -1,8 +1,10 @@
+
+#define USE_USBCON //Avoids USB error w/ Arduino Micro
+
 #include <ros.h>
-#include <std_msgs/String.h>
+#include <std_msgs/Float32.h>
 
 #include <MCP3221.h>
-
 
 /* MCP3221 declarations */
 const byte prxml_encdr_addr = 0x4D;
@@ -12,36 +14,33 @@ MCP3221 proximal_encoder(prxml_encdr_addr);
 
 /* ROS declarations */
 ros::NodeHandle nh;
-std_msgs::String str_msg;
-ros::Publisher chatter("chatter", &str_msg);
-char hello[13] = "hello world!";
+std_msgs::Float32 pub_data;
+ros::Publisher chatter("chatter", &pub_data);
 
 
 void setup() 
-{
+{  
+  /* Initialize rosnode and chatter topic */
   nh.initNode();
   nh.advertise(chatter);
-  
-  Serial.begin(9600);
+
+  /* Publisher will fail to transmit if the serial object is not instantiated with baud 57600*/
+  Serial.begin(57600);
+    
+  /* Setup I2C BUS (default I2C pins?) */
   Wire.begin();
-  Serial.print(F("\n\nserial is open\n\n"));
-  proximal_encoder.setVref(4096);                            // sets voltage reference for the ADC in mV (change as needed)
-  proximal_encoder.setVinput(VOLTAGE_INPUT_5V);              // sets voltage input type to be measured (change as needed)
-  timeNow = millis();
+  
+  /* Configure MCP3221 object */
+  proximal_encoder.setVref(4096);               // sets voltage reference for the ADC in mV (change as needed)
+  proximal_encoder.setVinput(VOLTAGE_INPUT_5V); // sets voltage input type to be measured (change as needed)
 }
 
 void loop() 
 {
-  if (millis() - timeNow >= 10) 
-  {
-    Serial.print(F("reading:\t"));
-    Serial.print(proximal_encoder.getData());
-    Serial.print(F("\n\n"));  
-    timeNow = millis();
 
-    str_msg.data = hello;
-    chatter.publish( &str_msg );
-    nh.spinOnce();
-    
-  }
+  pub_data.data = proximal_encoder.getData();
+  chatter.publish(&pub_data);
+  nh.spinOnce();
+  delay(2);
+
 }
