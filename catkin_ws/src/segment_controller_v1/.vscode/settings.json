@@ -1,0 +1,9 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/kinetic/lib/python2.7/dist-packages"
+    ],
+    "terminal.integrated.env.linux": {
+        "PATH": "/home/alfie/.platformio/penv/bin:/home/alfie/.platformio/penv:/opt/ros/kinetic/bin:/home/alfie/bin:/home/alfie/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/user/workspace/stm32/stlink",
+        "PLATFORMIO_CALLER": "vscode"
+    }
+}

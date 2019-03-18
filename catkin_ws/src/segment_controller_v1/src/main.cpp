@@ -1,7 +1,5 @@
-#include "ros.h"
-#include "Arduino.h"
-
-/*Watch this for help: https://www.youtube.com/watch?v=EIkGTwLOD7o*/
+#include <Arduino.h>
+#include "../.piolibdeps/MCP3221_ID1291/MCP3221.h"
 
 void setup() {
   // put your setup code here, to run once:
