@@ -13,7 +13,7 @@
 
 In order for the packages to be accessible, need to source devel/setup.bash a catkin workspace */
 
-## (2) Place code below (from here: ) into an Arduino sketch
+## (2) Place code below (from here: https://wiki.ros.org/rosserial_arduino/Tutorials/Hello%20World) into an Arduino sketch
 
 
 ```cpp
