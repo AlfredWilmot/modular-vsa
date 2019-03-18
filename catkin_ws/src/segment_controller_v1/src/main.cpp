@@ -1,10 +1,35 @@
 #include <Arduino.h>
-#include "../.piolibdeps/MCP3221_ID1291/MCP3221.h"
+#include "ros.h"
+#include "MCP3221.h"
 
-void setup() {
-  // put your setup code here, to run once:
+
+
+/* Reference code taken from here: https://github.com/nadavmatalon/MCP3221/blob/master/examples/MCP3221_Basic_Usage/MCP3221_Basic_Usage.ino */
+/* MCP3221 datasheet: http://ww1.microchip.com/downloads/en/DeviceDoc/20001732E.pdf */
+/* BEWARE THE DIFFERENT MCP3221AX VARIANTS REPRESENT THE 8 DIFFERENT DEVICE ADDRESSES!*/
+const byte prxml_encdr_addr = 0x4D;
+
+unsigned long timeNow;
+
+MCP3221 proximal_encoder(prxml_encdr_addr);
+
+void setup()
+{
+  Serial.begin(9600);
+  Wire.begin();
+  Serial.print(F("\n\nserial is open\n\n"));
+  proximal_encoder.setVref(4096);                            // sets voltage reference for the ADC in mV (change as needed)
+  proximal_encoder.setVinput(VOLTAGE_INPUT_5V);              // sets voltage input type to be measured (change as needed)
+  timeNow = millis();
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+void loop()
+{
+  if (millis() - timeNow >= 10)
+  {
+    Serial.print(F("reading:\t"));
+    Serial.print(proximal_encoder.getData());
+    Serial.print(F("\n\n"));
+    timeNow = millis();
+  }
 }
