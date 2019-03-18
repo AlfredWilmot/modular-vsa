@@ -2,7 +2,7 @@
 #define USE_USBCON //Avoids USB error w/ Arduino Micro
 
 #include <ros.h>
-#include <std_msgs/Float32.h>
+#include <std_msgs/Int16.h>
 
 #include <MCP3221.h>
 
@@ -14,7 +14,7 @@ MCP3221 proximal_encoder(prxml_encdr_addr);
 
 /* ROS declarations */
 ros::NodeHandle nh;
-std_msgs::Float32 pub_data;
+std_msgs::Int16 pub_data;
 ros::Publisher chatter("chatter", &pub_data);
 
 
