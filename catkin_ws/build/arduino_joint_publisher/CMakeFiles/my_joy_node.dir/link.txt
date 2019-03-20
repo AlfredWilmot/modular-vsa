@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/my_joy_node.dir/src/Test_Xbox_gamepad/joy_subscriber.cpp.o  -o /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node -rdynamic 

@@ -1,39 +1,4 @@
-
-
-  // Arduino UNO resources...
-  // PWM duty mapping : https://www.theengineeringprojects.com/2017/03/use-arduino-pwm-pins.html
-  // pin-out:           https://www.circuito.io/blog/arduino-uno-pinout/
-
-  
-  /* Allocating Joystick pins */
-  static int joystick_pitch_pin = 14;
-  static int joystick_yaw_pin   = 15;
-  static int joystick_SW_pin    = 2;
-
-  pinMode(joystick_pitch_pin, INPUT);
-  pinMode(joystick_yaw_pin,   INPUT);
-  pinMode(joystick_SW_pin,    INPUT);
-
-  /* L298N control pins (Set these LO to perform free-running stop) */
-  static int EN_A = 11;  // (pwm) 
-  static int EN_B = 10;  // (pwm)
-
-  pinMode(EN_A, OUTPUT);
-  pinMode(EN_B, OUTPUT);
-
-  /* Pin pairs define motor rotation direction (Set pairs equal, if corresponding EN is HI, to perform hard-stop) */
-  static int IN_1 = 9;
-  static int IN_2 = 8;
-  static int IN_3 = 7;
-  static int IN_4 = 6;
-
-  pinMode(IN_1, OUTPUT);
-  pinMode(IN_2, OUTPUT);
-  pinMode(IN_3, OUTPUT);
-  pinMode(IN_4, OUTPUT);
-
-  static int EN_A_DUTY = 0;
-  static int EN_B_DUTY = 0;
+#include <Arduino.h>
 
 /* Fcn for controlling motor given joystick input */
 void move_motor(int duty, int IN_A, int IN_B, int EN)
@@ -80,22 +45,60 @@ void move_motor(int duty, int IN_A, int IN_B, int EN)
   
 }
 
-/* Move motors according to joystick position (Antagonist pairs simply move in opposite direction for now) */
 void test_joy_stick()
 {
-  move_motor(analogRead(joystick_yaw_pin),    IN_1, IN_2, EN_A);
-  move_motor(analogRead(joystick_pitch_pin),  IN_3, IN_4, EN_B);
+
+  // Arduino UNO resources...
+  // PWM duty mapping : https://www.theengineeringprojects.com/2017/03/use-arduino-pwm-pins.html
+  // pin-out:           https://www.circuito.io/blog/arduino-uno-pinout/
+
+  /* Allocating Joystick pins */
+  int joystick_pitch_pin = 14;
+  int joystick_roll_pin  = 15;
+  int joystick_SW_pin    = 2;
+
+  pinMode(joystick_pitch_pin, INPUT);
+  pinMode(joystick_roll_pin,  INPUT);
+  pinMode(joystick_SW_pin,    INPUT);
+
+  /* L298N control pins (Set these LO to perform free-running stop) */
+  int EN_A = 11;  // (pwm) 
+  int EN_B = 10;  // (pwm)
+
+  pinMode(EN_A, OUTPUT);
+  pinMode(EN_B, OUTPUT);
+
+  /* Pin pairs define motor rotation direction (Set pairs equal, if corresponding EN is HI, to perform hard-stop) */
+  int IN_1 = 9;
+  int IN_2 = 8;
+  int IN_3 = 7;
+  int IN_4 = 6;
+
+  pinMode(IN_1, OUTPUT);
+  pinMode(IN_2, OUTPUT);
+  pinMode(IN_3, OUTPUT);
+  pinMode(IN_4, OUTPUT);
+
+  int EN_A_DUTY = 0;
+  int EN_B_DUTY = 0;
+
+  /* Main control loop */
+  while (1)
+  {
+
+    /* Move motors according to joystick position (Antagonist pairs simply move in opposite direction for now) */
+    move_motor(analogRead(joystick_roll_pin),    IN_1, IN_2, EN_A);
+    move_motor(analogRead(joystick_pitch_pin),  IN_3, IN_4, EN_B);
+
+    _delay_ms(20);
+  }
 }
 
 
 void setup() {
-  /* Arduino Bureaucracy, soon I shall be free from it's thrall... */
+/* This is required for arduino sketch to work */
 }
 
 void loop() {
-  while(1)
-  {
-    test_joy_stick();
-    _delay_ms(20);
-  }
+  test_joy_stick();
 }

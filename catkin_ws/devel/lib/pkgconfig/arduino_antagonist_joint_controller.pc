@@ -1,0 +1,8 @@
+prefix=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel
+
+Name: arduino_antagonist_joint_controller
+Description: Description of arduino_antagonist_joint_controller
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib 
+Requires: 

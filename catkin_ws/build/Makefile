@@ -292,7 +292,7 @@ std_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/std_msgs_generate_messages_py.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -305,7 +305,7 @@ std_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -318,7 +318,7 @@ std_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_eus/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -331,7 +331,7 @@ rosgraph_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -344,7 +344,7 @@ rosgraph_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -357,7 +357,7 @@ std_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -370,7 +370,7 @@ rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -383,7 +383,7 @@ rosgraph_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_eus/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -396,7 +396,7 @@ std_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -409,7 +409,7 @@ sensor_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -422,7 +422,7 @@ roscpp_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 #=============================================================================
@@ -435,7 +435,7 @@ geometry_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -448,7 +448,7 @@ roscpp_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_py.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/roscpp_generate_messages_py.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
@@ -461,7 +461,7 @@ rosserial_arduino_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 rosserial_arduino_generate_messages_eus/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build
 .PHONY : rosserial_arduino_generate_messages_eus/fast
 
 #=============================================================================
@@ -474,7 +474,7 @@ rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -487,7 +487,7 @@ rosserial_arduino_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 rosserial_arduino_generate_messages_lisp/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build
 .PHONY : rosserial_arduino_generate_messages_lisp/fast
 
 #=============================================================================
@@ -500,7 +500,7 @@ sensor_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_py/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -513,7 +513,7 @@ roscpp_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_nodejs/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -526,7 +526,7 @@ roscpp_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/roscpp_generate_messages_eus.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 #=============================================================================
@@ -539,7 +539,7 @@ geometry_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_eus/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -552,7 +552,7 @@ rosserial_arduino_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 rosserial_arduino_generate_messages_nodejs/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build
 .PHONY : rosserial_arduino_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -565,7 +565,7 @@ rosserial_arduino_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 rosserial_arduino_generate_messages_cpp/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build
 .PHONY : rosserial_arduino_generate_messages_cpp/fast
 
 #=============================================================================
@@ -578,7 +578,7 @@ sensor_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_eus/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -591,7 +591,7 @@ rosserial_arduino_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 rosserial_arduino_generate_messages_py/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build
 .PHONY : rosserial_arduino_generate_messages_py/fast
 
 #=============================================================================
@@ -604,7 +604,7 @@ roscpp_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 #=============================================================================
@@ -617,7 +617,7 @@ sensor_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -630,7 +630,7 @@ geometry_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
 .PHONY : geometry_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -643,7 +643,7 @@ geometry_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -656,7 +656,7 @@ geometry_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_py/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make arduino_joint_publisher/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -669,8 +669,21 @@ sensor_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make arduino_joint_publisher/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : sensor_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named my_joy_node
+
+# Build rule for target.
+my_joy_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 my_joy_node
+.PHONY : my_joy_node
+
+# fast build rule for target.
+my_joy_node/fast:
+	$(MAKE) -f arduino_joint_publisher/CMakeFiles/my_joy_node.dir/build.make arduino_joint_publisher/CMakeFiles/my_joy_node.dir/build
+.PHONY : my_joy_node/fast
 
 # Help Target
 help:
@@ -724,6 +737,7 @@ help:
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... my_joy_node"
 .PHONY : help
 
 
