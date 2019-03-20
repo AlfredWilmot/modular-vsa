@@ -24,4 +24,4 @@ include_directories(
 
 #Creating joystick subscriber exe and then linking it with the relevant user-made and base libraries 
 add_executable(my_joy_node src/Test_Xbox_gamepad/joy_subscriber.cpp)
-#target_link_libraries(my_joy_node ${catkin_LIBRARIES} my_joy_lib)
+target_link_libraries(my_joy_node ${catkin_LIBRARIES})

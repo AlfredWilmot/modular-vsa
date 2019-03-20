@@ -90,6 +90,25 @@ my_joy_node_EXTERNAL_OBJECTS =
 
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: arduino_joint_publisher/CMakeFiles/my_joy_node.dir/src/Test_Xbox_gamepad/joy_subscriber.cpp.o
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: arduino_joint_publisher/CMakeFiles/my_joy_node.dir/build.make
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /opt/ros/kinetic/lib/libroscpp.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /opt/ros/kinetic/lib/librosconsole.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /opt/ros/kinetic/lib/librostime.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /opt/ros/kinetic/lib/libcpp_common.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node: arduino_joint_publisher/CMakeFiles/my_joy_node.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_joint_publisher/my_joy_node"
 	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/arduino_joint_publisher && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/my_joy_node.dir/link.txt --verbose=$(VERBOSE)
