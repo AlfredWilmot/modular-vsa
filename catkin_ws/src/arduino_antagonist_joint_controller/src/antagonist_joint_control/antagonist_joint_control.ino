@@ -8,8 +8,8 @@ void move_motor(int duty, int IN_A, int IN_B, int EN)
       If above this value, go fwds   (IN_1 = HI ; IN_2 = LO).
       Else, turn PWM off gently      (EN_A = LO).
   */
-  int joy_rest      = 512;  // Value of joystick when untouched.
-  int thresh        = 20;    // Hysteresis around joystick resting value
+  int joy_rest      = 0;  // Value of joystick when untouched.
+  int thresh        = 0.1;    // Hysteresis around joystick resting value
   int thresh_lower  = joy_rest - thresh;
   int thresh_upper  = joy_rest + thresh;
 
@@ -45,60 +45,57 @@ void move_motor(int duty, int IN_A, int IN_B, int EN)
   
 }
 
-void test_joy_stick()
-{
 
-  // Arduino UNO resources...
-  // PWM duty mapping : https://www.theengineeringprojects.com/2017/03/use-arduino-pwm-pins.html
-  // pin-out:           https://www.circuito.io/blog/arduino-uno-pinout/
+  /// Arduino Micro resources...
+  //  PWM duty mapping : https://www.theengineeringprojects.com/2017/03/use-arduino-pwm-pins.html
+  //  pin-out:           http://pinoutguide.com/Electronics/arduino_micro_pinout.shtml
 
-  /* Allocating Joystick pins */
-  int joystick_pitch_pin = 14;
-  int joystick_roll_pin  = 15;
-  int joystick_SW_pin    = 2;
 
-  pinMode(joystick_pitch_pin, INPUT);
-  pinMode(joystick_roll_pin,  INPUT);
-  pinMode(joystick_SW_pin,    INPUT);
+/* L298N control pins (Set these LO to perform free-running stop) */
+const int EN_A = 13;  // (pwm) 
+const int EN_B = 11;  // (pwm)
 
-  /* L298N control pins (Set these LO to perform free-running stop) */
-  int EN_A = 11;  // (pwm) 
-  int EN_B = 10;  // (pwm)
 
+/* Pin pairs define motor rotation direction (Set pairs equal, if corresponding EN is HI, to perform hard-stop) */
+const int IN_1 = 12;
+const int IN_2 = A0;
+const int IN_3 = A1;
+const int IN_4 = A2;
+
+const int EN_A_DUTY = 0;
+const int EN_B_DUTY = 0;
+
+void setup() {
+
+  // PWM pins
   pinMode(EN_A, OUTPUT);
   pinMode(EN_B, OUTPUT);
 
-  /* Pin pairs define motor rotation direction (Set pairs equal, if corresponding EN is HI, to perform hard-stop) */
-  int IN_1 = 9;
-  int IN_2 = 8;
-  int IN_3 = 7;
-  int IN_4 = 6;
-
+  // Digital pins
   pinMode(IN_1, OUTPUT);
   pinMode(IN_2, OUTPUT);
   pinMode(IN_3, OUTPUT);
   pinMode(IN_4, OUTPUT);
 
-  int EN_A_DUTY = 0;
-  int EN_B_DUTY = 0;
 
+  
+}
+
+void loop() {
+
+  /* Need to add joystick subscriber code, and pass value as duty to move_motor fcn*/
+  int duty_from_joystick_roll = 500;
+  int duty_from_joystick_yaw  = 500;
+  
   /* Main control loop */
   while (1)
   {
 
     /* Move motors according to joystick position (Antagonist pairs simply move in opposite direction for now) */
-    move_motor(analogRead(joystick_roll_pin),    IN_1, IN_2, EN_A);
-    move_motor(analogRead(joystick_pitch_pin),  IN_3, IN_4, EN_B);
+    move_motor(duty_from_joystick_roll, IN_1, IN_2, EN_A);
+    move_motor(duty_from_joystick_yaw , IN_3, IN_4, EN_B);
 
     _delay_ms(20);
   }
-}
-
-
-void setup() {
-/* This is required for arduino sketch to work */
-}
-
-void loop() {
-  test_joy_stick();
+  
 }
