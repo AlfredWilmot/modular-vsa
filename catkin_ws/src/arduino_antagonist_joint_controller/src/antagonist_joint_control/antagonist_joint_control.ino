@@ -48,7 +48,7 @@ void move_motor(int duty, int IN_A, int IN_B, int EN)
 
   /// Arduino Micro resources...
   //  PWM duty mapping : https://www.theengineeringprojects.com/2017/03/use-arduino-pwm-pins.html
-  //  pin-out:           http://pinoutguide.com/Electronics/arduino_micro_pinout.shtml
+  //  pin-out:           https://www.arduino.cc/en/uploads/Main/ArduinoMicro_Pinout3.png
 
 
 /* L298N control pins (Set these LO to perform free-running stop) */
