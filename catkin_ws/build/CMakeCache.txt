@@ -266,6 +266,12 @@ arduino_antagonist_joint_controller_BINARY_DIR:STATIC=/home/alfie/Desktop/Modula
 arduino_antagonist_joint_controller_SOURCE_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller
 
 //Value Computed by CMake
+arduino_antagonist_joint_publisher_BINARY_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/arduino_antagonist_joint_controller
+
+//Value Computed by CMake
+arduino_antagonist_joint_publisher_SOURCE_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller
+
+//Value Computed by CMake
 arduino_joint_publisher_BINARY_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/arduino_joint_publisher
 
 //Value Computed by CMake

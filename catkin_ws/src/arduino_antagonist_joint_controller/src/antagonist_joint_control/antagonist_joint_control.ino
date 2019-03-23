@@ -1,5 +1,12 @@
 #include <Arduino.h>
 
+#define USE_USBCON 
+
+#include <ros.h>
+#include <sensor_msgs/Joy.h>
+
+
+
 /* Fcn for controlling motor given joystick input */
 void move_motor(int duty, int IN_A, int IN_B, int EN)
 {
@@ -14,7 +21,7 @@ void move_motor(int duty, int IN_A, int IN_B, int EN)
   int thresh_upper  = joy_rest + thresh;
 
 
-  
+
   if(duty >= thresh_upper)
   {
     /* Go fwd */
@@ -42,8 +49,15 @@ void move_motor(int duty, int IN_A, int IN_B, int EN)
   {
     analogWrite(EN, 0);
   }
-  
+
 }
+
+
+
+
+
+
+
 
 
   /// Arduino Micro resources...
@@ -52,7 +66,7 @@ void move_motor(int duty, int IN_A, int IN_B, int EN)
 
 
 /* L298N control pins (Set these LO to perform free-running stop) */
-const int EN_A = 13;  // (pwm) 
+const int EN_A = 13;  // (pwm)
 const int EN_B = 11;  // (pwm)
 
 
@@ -64,6 +78,83 @@ const int IN_4 = A2;
 
 const int EN_A_DUTY = 0;
 const int EN_B_DUTY = 0;
+
+
+/* Joystick subscriber callback for controlling motors of one joint */
+void test_proximal_joint(const sensor_msgs::Joy& msg)
+{
+    bool A_btn  = msg.buttons[0];
+
+    bool B_btn  = msg.buttons[1];
+    bool X_btn  = msg.buttons[2];
+
+    bool LB_btn = msg.buttons[4];
+    bool RB_btn = msg.buttons[5];
+
+    int duty = 100; //duty: 0,255
+
+    //Right motor rotates:  CW if A is pressed or if B is pressed:                 A || B
+    //                      CCW if A && RB are pressed or if B && RB are pressed:  RB && (A || B)
+
+    //Left motor roates:    CW if A is pressed or if X is pressed:                 A || X
+    //                      CCW if A && LB are pressed or if X && LB are pressed:  LB && (A || X)
+
+
+
+    /* CONTROL RIGHT MOTOR */
+    if(A_btn || B_btn)
+    {
+      if(RB_btn)
+      {
+        // FWD?
+        digitalWrite(IN_1, HIGH);
+        digitalWrite(IN_2, LOW);
+      }
+      else
+      {
+        //BKWD?
+        digitalWrite(IN_1, LOW);
+        digitalWrite(IN_2, HIGH);
+      }
+
+      analogWrite(EN_A, duty);
+    }
+    else
+    {
+        /* STOP */
+        analogWrite(EN_A, 0);
+    }
+
+    /* CONTROL LEFT MOTOR */
+    if(A_btn || X_btn)
+    {
+
+      if(LB_btn)
+      {
+        // FWD?
+        digitalWrite(IN_3, HIGH);
+        digitalWrite(IN_4, LOW);
+      }
+      else
+      {
+        //BKWD?
+        digitalWrite(IN_3, LOW);
+        digitalWrite(IN_4, HIGH);
+      }
+
+      analogWrite(EN_B, duty);
+    }
+    else
+    {
+        /* STOP */
+        analogWrite(EN_B, 0);
+    }
+}
+
+
+
+ros::NodeHandle nh;
+ros::Subscriber<sensor_msgs::Joy> sub("joy", &test_proximal_joint);
 
 void setup() {
 
@@ -77,25 +168,16 @@ void setup() {
   pinMode(IN_3, OUTPUT);
   pinMode(IN_4, OUTPUT);
 
+  nh.initNode();
+  nh.subscribe(sub);
 
-  
+  Serial.begin(57600);
+
 }
 
 void loop() {
 
-  /* Need to add joystick subscriber code, and pass value as duty to move_motor fcn*/
-  int duty_from_joystick_roll = 500;
-  int duty_from_joystick_yaw  = 500;
-  
-  /* Main control loop */
-  while (1)
-  {
+  nh.spinOnce();
+  delay(10);
 
-    /* Move motors according to joystick position (Antagonist pairs simply move in opposite direction for now) */
-    move_motor(duty_from_joystick_roll, IN_1, IN_2, EN_A);
-    move_motor(duty_from_joystick_yaw , IN_3, IN_4, EN_B);
-
-    _delay_ms(20);
-  }
-  
 }

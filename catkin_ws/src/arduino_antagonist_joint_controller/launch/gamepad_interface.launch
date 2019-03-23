@@ -1,0 +1,13 @@
+<launch>
+    <node pkg="arduino_antagonist_joint_controller" type="joystick_msg_parser_node" name="joystick_msg_parser_node" />
+    
+    <!-- Credit goes to: https://wiki.ros.org/joy/Tutorials/ConfiguringALinuxJoystick -->
+    <param name="joy_node/dev" value="/dev/input/js0" type="str" />
+    <node pkg="joy" type="joy_node" name="joy_node" />
+
+</launch>
+
+<!-- 
+    TODO: 
+    -> Generate status update msg when controller is connected (particularly after not being able to initially find it).
+ -->
