@@ -341,6 +341,9 @@ lib:FILEPATH=/opt/ros/kinetic/lib/libxmlrpcpp.so
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
 
+//Dependencies for target
+my_joy_lib_LIB_DEPENDS:STATIC=
+
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/kinetic/share/rosconsole/cmake
 

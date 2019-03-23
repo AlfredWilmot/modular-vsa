@@ -1,6 +1,6 @@
 #include "ros/ros.h"
 #include "sensor_msgs/Joy.h"
-#include "std_msgs/Int8.h"
+#include "std_msgs/Int8MultiArray.h"
 #include "std_msgs/Bool.h"
 
 #include <iostream>
@@ -8,6 +8,7 @@
 
 /* Fcn declarations */
 void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg);
+void direct_control();
 
 
 /* Variables store the parsed gamepad message into global varaibles that controller fcns can access */
@@ -20,27 +21,44 @@ static bool LB_btn = 0;
 static bool RB_btn = 0;
 
 
-/* Motor message */
-//  [ int8 motor_ID: [array_len_x], bool motor_DIR: [array_len_x], int8 motor_PWM_duty: [array_len_x] ]
+#define CW  0
+#define CCW 1
+
+/* motor msg */
+static std_msgs::Int8MultiArray motor_packet;
+
+/* motor msg publisher */
+static ros::Publisher motor_pub;
 
 
 /* Subscribe to the xbox-360 joy-stick topic, 
    publish corresponding motor control msg to "/segment_motor_cmds" topic */
 int main(int argc, char **argv)
 {
+    /* Initializing motor packet*/
 
-  /* ROS Node Premable */
-  ros::init(argc, argv, "joystick_msg_parser");
-  ros::NodeHandle nh;
+    motor_packet.data.clear();
+    // direction
+    motor_packet.data.push_back(CW);
+    motor_packet.data.push_back(CW);
+    //duty
+    motor_packet.data.push_back(0);
+    motor_packet.data.push_back(0);
 
-  /* Subscribe to gamepad /joy topic (callback filters joy-msg) */
-  ros::Subscriber sub = nh.subscribe("joy", 1, test_proximal_joint);
 
-  /* Publish filtered joy-msg into something simple array for the MCU */
-  ros::Publisher motor_pub = nh.advertise<std_msgs::Int8>("segment_motor_cmds", 1);
+    /* ROS Node Premable */
+    ros::init(argc, argv, "joystick_msg_parser");
 
-  /* Service any subscriber callbacks */
-  ros::spin();
+    ros::NodeHandle nh;
+    /* Subscribe to gamepad /joy topic (callback filters joy-msg) */
+    ros::Subscriber sub = nh.subscribe("joy", 1, test_proximal_joint);
+    /* Publish filtered joy-msg into something simple array for the MCU */
+    motor_pub = nh.advertise<std_msgs::Int8MultiArray>("segment_motor_cmds", 1);
+
+
+
+    /* Service any subscriber callbacks */
+    ros::spin();
 
   return 0;
 }
@@ -58,6 +76,9 @@ void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg)
 
     LB_btn = msg->buttons[4];
     RB_btn = msg->buttons[5];
+
+    // Testing direct control
+    direct_control();
         
 }
 
@@ -71,14 +92,22 @@ void direct_control()
     //                      CCW if A && LB are pressed or if X && LB are pressed:  LB && (A || X) 
     
     std::cout << "Right motor";
+    
 
     if(A_btn || B_btn)
     {
+        // set dir
         RB_btn ? std::cout << " CCW\n" : std::cout << " CW\n";
+        RB_btn ? motor_packet.data.at(0) = CCW : motor_packet.data.at(0) = CW;
+
+        // set duty
+        motor_packet.data.at(2) = 128;  //255/2 = ~50% duty
+        
     }
     else
     {
         std::cout << " stop\n";
+        motor_packet.data.at(2) = 0;
     }
 
 
@@ -87,10 +116,19 @@ void direct_control()
 
     if(A_btn || X_btn)
     {
+        //set dir
         LB_btn ? std::cout << " CCW\n" : std::cout << " CW\n";
+        LB_btn ? motor_packet.data.at(1) = CCW : motor_packet.data.at(1) = CW;
+
+        // set duty 
+        motor_packet.data.at(3) = 128;
     }
     else
     {
         std::cout << " stop\n";
+        motor_packet.data.at(3) = 0;
     }
+
+    //publish updated packet 
+    motor_pub.publish(motor_packet);
 }
