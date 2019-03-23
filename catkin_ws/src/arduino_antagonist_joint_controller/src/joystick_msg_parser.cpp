@@ -1,6 +1,6 @@
 #include "ros/ros.h"
 #include "sensor_msgs/Joy.h"
-#include "std_msgs/Int8MultiArray.h"
+#include "std_msgs/UInt8MultiArray.h"
 #include "std_msgs/Bool.h"
 
 #include <iostream>
@@ -25,7 +25,7 @@ static bool RB_btn = 0;
 #define CCW 1
 
 /* motor msg */
-static std_msgs::Int8MultiArray motor_packet;
+static std_msgs::UInt8MultiArray motor_packet;
 
 /* motor msg publisher */
 static ros::Publisher motor_pub;
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
     /* Subscribe to gamepad /joy topic (callback filters joy-msg) */
     ros::Subscriber sub = nh.subscribe("joy", 1, test_proximal_joint);
     /* Publish filtered joy-msg into something simple array for the MCU */
-    motor_pub = nh.advertise<std_msgs::Int8MultiArray>("segment_motor_cmds", 1);
+    motor_pub = nh.advertise<std_msgs::UInt8MultiArray>("segment_motor_cmds", 1);
 
 
 
@@ -90,24 +90,27 @@ void direct_control()
 
     //Left motor roates:    CW if A is pressed or if X is pressed:                 A || X
     //                      CCW if A && LB are pressed or if X && LB are pressed:  LB && (A || X) 
-    
-    std::cout << "Right motor";
+
+
+
+
+    //std::cout << "Right motor";
     
 
     if(A_btn || B_btn)
     {
         // set dir
-        RB_btn ? std::cout << " CCW\n" : std::cout << " CW\n";
+        //RB_btn ? std::cout << " CCW\n" : std::cout << " CW\n";
         RB_btn ? motor_packet.data.at(0) = CCW : motor_packet.data.at(0) = CW;
 
         // set duty
-        motor_packet.data.at(2) = 128;  //255/2 = ~50% duty
+        motor_packet.data.at(1) = 128;  //255/2 = ~50% duty
         
     }
     else
     {
-        std::cout << " stop\n";
-        motor_packet.data.at(2) = 0;
+        //std::cout << " stop\n";
+        motor_packet.data.at(1) = 0;
     }
 
 
@@ -117,15 +120,15 @@ void direct_control()
     if(A_btn || X_btn)
     {
         //set dir
-        LB_btn ? std::cout << " CCW\n" : std::cout << " CW\n";
-        LB_btn ? motor_packet.data.at(1) = CCW : motor_packet.data.at(1) = CW;
+        //LB_btn ? std::cout << " CCW\n" : std::cout << " CW\n";
+        LB_btn ? motor_packet.data.at(2) = CCW : motor_packet.data.at(2) = CW;
 
         // set duty 
         motor_packet.data.at(3) = 128;
     }
     else
     {
-        std::cout << " stop\n";
+        //std::cout << " stop\n";
         motor_packet.data.at(3) = 0;
     }
 
