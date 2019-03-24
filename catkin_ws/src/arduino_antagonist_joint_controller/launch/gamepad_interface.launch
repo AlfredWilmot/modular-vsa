@@ -1,9 +1,17 @@
 <launch>
+
     <node pkg="arduino_antagonist_joint_controller" type="joystick_msg_parser_node" name="joystick_msg_parser_node" />
     
     <!-- Credit goes to: https://wiki.ros.org/joy/Tutorials/ConfiguringALinuxJoystick -->
-    <param name="joy_node/dev" value="/dev/input/js0" type="str" />
-    <node pkg="joy" type="joy_node" name="joy_node" />
+    <node pkg="joy" type="joy_node" name="joy_node">
+        <param name="joy_node/dev" value="/dev/input/js0" type="str" />
+    </node>
+
+    <!-- rosserial for forwarding arduino messages -->
+    <node name="rosserial_node" type="serial_node.py" pkg="rosserial_python">
+        <param name="baud" value="115200"/>
+        <param name="port" value="/dev/ttyACM0"/>
+    </node>
 
 </launch>
 

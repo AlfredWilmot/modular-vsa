@@ -74,6 +74,8 @@ void test_proximal_joint(const std_msgs::UInt8MultiArray& msg)
 
 
 ros::NodeHandle nh;
+nh.getHardware()->setBaud(115200);
+
 ros::Subscriber<std_msgs::UInt8MultiArray> sub("/segment_motor_cmds", &test_proximal_joint);
 
 void setup() {
