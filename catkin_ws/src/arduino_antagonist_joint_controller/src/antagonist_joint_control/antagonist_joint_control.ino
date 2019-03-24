@@ -73,13 +73,16 @@ void test_proximal_joint(const std_msgs::UInt8MultiArray& msg)
 
 
 
-ros::NodeHandle nh;
-nh.getHardware()->setBaud(115200);
+void setup() 
+{
+}
 
-ros::Subscriber<std_msgs::UInt8MultiArray> sub("/segment_motor_cmds", &test_proximal_joint);
 
-void setup() {
-
+void loop() {
+  ros::NodeHandle nh;
+  nh.getHardware()->setBaud(115200);
+  ros::Subscriber<std_msgs::UInt8MultiArray> sub("/segment_motor_cmds", &test_proximal_joint);
+  
   // PWM pins
   pinMode(EN_A, OUTPUT);
   pinMode(EN_B, OUTPUT);
@@ -95,11 +98,10 @@ void setup() {
 
   Serial.begin(57600);
 
-}
-
-void loop() {
-
-  nh.spinOnce();
-  delay(1);
+  while(1)
+  {
+    nh.spinOnce();
+    delay(1);
+  }
 
 }
