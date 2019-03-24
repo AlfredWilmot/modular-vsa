@@ -6,8 +6,7 @@
 
 #include "std_msgs/UInt16MultiArray.h"
 #include "std_msgs/UInt16.h"
-#include "std_msgs/Int16.h"
-#include <MCP3221.h>
+#include "MCP3221.h"
 
   /// Arduino Micro resources...
   //  PWM duty mapping : https://www.theengineeringprojects.com/2017/03/use-arduino-pwm-pins.html
@@ -82,19 +81,31 @@ void setup()
 
 
 void loop() {
-  ros::NodeHandle nh;
-  nh.getHardware()->setBaud(115200);
-  ros::Subscriber<std_msgs::UInt16MultiArray> sub("segment_motor_cmds", &test_proximal_joint);
-  
-  std_msgs::UInt16 pub_data;
-  pub_data.data = 1;
-  ros::Publisher chatter("chatter", &pub_data);
-
 
   /* MCP3221 declarations */
   const byte prxml_encdr_addr = 0x4D;
   unsigned long timeNow;
   MCP3221 proximal_encoder(prxml_encdr_addr);
+
+  /* ROS declarations */
+  ros::NodeHandle nh;
+  nh.getHardware()->setBaud(115200);
+  ros::Subscriber<std_msgs::UInt16MultiArray> sub("segment_motor_cmds", &test_proximal_joint);
+  std_msgs::UInt16 pub_data;
+  ros::Publisher chatter("chatter", &pub_data);
+
+  /* Setup node and it's topics */
+  nh.initNode();
+  nh.subscribe(sub);
+  nh.advertise(chatter);
+
+  /* Setup I2C BUS (default I2C pins?) */
+  Wire.begin();
+
+  /* Configure MCP3221 object */
+  proximal_encoder.setVref(4096);               // sets voltage reference for the ADC in mV (change as needed)
+  proximal_encoder.setVinput(VOLTAGE_INPUT_5V); // sets voltage input type to be measured (change as needed)
+
 
   // PWM pins
   pinMode(EN_A, OUTPUT);
@@ -106,27 +117,13 @@ void loop() {
   pinMode(IN_3, OUTPUT);
   pinMode(IN_4, OUTPUT);
 
-
-  /* Setup I2C BUS (default I2C pins?) */
-  Wire.begin();
-  /* Configure MCP3221 object */
-  proximal_encoder.setVref(4096);               // sets voltage reference for the ADC in mV (change as needed)
-  proximal_encoder.setVinput(VOLTAGE_INPUT_5V); // sets voltage input type to be measured (change as needed)
-
-  /* Setup node and it's topics */
-  nh.initNode();
-  nh.subscribe(sub);
-  nh.advertise(chatter);
-
-///  Serial.begin(115200);
-
   while(1)
   {
-    delay(10);
-    pub_data.data = 1;//proximal_encoder.getData();
-    delay(10);
+    
+    pub_data.data = proximal_encoder.getData();
     chatter.publish(&pub_data);
     nh.spinOnce();
+    delay(2);
   }
 
 }
