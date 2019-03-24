@@ -1,6 +1,6 @@
 #include "ros/ros.h"
 #include "sensor_msgs/Joy.h"
-#include "std_msgs/UInt8MultiArray.h"
+#include "std_msgs/UInt16MultiArray.h"
 #include "std_msgs/Bool.h"
 
 #include <iostream>
@@ -25,7 +25,7 @@ static bool RB_btn = 0;
 #define CCW 1
 
 /* motor msg */
-static std_msgs::UInt8MultiArray motor_packet;
+static std_msgs::UInt16MultiArray motor_packet;
 
 /* motor msg publisher */
 static ros::Publisher motor_pub;
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
     /* Subscribe to gamepad /joy topic (callback filters joy-msg) */
     ros::Subscriber sub = nh.subscribe("joy", 1, test_proximal_joint);
     /* Publish filtered joy-msg into something simple array for the MCU */
-    motor_pub = nh.advertise<std_msgs::UInt8MultiArray>("segment_motor_cmds", 1);
+    motor_pub = nh.advertise<std_msgs::UInt16MultiArray>("segment_motor_cmds", 1);
 
 
 

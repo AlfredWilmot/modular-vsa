@@ -8,10 +8,24 @@
     </node>
 
     <!-- rosserial for forwarding arduino messages -->
-    <node name="rosserial_node" type="serial_node.py" pkg="rosserial_python">
-        <param name="baud" value="115200"/>
-        <param name="port" value="/dev/ttyACM0"/>
+    <arg name="MCU_port" default="/dev/ttyACM1" />
+    <node pkg="rosserial_server" type="serial_node" name="rosserial_server">
+    <!-->    <param name="port" value="$(arg MCU_port)" />
+        <param name="baud" value="115200" />
+    -->
+
+        <rosparam>
+            port: /dev/ttyACM1
+            baud: 115200
+            require:
+                publishers: [ chatter ]
+                subscribers: [ segment_motor_cmds ]
+        </rosparam>
+
     </node>
+
+
+    <node pkg="rosserial_python" type="message_info_service.py" name="rosserial_msg_info" />
 
 </launch>
 

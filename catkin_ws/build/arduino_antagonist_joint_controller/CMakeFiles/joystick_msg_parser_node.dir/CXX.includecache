@@ -11,8 +11,8 @@ ros/ros.h
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/ros/ros.h
 sensor_msgs/Joy.h
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/sensor_msgs/Joy.h
-std_msgs/UInt8MultiArray.h
-/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/std_msgs/UInt8MultiArray.h
+std_msgs/UInt16MultiArray.h
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/std_msgs/UInt16MultiArray.h
 std_msgs/Bool.h
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/std_msgs/Bool.h
 iostream
@@ -748,7 +748,7 @@ ros/message_operations.h
 std_msgs/MultiArrayDimension.h
 -
 
-/opt/ros/kinetic/include/std_msgs/UInt8MultiArray.h
+/opt/ros/kinetic/include/std_msgs/UInt16MultiArray.h
 string
 -
 vector
