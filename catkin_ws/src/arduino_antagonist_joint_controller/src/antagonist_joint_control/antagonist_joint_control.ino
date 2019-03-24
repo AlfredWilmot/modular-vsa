@@ -38,7 +38,7 @@ void test_proximal_joint(const std_msgs::UInt8MultiArray& msg)
 
 
  
-      if(left_motor_dir)
+      if(right_motor_dir)
       {
         // FWD?
         digitalWrite(IN_1, HIGH);
@@ -51,11 +51,11 @@ void test_proximal_joint(const std_msgs::UInt8MultiArray& msg)
         digitalWrite(IN_2, HIGH);
       }
 
-      analogWrite(EN_A, left_motor_duty);
+      analogWrite(EN_A, right_motor_duty);
 
 
 
-      if(right_motor_dir)
+      if(left_motor_dir)
       {
         // FWD?
         digitalWrite(IN_3, HIGH);
@@ -68,7 +68,7 @@ void test_proximal_joint(const std_msgs::UInt8MultiArray& msg)
         digitalWrite(IN_4, HIGH);
       }
 
-      analogWrite(EN_B, right_motor_duty);
+      analogWrite(EN_B, left_motor_duty);
 }
 
 
