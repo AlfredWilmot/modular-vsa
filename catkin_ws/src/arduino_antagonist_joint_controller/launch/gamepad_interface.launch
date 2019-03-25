@@ -8,14 +8,14 @@
     </node>
 
     <!-- rosserial for forwarding arduino messages -->
-    <arg name="MCU_port" default="/dev/ttyACM5" />
+    <arg name="MCU_port" default="/dev/ttyACM1" />
     <node pkg="rosserial_server" type="serial_node" name="rosserial_server">
     <!-->    <param name="port" value="$(arg MCU_port)" />
         <param name="baud" value="115200" />
     -->
 
         <rosparam>
-            port: /dev/ttyACM5
+            port: /dev/ttyACM2
             baud: 115200
             require:
                 publishers: [ chatter ]
