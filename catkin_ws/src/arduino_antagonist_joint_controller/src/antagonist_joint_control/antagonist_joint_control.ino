@@ -6,7 +6,7 @@
 
 #include "std_msgs/UInt16MultiArray.h"
 #include "std_msgs/UInt16.h"
-#include "MCP3221.h"
+#include "Wire.h"
 
   /// Arduino Micro resources...
   //  PWM duty mapping : https://www.theengineeringprojects.com/2017/03/use-arduino-pwm-pins.html
@@ -36,9 +36,6 @@ void test_proximal_joint(const std_msgs::UInt16MultiArray& msg)
     int left_motor_duty  = msg.data[1];
     int right_motor_dir  = msg.data[2];
     int right_motor_duty = msg.data[3];
-    
-
-
  
       if(right_motor_dir)
       {
@@ -82,15 +79,11 @@ void setup()
 
 void loop() {
 
-  /* MCP3221 declarations */
-
   // Proximal Encoder
-  const byte prxml_encdr_addr = 0x4D;
-  MCP3221 proximal_encoder(prxml_encdr_addr);
+  const int prxml_encdr_addr = 77; //0x4D
 
   // Distal Encoder 
-  const byte dstl_encdr_addr = 0x48;
-  MCP3221 distal_encoder(dstl_encdr_addr);
+  const int dstl_encdr_addr = 72; //0x48
 
 
   /* ROS declarations */
@@ -113,11 +106,6 @@ void loop() {
   /* Setup I2C BUS (default I2C pins?) */
   Wire.begin();
 
-  /* Configure MCP3221 objects */
-//  proximal_encoder.setVref(4096);               // sets voltage reference for the ADC in mV (change as needed)
-//  proximal_encoder.setVinput(VOLTAGE_INPUT_5V); // sets voltage input type to be measured (change as needed)
-//  distal_encoder.setVref(4096);               
-//  distal_encoder.setVinput(VOLTAGE_INPUT_5V); 
 
   // PWM pins
   pinMode(EN_A, OUTPUT);
@@ -140,32 +128,27 @@ void loop() {
 
     
     raw_data = 0;
-    Wire.requestFrom(77, 2, false); //StartBit + SlaveAddr + ReadBit, wait for Ack, get two dataBytes, send StopCondition.
-    raw_data |= (Wire.read()<<8);
-    raw_data |= Wire.read();
-    //Serial.print("\nProximal Encoder: ");
-    //Serial.print(raw_data);
-    while(Wire.available() != 0); //block until bus is free.
+    Wire.requestFrom(prxml_encdr_addr, 2, false); //StartBit + SlaveAddr + ReadBit, wait for Ack, get two dataBytes, send StopCondition.
+    raw_data |= (Wire.read()<<8);   //Store first high-byte
+    raw_data |= Wire.read();        //Store second low-byte
+    while(Wire.available() != 0);   //block until bus is free.
+
+    // Publish data, baby!
     proximal_encoder_packet.data = raw_data;
     prxml_encdr_pub.publish(&proximal_encoder_packet);
 
     raw_data = 0;
-    Wire.requestFrom(72, 2, false); //StartBit + SlaveAddr + ReadBit, wait for Ack, get two dataBytes, send StopCondition.
+    Wire.requestFrom(dstl_encdr_addr, 2, false); //StartBit + SlaveAddr + ReadBit, wait for Ack, get two dataBytes, send StopCondition.
     raw_data |= (Wire.read()<<8);
     raw_data |= Wire.read();
-    //Serial.print("\nDistal Encoder: ");
-    //Serial.print(raw_data);
     while(Wire.available() != 0);
     
     distal_encoder_packet.data = raw_data;
     dstl_encdr_pub.publish(&distal_encoder_packet);
-    
-    //prxml_encdr_pub.publish(&proximal_encoder_packet);
-    //dstl_encdr_pub.publish(&distal_encoder_packet);
 
     nh.spinOnce();
 
-    delay(10);
+    delay(1);
   }
 
 }
