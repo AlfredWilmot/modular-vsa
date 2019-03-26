@@ -115,11 +115,17 @@ int update_axis_if_changed(uint8_t *axis_to_check, int index, uint8_t step, cons
     uint8_t diff_mid = abs(mapped_input - 255/2);
 
     /* see if input is one of the step values, or if it's close to it's boundary or midpoints*/
-    if(mapped_input % step == 0 || diff_end < 10 || diff_mid < 10 || mapped_input <10) 
+    if(mapped_input % step == 0 || diff_end < 10 || diff_mid < 20 || mapped_input <10) 
     {
         at_least_one_change = true;
-        *axis_to_check = mapped_input;
-        std::cout << *axis_to_check << "\n";
+        
+        if (diff_mid < 20 ) {
+            *axis_to_check = 128;
+        }
+        else
+        {
+            *axis_to_check = mapped_input;
+        }
     }
 
     return 0;
@@ -274,10 +280,26 @@ void direct_control()
 /* A controller that uses Right-joyStick, as well as LT & RT for tension control of either joint */
 void joy_stick_OL_control()
 {
+    // TESTING OUTPUTS
     motor_packet.data.at(0) = right_joy_roll;
     motor_packet.data.at(1) = right_joy_pitch;
     motor_packet.data.at(2) = right_trigger;
     motor_packet.data.at(3) = left_trigger;
+
+    // roll-forward: proximal-left motor fwd, proximal-right motor bkwd
+    // motor_packet.data.at(0) = 1;
+    // motor_packet.data.at(1) = 0;
+    // motor_packet.data.at(1) = 0;
+    // roll-backward: proximal-left motor bkwd, proximal-right motor fwd
+
+    // pitch-forward: distal-left motor fwd, distal-right motor bkwd
+
+    // pitch-backward: distal-left motor bkwd, distal-right motor fwd
+
+
+    // pressing left-trigger causes proximal joint tendons to tighten/ loosen (depending on toggle-switch value)
+
+    // pressing right-trigger causes distal joint tendons to tighten/ loosen (depending on toggle-switch value)
 
     motor_pub.publish(motor_packet);
 }
