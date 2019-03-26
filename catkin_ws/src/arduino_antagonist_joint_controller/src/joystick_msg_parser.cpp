@@ -11,18 +11,24 @@ void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg);
 void direct_control();
 
 
-/* Variables store the parsed gamepad message into global varaibles that controller fcns can access */
+/* Store parsed button presses */
 static bool A_btn    = 0;
-
 static bool B_btn    = 0;
 static bool X_btn    = 0;
-
 static bool LB_btn   = 0;
 static bool RB_btn   = 0;
-
 static bool xbox_btn = 0;
 
+/* Store parsed axis position values */
+// TODO ...
+
+
+/* Flag ensures that parsed identical gamepad messages are only published once */
 static bool at_least_one_change = false;
+
+
+
+
 
 #define CW  0
 #define CCW 1
@@ -64,11 +70,15 @@ int main(int argc, char **argv)
 
 
 
-    /* Service any subscriber callbacks */
+    /* Service any subscriber callbacks (publishing parsed data takes place within callback) */
     ros::spin();
 
-  return 0;
+    return 0;
 }
+
+/************************/
+/* Filtering functions */
+/**********************/
 
 /* To filter message repetitions from the joy topic, check that each recieved data of interest is different from it's previous value */
 void update_btn_if_changed(bool *btn_to_check, int index, const sensor_msgs::JoyConstPtr& msg)
@@ -79,6 +89,22 @@ void update_btn_if_changed(bool *btn_to_check, int index, const sensor_msgs::Joy
         *btn_to_check = msg->buttons[index];
     }
 }
+
+/* Only indicate change of gamepad msg, once beyond a sufficient hysteresis band around previous reading */
+void update_axis_if_changed(float *axis_to_check, float hyst, int index, const sensor_msgs::JoyConstPtr& msg)
+{
+    float diff = abs(*axis_to_check - msg->axes[index]);
+
+    if(diff > hyst)
+    {
+        at_least_one_change = true;
+        *axis_to_check = msg->axes[index];
+    }
+}
+
+/*****************************/
+/* joy-msg parser functions */
+/***************************/
 
 /* Joystick subscriber parses joystick message into relevant variables usable by controller functions */
 void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg)
@@ -91,20 +117,6 @@ void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg)
     update_btn_if_changed(&LB_btn,   4, msg);
     update_btn_if_changed(&RB_btn,   5, msg);
     update_btn_if_changed(&xbox_btn, 8, msg);
-
-
-
-    // A_btn  =   msg->buttons[0];
-
-    // B_btn  =   msg->buttons[1];
-    // X_btn  =   msg->buttons[2];
-
-    // LB_btn =   msg->buttons[4];
-    // RB_btn =   msg->buttons[5];
-
-    // xbox_btn = msg->buttons[8];         
-
-    // Testing direct control
     
 
     if (at_least_one_change) 
@@ -124,6 +136,17 @@ void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg)
     }
     
 }
+
+/* Joystick subscriber parses joystick msg to direct digital pin & PWM pin allocation on MCU*/
+// Generates control packet of form: "[IN1, IN2, ENA, IN3, IN4, ENB]" for each joint.
+void parse_for_joystick_and_triggers(const sensor_msgs::JoyConstPtr& msg)
+{
+    update_axis_if_changed()
+}
+
+/*************************/
+/* Controller functions */
+/***********************/
 
 /* A controller that uses X,A,B,LB, & RB buttons for direct control of proximal joint of a single connected segment */
 void direct_control()
@@ -181,4 +204,10 @@ void direct_control()
 
     //publish updated packet 
     motor_pub.publish(motor_packet);
+}
+
+/* A controller that uses Right-joyStick, as well as LT & RT for tension control of either joint */
+void joy_stick_OL_control()
+{
+
 }
