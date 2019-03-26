@@ -14,7 +14,7 @@ void parse_for_joystick_and_triggers(const sensor_msgs::JoyConstPtr& msg);
 void direct_control();
 void joy_stick_OL_control();
 
-uint8_t map_float_to_UInt8(float, float, float);
+uint8_t map_float_to_UInt8(float input_val, float min_input = -1, float max_input = 1);
 
 /* Store parsed button presses */
 static bool A_btn    = 0;
@@ -25,10 +25,15 @@ static bool RB_btn   = 0;
 static bool xbox_btn = 0;
 
 /* Store parsed axis position values */
-static uint8_t right_joy_roll = 0;      //axes index: 4
+static uint8_t right_joy_roll  = 0;     //axes index: 4
 static uint8_t right_joy_pitch = 0;     //axes index: 3
-static uint8_t right_trigger  = 0;      //axes index: 5
-static uint8_t left_trigger   = 0;      //axes index: 2
+static uint8_t right_trigger   = 0;     //axes index: 5
+static uint8_t left_trigger    = 0;     //axes index: 2
+
+#define LT_index                2
+#define RT_index                5
+#define right_joy_roll_index    4
+#define right_joy_pitch_index   3
 
 
 /* Flag ensures that parsed identical gamepad messages are only published once */
@@ -52,11 +57,11 @@ int main(int argc, char **argv)
 {
     /* Initializing motor packet*/ 
     motor_packet.data.clear();
-    int packet_len = 12;
+    int packet_len = 12;                    // packet is 12 elements long (3 elements per motor: [dir1, dir2, duty]).
 
     for(int i = 0; i < packet_len; i++)
     {
-        motor_packet.data.push_back(0);
+        motor_packet.data.push_back(0);     // Initialized packet with zero-value.
     }
 
     /* ROS Node Premable */
@@ -67,7 +72,7 @@ int main(int argc, char **argv)
     ros::Subscriber sub = nh.subscribe("joy", 1, parse_for_joystick_and_triggers);
    
    
-    /* Publish filtered joy-msg into something simple array for the MCU */
+    /* Publish filtered joy-msg into something simple for the segment MCU to efficiently process */
     motor_pub = nh.advertise<std_msgs::UInt16MultiArray>("segment_motor_cmds", 1);
 
     /* Service any subscriber callbacks (publishing parsed data takes place within callback) */
@@ -91,15 +96,26 @@ void update_btn_if_changed(bool *btn_to_check, int index, const sensor_msgs::Joy
 }
 
 /* Only indicate change of gamepad msg, once beyond a sufficient hysteresis band around previous reading */
-void update_axis_if_changed(float *axis_to_check, float hyst, int index, const sensor_msgs::JoyConstPtr& msg)
+int update_axis_if_changed(uint8_t *axis_to_check, int index, uint8_t step, const sensor_msgs::JoyConstPtr& msg)
 {
-    float diff = abs(*axis_to_check - msg->axes[index]);
+    /* convert raw float to 8-bit uint, implicit input range: [-1,1] */
+    uint8_t mapped_input = map_float_to_UInt8(msg->axes[index]);
 
-    if(diff > hyst)
+    if(step > 255 || step < 0) return -1;
+
+
+    uint8_t diff_end = abs(mapped_input - 255);
+    uint8_t diff_mid = abs(mapped_input - 255/2);
+
+    /* see if input is one of the step values, or if it's close to it's boundary or midpoints*/
+    if(mapped_input % step == 0 || diff_end < 10 || diff_mid < 10 || mapped_input <10) 
     {
         at_least_one_change = true;
-        *axis_to_check = msg->axes[index];
+        *axis_to_check = mapped_input;
+        std::cout << *axis_to_check << "\n";
     }
+
+    return 0;
 }
 
 /*****************************/
@@ -141,7 +157,30 @@ void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg)
 // Generates control packet of form: "[IN1, IN2, ENA, IN3, IN4, ENB]" for each joint.
 void parse_for_joystick_and_triggers(const sensor_msgs::JoyConstPtr& msg)
 {
-    //update_axis_if_changed();
+
+    update_axis_if_changed(&right_joy_roll,  right_joy_roll_index,  5, msg);
+    update_axis_if_changed(&right_joy_pitch, right_joy_pitch_index, 5, msg);
+    update_axis_if_changed(&left_trigger,    LT_index,              5, msg);
+    update_axis_if_changed(&right_trigger,   RT_index,              5, msg);
+
+    
+
+
+    // if (at_least_one_change) 
+    // {
+        // reset filter flag
+        at_least_one_change = false;
+
+        // filter button-bounce
+        //usleep(1000);
+        
+        // publish control messages according to control function below 
+        joy_stick_OL_control();
+    // }
+    // else
+    // {
+    //     return;
+    // }
 }
 
 /*************************/
@@ -209,7 +248,12 @@ void direct_control()
 /* A controller that uses Right-joyStick, as well as LT & RT for tension control of either joint */
 void joy_stick_OL_control()
 {
+    motor_packet.data.at(0) = right_joy_roll;
+    motor_packet.data.at(1) = right_joy_pitch;
+    motor_packet.data.at(2) = right_trigger;
+    motor_packet.data.at(3) = left_trigger;
 
+    motor_pub.publish(motor_packet);
 }
 
 
@@ -218,7 +262,7 @@ void joy_stick_OL_control()
 /*****************/
 
 /* Simply scales any input float to a correspinding UInt8 value (to drive MCU PWM) for motor duty value. Assumes input range of: [-1, 1]*/
-uint8_t map_float_to_UInt8(float input_val, float min_input = -1, float max_input = 1)
+uint8_t map_float_to_UInt8(float input_val, float min_input, float max_input)
 {
     return (uint8_t) round((input_val - min_input) * 255 / (max_input - min_input) );
 }
