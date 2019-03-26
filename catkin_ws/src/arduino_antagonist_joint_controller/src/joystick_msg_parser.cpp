@@ -143,7 +143,7 @@ void direct_control()
         RB_btn ? motor_packet.data.at(0) = CCW : motor_packet.data.at(0) = CW;
 
         // set duty
-        motor_packet.data.at(1) = 128;  //255/2 = ~50% duty
+        motor_packet.data.at(1) = 255;  //255/2 = ~50% duty
         
     }
     else
@@ -163,7 +163,7 @@ void direct_control()
         LB_btn ? motor_packet.data.at(2) = CCW : motor_packet.data.at(2) = CW;
 
         // set duty 
-        motor_packet.data.at(3) = 128;
+        motor_packet.data.at(3) = 255;
     }
     else
     {

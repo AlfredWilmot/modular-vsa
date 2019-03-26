@@ -14,20 +14,36 @@
   //  Wire library help: https://forum.arduino.cc/index.php?topic=391746.0
   //                     
 
+/***********************/
+/* PROXIMAL JOINT PINS*/
+/*********************/
 /* L298N control pins (Set these LO to perform free-running stop) */
-const int EN_A = 13;  // (pwm)
-const int EN_B = 11;  // (pwm)
+const int EN_A_prox = 13;  // (pwm)
+const int EN_B_prox = 11;  // (pwm)
 
 
 /* Pin pairs define motor rotation direction (Set pairs equal, if corresponding EN is HI, to perform hard-stop) */
-const int IN_1 = 12;
-const int IN_2 = A0;
-const int IN_3 = A1;
-const int IN_4 = A2;
+const int IN_1_prox = 12;
+const int IN_2_prox = A0;
+const int IN_3_prox = A1;
+const int IN_4_prox = A2;
 
-const int EN_A_DUTY = 0;
-const int EN_B_DUTY = 0;
+const int EN_A_prox_DUTY = 0;
+const int EN_B_prox_DUTY = 0;
 
+/*********************/
+/* DISTAL JOINT PINS*/
+/*******************/
+const int EN_A_dist = A9;
+const int EN_B_dist = A10;
+
+const int IN_1_dist = 5;
+const int IN_2_dist = 6;
+const int IN_3_dist = 7;
+const int IN_4_dist = 8;
+
+const int EN_A_dist_DUTY = 0;
+const int EN_B_dist_DUTY = 0;
 
 /* Joystick subscriber callback for controlling motors of one joint */
 void test_proximal_joint(const std_msgs::UInt16MultiArray& msg)
@@ -37,38 +53,81 @@ void test_proximal_joint(const std_msgs::UInt16MultiArray& msg)
     int left_motor_duty  = msg.data[1];
     int right_motor_dir  = msg.data[2];
     int right_motor_duty = msg.data[3];
- 
+    int toggle_joint     = msg.data[4];
+
+    if(toggle_joint)
+    {
+      /* Disable the other motor pair */
+      analogWrite(EN_A_prox, 0);
+      analogWrite(EN_B_prox, 0);
+      
+      if(right_motor_dir)
+      {
+        digitalWrite(IN_1_dist, HIGH);
+        digitalWrite(IN_2_dist, LOW);
+      }
+      else
+      {
+        digitalWrite(IN_1_dist, LOW);
+        digitalWrite(IN_2_dist, HIGH);
+      }
+
+      analogWrite(EN_A_dist, right_motor_duty);
+      
+      
+      
+      if(left_motor_dir)
+      {
+        digitalWrite(IN_3_dist, HIGH);
+        digitalWrite(IN_4_dist, LOW);
+      }
+      else
+      {
+        digitalWrite(IN_3_dist, LOW);
+        digitalWrite(IN_4_dist, HIGH);
+      }
+      
+      analogWrite(EN_B_dist, left_motor_duty);    
+        
+    }
+    else
+    {
+      /* Disable the other motor pair */
+      analogWrite(EN_A_dist, 0);
+      analogWrite(EN_B_dist, 0);
+      
       if(right_motor_dir)
       {
         // FWD?
-        digitalWrite(IN_1, HIGH);
-        digitalWrite(IN_2, LOW);
+        digitalWrite(IN_1_prox, HIGH);
+        digitalWrite(IN_2_prox, LOW);
       }
       else
       {
         //BKWD?
-        digitalWrite(IN_1, LOW);
-        digitalWrite(IN_2, HIGH);
+        digitalWrite(IN_1_prox, LOW);
+        digitalWrite(IN_2_prox, HIGH);
       }
 
-      analogWrite(EN_A, right_motor_duty);
+      analogWrite(EN_A_prox, right_motor_duty);
 
 
 
       if(left_motor_dir)
       {
         // FWD?
-        digitalWrite(IN_3, HIGH);
-        digitalWrite(IN_4, LOW);
+        digitalWrite(IN_3_prox, HIGH);
+        digitalWrite(IN_4_prox, LOW);
       }
       else
       {
         //BKWD?
-        digitalWrite(IN_3, LOW);
-        digitalWrite(IN_4, HIGH);
+        digitalWrite(IN_3_prox, LOW);
+        digitalWrite(IN_4_prox, HIGH);
       }
 
-      analogWrite(EN_B, left_motor_duty);
+      analogWrite(EN_B_prox, left_motor_duty);
+    }
 }
 
 
@@ -106,16 +165,16 @@ void loop() {
   /* Setup I2C BUS (default I2C pins?) */
   Wire.begin();
 
-
+  
   // PWM pins
-  pinMode(EN_A, OUTPUT);
-  pinMode(EN_B, OUTPUT);
+  pinMode(EN_A_prox, OUTPUT);
+  pinMode(EN_B_prox, OUTPUT);
 
   // Digital pins
-  pinMode(IN_1, OUTPUT);
-  pinMode(IN_2, OUTPUT);
-  pinMode(IN_3, OUTPUT);
-  pinMode(IN_4, OUTPUT);
+  pinMode(IN_1_prox, OUTPUT);
+  pinMode(IN_2_prox, OUTPUT);
+  pinMode(IN_3_prox, OUTPUT);
+  pinMode(IN_4_prox, OUTPUT);
 
   //Serial.begin(9600);
   unsigned int raw_data = 0;
