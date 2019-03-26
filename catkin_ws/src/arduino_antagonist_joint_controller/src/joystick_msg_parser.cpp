@@ -37,7 +37,10 @@ static uint8_t left_trigger    = 0;     //axes index: 2
 
 
 /* Flag ensures that parsed identical gamepad messages are only published once */
-static bool at_least_one_change = false;
+static bool at_least_one_btn_change  = false;
+
+/* determines direction of tendon tensioning (tighten/ loosen) when respective joint triggers are actuated */
+static bool cable_tensioning_flag = 0;
 
 
 /*  Default gamepad msg when initiallized is 0 for all inputs, 
@@ -93,39 +96,49 @@ int main(int argc, char **argv)
 /**********************/
 
 /* To filter message repetitions from the joy topic, check that each recieved data of interest is different from it's previous value */
-void update_btn_if_changed(bool *btn_to_check, int index, const sensor_msgs::JoyConstPtr& msg)
+int update_btn_if_changed(bool *btn_to_check, int index, const sensor_msgs::JoyConstPtr& msg)
 {
     if(*btn_to_check != msg->buttons[index])
     {
-        at_least_one_change = true;
+        at_least_one_btn_change = true;
+        ROS_INFO("TEST_BTNS");
         *btn_to_check = msg->buttons[index];
+
+        return 1; // indicate value was changed 
+    }
+    else
+    {
+        return 0; // indicate value was not changed
     }
 }
 
 /* Only indicate change of gamepad msg, once beyond a sufficient hysteresis band around previous reading */
-int update_axis_if_changed(uint8_t *axis_to_check, int index, uint8_t step, const sensor_msgs::JoyConstPtr& msg)
+int update_axis_if_changed(uint8_t *axis_to_check, int index, uint8_t step, uint8_t deadband, const sensor_msgs::JoyConstPtr& msg)
 {
     /* convert raw float to 8-bit uint, implicit input range: [-1,1] */
     uint8_t mapped_input = map_float_to_UInt8(msg->axes[index]);
 
-    if(step > 255 || step < 0) return -1;
+    if(step > 255 || step < 0) return -1; // indicate input error 
 
 
     uint8_t diff_end = abs(mapped_input - 255);
     uint8_t diff_mid = abs(mapped_input - 255/2);
 
-    /* see if input is one of the step values, or if it's close to it's boundary or midpoints*/
-    if(mapped_input % step == 0 || diff_end < 10 || diff_mid < 20 || mapped_input <10) 
+    /* see if input is one of the step values, or if it's close to it's boundary or midpoints, also make sure it isn't a duplicate value!! */
+    if( mapped_input % step == 0 || diff_end < deadband || diff_mid < deadband || mapped_input <deadband )
     {
-        at_least_one_change = true;
-        
-        if (diff_mid < 20 ) {
+        ROS_INFO("TEST_AXES");
+
+
+        if (diff_mid < deadband ) {
             *axis_to_check = 128;
         }
         else
         {
             *axis_to_check = mapped_input;
         }
+
+        return 1;
     }
 
     return 0;
@@ -148,10 +161,10 @@ void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg)
     update_btn_if_changed(&xbox_btn, 8, msg);
     
 
-    if (at_least_one_change) 
+    if (at_least_one_btn_change) 
     {
         // reset filter flag
-        at_least_one_change = false;
+        at_least_one_btn_change = false;
 
         // filter button-bounce
         usleep(1000);
@@ -171,10 +184,16 @@ void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg)
 void parse_for_joystick_and_triggers(const sensor_msgs::JoyConstPtr& msg)
 {
 
-    update_axis_if_changed(&right_joy_roll,  right_joy_roll_index,  5, msg);
-    update_axis_if_changed(&right_joy_pitch, right_joy_pitch_index, 5, msg);
-    update_axis_if_changed(&left_trigger,    LT_index,              5, msg);
-    update_axis_if_changed(&right_trigger,   RT_index,              5, msg);
+    update_axis_if_changed(&right_joy_roll,  right_joy_roll_index,  5, 20, msg);
+    update_axis_if_changed(&right_joy_pitch, right_joy_pitch_index, 5, 20, msg);
+    update_axis_if_changed(&left_trigger,    LT_index,              5, 10, msg);
+    update_axis_if_changed(&right_trigger,   RT_index,              5, 10, msg);
+
+    if( update_btn_if_changed(&xbox_btn, 8, msg) )
+    {
+        xbox_btn == 1 ? cable_tensioning_flag^=1 : 1;   // toggle flag when xbox button is pressed (not also when it's released!).
+        at_least_one_btn_change = false;
+    }
 
     /* if right-trigger has not been pressed, and it's value is not 128, then it has now been pressed */
     if (RT_not_pressed && right_trigger != 128) 
@@ -196,23 +215,11 @@ void parse_for_joystick_and_triggers(const sensor_msgs::JoyConstPtr& msg)
     {
         left_trigger = 255; //RT resting value after it has been pressed (activated?)
     }
+    
+    // publish control messages according to control function below 
+    joy_stick_OL_control();
 
 
-    if (at_least_one_change) 
-    {
-        // reset filter flag
-        at_least_one_change = false;
-
-        // filter button-bounce
-        usleep(10);
-        
-        // publish control messages according to control function below 
-        joy_stick_OL_control();
-    }
-    else
-    {
-        return;
-    }
 }
 
 /*************************/
@@ -277,6 +284,7 @@ void direct_control()
     motor_pub.publish(motor_packet);
 }
 
+
 /* A controller that uses Right-joyStick, as well as LT & RT for tension control of either joint */
 void joy_stick_OL_control()
 {
@@ -286,6 +294,7 @@ void joy_stick_OL_control()
     motor_packet.data.at(2) = right_trigger;
     motor_packet.data.at(3) = left_trigger;
 
+    motor_packet.data.at(4) = cable_tensioning_flag;
     // roll-forward: proximal-left motor fwd, proximal-right motor bkwd
     // motor_packet.data.at(0) = 1;
     // motor_packet.data.at(1) = 0;
