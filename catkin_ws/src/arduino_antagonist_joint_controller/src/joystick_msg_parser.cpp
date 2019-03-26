@@ -1,6 +1,7 @@
 #include "ros/ros.h"
 #include "sensor_msgs/Joy.h"
 #include "std_msgs/UInt16MultiArray.h"
+#include "std_msgs/UInt8.h"
 #include "std_msgs/Bool.h"
 
 #include <iostream>
@@ -8,8 +9,12 @@
 
 /* Fcn declarations */
 void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg);
-void direct_control();
+void parse_for_joystick_and_triggers(const sensor_msgs::JoyConstPtr& msg);
 
+void direct_control();
+void joy_stick_OL_control();
+
+uint8_t map_float_to_UInt8(float, float, float);
 
 /* Store parsed button presses */
 static bool A_btn    = 0;
@@ -25,8 +30,6 @@ static bool xbox_btn = 0;
 
 /* Flag ensures that parsed identical gamepad messages are only published once */
 static bool at_least_one_change = false;
-
-
 
 
 
@@ -64,7 +67,10 @@ int main(int argc, char **argv)
 
     ros::NodeHandle nh;
     /* Subscribe to gamepad /joy topic (callback filters joy-msg) */
-    ros::Subscriber sub = nh.subscribe("joy", 1, test_proximal_joint);
+    //ros::Subscriber sub = nh.subscribe("joy", 1, test_proximal_joint);
+    ros::Subscriber sub = nh.subscribe("joy", 1, parse_for_joystick_and_triggers);
+   
+   
     /* Publish filtered joy-msg into something simple array for the MCU */
     motor_pub = nh.advertise<std_msgs::UInt16MultiArray>("segment_motor_cmds", 1);
 
@@ -141,7 +147,7 @@ void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg)
 // Generates control packet of form: "[IN1, IN2, ENA, IN3, IN4, ENB]" for each joint.
 void parse_for_joystick_and_triggers(const sensor_msgs::JoyConstPtr& msg)
 {
-    update_axis_if_changed()
+    //update_axis_if_changed();
 }
 
 /*************************/
@@ -210,4 +216,15 @@ void direct_control()
 void joy_stick_OL_control()
 {
 
+}
+
+
+/*******************/
+/* Misc Functions */
+/*****************/
+
+/* Simply scales any input float to a correspinding UInt8 value (to drive MCU PWM) for motor duty value. Assumes input range of: [-1, 1]*/
+uint8_t map_float_to_UInt8(float input_val, float min_input = -1, float max_input = 1)
+{
+    return (uint8_t) round((input_val - min_input) * 255 / (max_input - min_input) );
 }
