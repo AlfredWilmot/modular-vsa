@@ -25,7 +25,10 @@ static bool RB_btn   = 0;
 static bool xbox_btn = 0;
 
 /* Store parsed axis position values */
-// TODO ...
+static uint8_t right_joy_roll = 0;      //axes index: 4
+static uint8_t right_joy_pitch = 0;     //axes index: 3
+static uint8_t right_trigger  = 0;      //axes index: 5
+static uint8_t left_trigger   = 0;      //axes index: 2
 
 
 /* Flag ensures that parsed identical gamepad messages are only published once */
@@ -47,34 +50,25 @@ static ros::Publisher motor_pub;
    publish corresponding motor control msg to "/segment_motor_cmds" topic */
 int main(int argc, char **argv)
 {
-    /* Initializing motor packet*/
-
+    /* Initializing motor packet*/ 
     motor_packet.data.clear();
-    
-    // Left motor packet
-    motor_packet.data.push_back(CW);
-    motor_packet.data.push_back(0);
+    int packet_len = 12;
 
-    // Right motor packet 
-    motor_packet.data.push_back(CW);
-    motor_packet.data.push_back(0);
-
-    // Joint toggle
-    motor_packet.data.push_back(0);
+    for(int i = 0; i < packet_len; i++)
+    {
+        motor_packet.data.push_back(0);
+    }
 
     /* ROS Node Premable */
     ros::init(argc, argv, "joystick_msg_parser");
-
     ros::NodeHandle nh;
+
     /* Subscribe to gamepad /joy topic (callback filters joy-msg) */
-    //ros::Subscriber sub = nh.subscribe("joy", 1, test_proximal_joint);
     ros::Subscriber sub = nh.subscribe("joy", 1, parse_for_joystick_and_triggers);
    
    
     /* Publish filtered joy-msg into something simple array for the MCU */
     motor_pub = nh.advertise<std_msgs::UInt16MultiArray>("segment_motor_cmds", 1);
-
-
 
     /* Service any subscriber callbacks (publishing parsed data takes place within callback) */
     ros::spin();
