@@ -40,6 +40,13 @@ static uint8_t left_trigger    = 0;     //axes index: 2
 static bool at_least_one_change = false;
 
 
+/*  Default gamepad msg when initiallized is 0 for all inputs, 
+    even though some inputs have a non-zero resting position, 
+    therfore ignore those inputs until they change for the first time.
+*/
+static bool RT_not_pressed = true;
+static bool LT_not_pressed = true;
+
 
 #define CW  0
 #define CCW 1
@@ -163,24 +170,43 @@ void parse_for_joystick_and_triggers(const sensor_msgs::JoyConstPtr& msg)
     update_axis_if_changed(&left_trigger,    LT_index,              5, msg);
     update_axis_if_changed(&right_trigger,   RT_index,              5, msg);
 
+    /* if right-trigger has not been pressed, and it's value is not 128, then it has now been pressed */
+    if (RT_not_pressed && right_trigger != 128) 
+    {
+        RT_not_pressed = false;
+    }
+    else if(RT_not_pressed)
+    {
+        right_trigger = 255; //RT resting value after it has been pressed (activated?)
+    }
     
+    
+    /* if left-trigger has not been pressed, and it's value is not 128, then it has now been pressed */
+    if (LT_not_pressed && left_trigger != 128) 
+    {
+        LT_not_pressed = false;
+    }
+    else if (LT_not_pressed) 
+    {
+        left_trigger = 255; //RT resting value after it has been pressed (activated?)
+    }
 
 
-    // if (at_least_one_change) 
-    // {
+    if (at_least_one_change) 
+    {
         // reset filter flag
         at_least_one_change = false;
 
         // filter button-bounce
-        //usleep(1000);
+        usleep(10);
         
         // publish control messages according to control function below 
         joy_stick_OL_control();
-    // }
-    // else
-    // {
-    //     return;
-    // }
+    }
+    else
+    {
+        return;
+    }
 }
 
 /*************************/
