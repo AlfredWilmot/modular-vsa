@@ -11,7 +11,8 @@
   /// Arduino Micro resources...
   //  PWM duty mapping : https://www.theengineeringprojects.com/2017/03/use-arduino-pwm-pins.html
   //  pin-out:           https://www.arduino.cc/en/uploads/Main/ArduinoMicro_Pinout3.png
-
+  //  Wire library help: https://forum.arduino.cc/index.php?topic=391746.0
+  //                     
 
 /* L298N control pins (Set these LO to perform free-running stop) */
 const int EN_A = 13;  // (pwm)
@@ -71,7 +72,6 @@ void test_proximal_joint(const std_msgs::UInt16MultiArray& msg)
 }
 
 
-
 void setup() 
 {
 }
@@ -119,26 +119,23 @@ void loop() {
 
   //Serial.begin(9600);
   unsigned int raw_data = 0;
+  
   while(1)
   {
 
-    //proximal_encoder_packet.data = proximal_encoder.getData();
-
-    //distal_encoder_packet.data = distal_encoder.getData();
-
-    
+    /* Read Proximal encoder on I2C BUS, and then publish */
     raw_data = 0;
     Wire.requestFrom(prxml_encdr_addr, 2, false); //StartBit + SlaveAddr + ReadBit, wait for Ack, get two dataBytes, send StopCondition.
-    raw_data |= (Wire.read()<<8);   //Store first high-byte
-    raw_data |= Wire.read();        //Store second low-byte
-    while(Wire.available() != 0);   //block until bus is free.
+    raw_data |= (Wire.read()<<8);                 //Store first high-byte
+    raw_data |= Wire.read();                      //Store second low-byte
+    while(Wire.available() != 0);                 //block until bus is free.
 
-    // Publish data, baby!
     proximal_encoder_packet.data = raw_data;
     prxml_encdr_pub.publish(&proximal_encoder_packet);
 
+    /* Read Distal encoder on I2C BUS, and then publish */
     raw_data = 0;
-    Wire.requestFrom(dstl_encdr_addr, 2, false); //StartBit + SlaveAddr + ReadBit, wait for Ack, get two dataBytes, send StopCondition.
+    Wire.requestFrom(dstl_encdr_addr, 2, false); 
     raw_data |= (Wire.read()<<8);
     raw_data |= Wire.read();
     while(Wire.available() != 0);
@@ -148,7 +145,7 @@ void loop() {
 
     nh.spinOnce();
 
-    delay(1);
+    delay(10);
   }
 
 }

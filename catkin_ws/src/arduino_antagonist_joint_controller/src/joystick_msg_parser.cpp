@@ -4,7 +4,7 @@
 #include "std_msgs/Bool.h"
 
 #include <iostream>
-
+#include <unistd.h>
 
 /* Fcn declarations */
 void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg);
@@ -12,14 +12,17 @@ void direct_control();
 
 
 /* Variables store the parsed gamepad message into global varaibles that controller fcns can access */
-static bool A_btn  = 0;
+static bool A_btn    = 0;
 
-static bool B_btn  = 0;
-static bool X_btn  = 0;
+static bool B_btn    = 0;
+static bool X_btn    = 0;
 
-static bool LB_btn = 0;
-static bool RB_btn = 0;
+static bool LB_btn   = 0;
+static bool RB_btn   = 0;
 
+static bool xbox_btn = 0;
+
+static bool at_least_one_change = false;
 
 #define CW  0
 #define CCW 1
@@ -38,13 +41,17 @@ int main(int argc, char **argv)
     /* Initializing motor packet*/
 
     motor_packet.data.clear();
-    // direction
+    
+    // Left motor packet
     motor_packet.data.push_back(CW);
-    motor_packet.data.push_back(CW);
-    //duty
-    motor_packet.data.push_back(0);
     motor_packet.data.push_back(0);
 
+    // Right motor packet 
+    motor_packet.data.push_back(CW);
+    motor_packet.data.push_back(0);
+
+    // Joint toggle
+    motor_packet.data.push_back(0);
 
     /* ROS Node Premable */
     ros::init(argc, argv, "joystick_msg_parser");
@@ -63,23 +70,59 @@ int main(int argc, char **argv)
   return 0;
 }
 
-
-
+/* To filter message repetitions from the joy topic, check that each recieved data of interest is different from it's previous value */
+void update_btn_if_changed(bool *btn_to_check, int index, const sensor_msgs::JoyConstPtr& msg)
+{
+    if(*btn_to_check != msg->buttons[index])
+    {
+        at_least_one_change = true;
+        *btn_to_check = msg->buttons[index];
+    }
+}
 
 /* Joystick subscriber parses joystick message into relevant variables usable by controller functions */
 void test_proximal_joint(const sensor_msgs::JoyConstPtr& msg)
 {
-    A_btn  = msg->buttons[0];
 
-    B_btn  = msg->buttons[1];
-    X_btn  = msg->buttons[2];
+    /* Only publish to segment_motor_cmds topic if at least one of the button values have changed, otherwise ignore the message */
+    update_btn_if_changed(&A_btn,    0, msg);
+    update_btn_if_changed(&B_btn,    1, msg);
+    update_btn_if_changed(&X_btn,    2, msg);
+    update_btn_if_changed(&LB_btn,   4, msg);
+    update_btn_if_changed(&RB_btn,   5, msg);
+    update_btn_if_changed(&xbox_btn, 8, msg);
 
-    LB_btn = msg->buttons[4];
-    RB_btn = msg->buttons[5];
+
+
+    // A_btn  =   msg->buttons[0];
+
+    // B_btn  =   msg->buttons[1];
+    // X_btn  =   msg->buttons[2];
+
+    // LB_btn =   msg->buttons[4];
+    // RB_btn =   msg->buttons[5];
+
+    // xbox_btn = msg->buttons[8];         
 
     // Testing direct control
-    direct_control();
+    
+
+    if (at_least_one_change) 
+    {
+        // reset filter flag
+        at_least_one_change = false;
+
+        // filter button-bounce
+        usleep(1000);
         
+        // publish control messages according to control function below 
+        direct_control();
+    }
+    else
+    {
+        return;
+    }
+    
 }
 
 /* A controller that uses X,A,B,LB, & RB buttons for direct control of proximal joint of a single connected segment */
@@ -92,10 +135,6 @@ void direct_control()
     //                      CCW if A && LB are pressed or if X && LB are pressed:  LB && (A || X) 
 
 
-
-
-    //std::cout << "Right motor";
-    
 
     if(A_btn || B_btn)
     {
@@ -130,6 +169,14 @@ void direct_control()
     {
         //std::cout << " stop\n";
         motor_packet.data.at(3) = 0;
+    }
+
+    /* Toggle which joint is driven by the motor packet */
+    if(xbox_btn)
+    {
+
+        motor_packet.data.at(4) = !motor_packet.data.at(4);
+
     }
 
     //publish updated packet 
