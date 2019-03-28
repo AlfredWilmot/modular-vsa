@@ -1,0 +1,8 @@
+prefix=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/install
+
+Name: segment_v_2_3b
+Description: Description of segment_v_2_3b
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/install/lib 
+Requires: 
