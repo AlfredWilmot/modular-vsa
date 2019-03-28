@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<robot name="gummi">
+	<link name="base_link"/>
+	<joint name="set_worldaxis" type="fixed">
+		<origin rpy="1.570796326795 0 0" xyz="0.0 0.0 0.0"/>
+		<parent link="base_link"/>
+		<child link="base"/>
+		<axis xyz="0 0 0"/>
+		<limit effort="0" lower="-1" upper="1" velocity="0"/>
+	</joint>
+	<link name="base">
+		<inertial>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<mass value="0"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
+		<visual>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://segment_v_2_3b/meshes/base.stl"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+			</material>
+		</visual>
+		<collision>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://segment_v_2_3b/meshes/base.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="link1">
+		<inertial>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<mass value="0"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
+		<visual>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://segment_v_2_3b/meshes/link1.stl"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+			</material>
+		</visual>
+		<collision>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://segment_v_2_3b/meshes/link1.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="link2">
+		<inertial>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<mass value="0"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
+		<visual>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://segment_v_2_3b/meshes/link2.stl"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+			</material>
+		</visual>
+		<collision>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://segment_v_2_3b/meshes/link2.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<joint name="joint0" type="revolute">
+		<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		<parent link="base"/>
+		<child link="link1"/>
+		<axis xyz="0.9999999999999998 -6.118080227070511e-16 -1.836970198720901e-16"/>
+		<limit effort="0" lower="-0.7853981633974483" upper="0.7853981633974483" velocity="0"/>
+	</joint>
+	<joint name="joint1" type="revolute">
+		<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		<parent link="link1"/>
+		<child link="link2"/>
+		<axis xyz="2.972152420865314e-17 0.7071067811865976 0.7071067811866121"/>
+		<limit effort="0" lower="-0.7853981633974483" upper="0.7853981633974483" velocity="0"/>
+	</joint>
+</robot>
+
