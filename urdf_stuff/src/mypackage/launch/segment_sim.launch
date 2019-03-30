@@ -4,9 +4,11 @@
     <param
         name="robot_description"
         textfile="$(find mypackage)/robot.urdf" />
+
 <!-- Setup Gazebo with an empty world -->
     <include
         file="$(find gazebo_ros)/launch/empty_world.launch" />
+
 <!-- Spawn segment into Gazebo, using URDF loaded into parameter server -->
     <node	
         name="spawn_urdf"	
@@ -14,4 +16,21 @@
         type="spawn_model"
 		args="-param robot_description -urdf -model	robot" />
 
+<!-- Load contents of controller urdf to ROS parameter server -->
+    <rosparam
+        file="$(find mypackage)/config/segment_controller.yaml"
+        command="load" />
+
+<!-- spawning configured controller (ros_control will idle until controllers are spawned) -->
+    <node
+        name="controller_spawner"
+        pkg="controller_manager"
+        type="spawner"
+        args="arm_controller"
+    />
+
 </launch>
+
+
+
+<!-- Checkout for more infor about controller features, such as PIDs: http://gazebosim.org/tutorials/?tut=ros_control -->

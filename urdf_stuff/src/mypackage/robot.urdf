@@ -88,5 +88,36 @@
 		<axis xyz="5.267338778969267e-15 -5.467848396278865e-15 1.0000000000000524"/>
 		<limit effort="0" lower="-0.7853981633974483" upper="0.7853981633974483" velocity="0"/>
 	</joint>
+
+<!-- Dummy joint transmission parameters for Gazebo sim (assumes motor directly coupled to joint with 0 reduction) -->
+	<transmission	name="tran1">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint	name="joint0">
+					<hardwareInterface>PositionJointInterface</hardwareInterface>
+			</joint>
+			<actuator	name="motor1">
+					<hardwareInterface>PositionJointInterface</hardwareInterface>
+					<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+	</transmission>
+	<transmission	name="tran2">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint	name="joint1">
+					<hardwareInterface>PositionJointInterface</hardwareInterface>
+			</joint>
+			<actuator	name="motor2">
+					<hardwareInterface>PositionJointInterface</hardwareInterface>
+					<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+	</transmission>
+
+	<!-- ros_control plugin for Gazebo: 
+			* Accepts new desired trajectories via follow_joint_trajectory, while joint_state_publisher publishes joint_states.
+			* Makes joints move.
+	-->
+	<gazebo>
+			<plugin	name="control"	filename="libgazebo_ros_control.so"/>
+	</gazebo>
+
 </robot>
 
