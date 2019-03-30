@@ -68,17 +68,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -89,6 +78,28 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -122,27 +133,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/segment_v_2_3b/CMakeFiles/progress.marks
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f CMakeFiles/Makefile2 segment_v_2_3b/all
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/mypackage/CMakeFiles/progress.marks
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f CMakeFiles/Makefile2 mypackage/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f CMakeFiles/Makefile2 segment_v_2_3b/clean
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f CMakeFiles/Makefile2 mypackage/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,18 +152,33 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f CMakeFiles/Makefile2 segment_v_2_3b/preinstall
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f CMakeFiles/Makefile2 mypackage/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f CMakeFiles/Makefile2 segment_v_2_3b/preinstall
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f CMakeFiles/Makefile2 mypackage/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
 	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+mypackage/CMakeFiles/_catkin_empty_exported_target.dir/rule:
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f CMakeFiles/Makefile2 mypackage/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : mypackage/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+# Convenience name for target.
+_catkin_empty_exported_target: mypackage/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+.PHONY : _catkin_empty_exported_target
+
+# fast build rule for target.
+_catkin_empty_exported_target/fast:
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f mypackage/CMakeFiles/_catkin_empty_exported_target.dir/build.make mypackage/CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
 
 # Help Target
 help:
@@ -172,12 +187,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install"
-	@echo "... edit_cache"
 	@echo "... install/strip"
+	@echo "... rebuild_cache"
+	@echo "... _catkin_empty_exported_target"
+	@echo "... edit_cache"
 	@echo "... list_install_components"
 	@echo "... test"
 	@echo "... install/local"
-	@echo "... rebuild_cache"
 .PHONY : help
 
 

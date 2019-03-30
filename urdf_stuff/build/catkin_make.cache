@@ -1,2 +1,2 @@
-segment_v_2_3b
+mypackage:segment_v_2_3b
 -DCATKIN_DEVEL_PREFIX=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/devel -DCMAKE_INSTALL_PREFIX=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/install -G Unix Makefiles

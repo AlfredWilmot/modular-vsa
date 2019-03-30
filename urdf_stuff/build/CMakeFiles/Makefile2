@@ -387,6 +387,56 @@ clean: gtest/gtest/CMakeFiles/gtest_main.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory mypackage
+
+# Convenience name for "all" pass in the directory.
+mypackage/all:
+
+.PHONY : mypackage/all
+
+# Convenience name for "clean" pass in the directory.
+mypackage/clean: mypackage/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+.PHONY : mypackage/clean
+
+# Convenience name for "preinstall" pass in the directory.
+mypackage/preinstall:
+
+.PHONY : mypackage/preinstall
+
+#=============================================================================
+# Target rules for target mypackage/CMakeFiles/_catkin_empty_exported_target.dir
+
+# All Build rule for target.
+mypackage/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f mypackage/CMakeFiles/_catkin_empty_exported_target.dir/build.make mypackage/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f mypackage/CMakeFiles/_catkin_empty_exported_target.dir/build.make mypackage/CMakeFiles/_catkin_empty_exported_target.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
+.PHONY : mypackage/CMakeFiles/_catkin_empty_exported_target.dir/all
+
+# Build rule for subdir invocation for target.
+mypackage/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 mypackage/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles 0
+.PHONY : mypackage/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+# Convenience name for target.
+_catkin_empty_exported_target: mypackage/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+.PHONY : _catkin_empty_exported_target
+
+# clean rule for target.
+mypackage/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f mypackage/CMakeFiles/_catkin_empty_exported_target.dir/build.make mypackage/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : mypackage/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+# clean rule for target.
+clean: mypackage/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory segment_v_2_3b
 
 # Convenience name for "all" pass in the directory.
@@ -395,7 +445,7 @@ segment_v_2_3b/all:
 .PHONY : segment_v_2_3b/all
 
 # Convenience name for "clean" pass in the directory.
-segment_v_2_3b/clean: segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/clean
+segment_v_2_3b/clean:
 
 .PHONY : segment_v_2_3b/clean
 
@@ -403,38 +453,6 @@ segment_v_2_3b/clean: segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.di
 segment_v_2_3b/preinstall:
 
 .PHONY : segment_v_2_3b/preinstall
-
-#=============================================================================
-# Target rules for target segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir
-
-# All Build rule for target.
-segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/build.make segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/build.make segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/all
-
-# Build rule for subdir invocation for target.
-segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles 0
-.PHONY : segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-.PHONY : _catkin_empty_exported_target
-
-# clean rule for target.
-segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/build.make segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/clean
-
-# clean rule for target.
-clean: segment_v_2_3b/CMakeFiles/_catkin_empty_exported_target.dir/clean
-
-.PHONY : clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

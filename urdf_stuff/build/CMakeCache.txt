@@ -303,6 +303,12 @@ gtest_force_shared_crt:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
 //Value Computed by CMake
+mypackage_BINARY_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/mypackage
+
+//Value Computed by CMake
+mypackage_SOURCE_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/src/mypackage
+
+//Value Computed by CMake
 segment_v_2_3b_BINARY_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/segment_v_2_3b
 
 //Value Computed by CMake
@@ -412,7 +418,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
