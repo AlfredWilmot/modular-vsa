@@ -26,8 +26,13 @@
         name="controller_spawner"
         pkg="controller_manager"
         type="spawner"
-        args="arm_controller"
-    />
+        args="arm_controller" />
+
+<!-- produces tf messages by applying fwd-kinematics to joint_states msgs -->
+    <node 
+        name="robot_state_publisher"
+        pkg="robot_state_publisher"
+        type="robot_state_publisher" />
 
 </launch>
 
