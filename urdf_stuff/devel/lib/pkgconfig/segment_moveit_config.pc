@@ -1,0 +1,8 @@
+prefix=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/devel
+
+Name: segment_moveit_config
+Description: Description of segment_moveit_config
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/devel/lib 
+Requires: 

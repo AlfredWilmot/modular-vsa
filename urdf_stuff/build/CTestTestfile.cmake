@@ -6,4 +6,5 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(mypackage)
+subdirs(segment_moveit_config)
 subdirs(segment_v_2_3b)

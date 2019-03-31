@@ -118,6 +118,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/gtest/cmake_install.cmake")
   include("/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/mypackage/cmake_install.cmake")
+  include("/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/segment_moveit_config/cmake_install.cmake")
   include("/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/segment_v_2_3b/cmake_install.cmake")
 
 endif()
