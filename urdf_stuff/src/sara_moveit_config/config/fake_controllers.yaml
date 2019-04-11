@@ -1,0 +1,5 @@
+controller_list:
+  - name: fake_SARA_controller
+    joints:
+      - joint0
+      - joint1

@@ -3,7 +3,7 @@
 <!-- Load URDF model of segment into parameter server -->
     <param
         name="robot_description"
-        textfile="$(find mypackage)/robot.urdf" />
+        textfile="$(find mypackage)/SARA.urdf" />
 
 <!-- Setup Gazebo with an empty world -->
     <include
@@ -14,7 +14,7 @@
         name="spawn_urdf"	
         pkg="gazebo_ros"	
         type="spawn_model"
-		args="-param robot_description -urdf -model	robot" />
+		args="-param robot_description -urdf -model	SARA" />
 
 <!-- Load contents of controller urdf to ROS parameter server -->
     <rosparam
@@ -26,13 +26,22 @@
         name="controller_spawner"
         pkg="controller_manager"
         type="spawner"
-        args="arm_controller" />
+        respawn="false"
+        output="screen"
+        ns="/SARA"
+        args="joint0_controller joint1_controller" />
 
-<!-- produces tf messages by applying fwd-kinematics to joint_states msgs -->
+<!-- converts joints_states to tf for rviz and other ros packages -->
     <node 
         name="robot_state_publisher"
         pkg="robot_state_publisher"
-        type="robot_state_publisher" />
+        type="robot_state_publisher" 
+        respawn="false"
+        output="screen">
+
+        <remap from="/joint_states" to="/SARA/joint_states"/>
+
+    </node>
 
 </launch>
 

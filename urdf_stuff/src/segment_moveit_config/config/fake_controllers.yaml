@@ -1,5 +1,0 @@
-controller_list:
-  - name: fake_segment_controller
-    joints:
-      - joint0
-      - joint1

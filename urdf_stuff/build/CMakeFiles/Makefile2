@@ -437,42 +437,6 @@ clean: mypackage/CMakeFiles/_catkin_empty_exported_target.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory segment_moveit_config
-
-# Convenience name for "all" pass in the directory.
-segment_moveit_config/all:
-
-.PHONY : segment_moveit_config/all
-
-# Convenience name for "clean" pass in the directory.
-segment_moveit_config/clean:
-
-.PHONY : segment_moveit_config/clean
-
-# Convenience name for "preinstall" pass in the directory.
-segment_moveit_config/preinstall:
-
-.PHONY : segment_moveit_config/preinstall
-
-#=============================================================================
-# Directory level rules for directory segment_v_2_3b
-
-# Convenience name for "all" pass in the directory.
-segment_v_2_3b/all:
-
-.PHONY : segment_v_2_3b/all
-
-# Convenience name for "clean" pass in the directory.
-segment_v_2_3b/clean:
-
-.PHONY : segment_v_2_3b/clean
-
-# Convenience name for "preinstall" pass in the directory.
-segment_v_2_3b/preinstall:
-
-.PHONY : segment_v_2_3b/preinstall
-
-#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.
