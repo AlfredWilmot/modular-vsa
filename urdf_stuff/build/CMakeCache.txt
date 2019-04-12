@@ -414,6 +414,12 @@ rospy_DIR:PATH=/opt/ros/kinetic/share/rospy/cmake
 rostime_DIR:PATH=/opt/ros/kinetic/share/rostime/cmake
 
 //Value Computed by CMake
+sara_moveit_config_BINARY_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_moveit_config
+
+//Value Computed by CMake
+sara_moveit_config_SOURCE_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/src/sara_moveit_config
+
+//Value Computed by CMake
 segment_effort_control_BINARY_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/segment_effort_control
 
 //Value Computed by CMake
@@ -562,7 +568,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

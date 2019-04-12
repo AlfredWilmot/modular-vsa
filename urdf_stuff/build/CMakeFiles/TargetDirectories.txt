@@ -36,3 +36,10 @@
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/mypackage/CMakeFiles/list_install_components.dir
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/mypackage/CMakeFiles/test.dir
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/mypackage/CMakeFiles/install/local.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_moveit_config/CMakeFiles/install.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_moveit_config/CMakeFiles/edit_cache.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_moveit_config/CMakeFiles/install/strip.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_moveit_config/CMakeFiles/list_install_components.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_moveit_config/CMakeFiles/test.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_moveit_config/CMakeFiles/install/local.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_moveit_config/CMakeFiles/rebuild_cache.dir

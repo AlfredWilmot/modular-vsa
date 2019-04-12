@@ -1,0 +1,10 @@
+# Telling MoveIt! where to find follow_joint_trajectory action server being provided by ros_control plugin,
+# and which joints are to be controlled.
+controller_manager_ns: /
+controller_list:
+  -	name: arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+      -	joint0
+      -	joint1

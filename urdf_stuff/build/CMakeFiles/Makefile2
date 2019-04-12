@@ -437,6 +437,24 @@ clean: mypackage/CMakeFiles/_catkin_empty_exported_target.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory sara_moveit_config
+
+# Convenience name for "all" pass in the directory.
+sara_moveit_config/all:
+
+.PHONY : sara_moveit_config/all
+
+# Convenience name for "clean" pass in the directory.
+sara_moveit_config/clean:
+
+.PHONY : sara_moveit_config/clean
+
+# Convenience name for "preinstall" pass in the directory.
+sara_moveit_config/preinstall:
+
+.PHONY : sara_moveit_config/preinstall
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

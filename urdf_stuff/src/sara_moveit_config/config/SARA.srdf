@@ -9,14 +9,17 @@
     <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
-    <group name="SARA">
+    <group name="segment">
+        <link name="link2" />
+        <link name="link1" />
+        <link name="base_link" />
         <joint name="joint0" />
-        <joint name="world" />
-        <joint name="world_frame" />
         <joint name="joint1" />
+        <joint name="world_frame" />
+        <chain base_link="base_link" tip_link="link2" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="tool" parent_link="link2" group="SARA" />
+    <end_effector name="link2" parent_link="link2" group="segment" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world" type="fixed" parent_frame="base_link" child_link="world" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
