@@ -29,7 +29,7 @@
         respawn="false"
         output="screen"
         ns="/SARA"
-        args="joint0_controller joint1_controller" />
+        args="joint_controller" />
 
 <!-- converts joints_states to tf for rviz and other ros packages -->
     <node 

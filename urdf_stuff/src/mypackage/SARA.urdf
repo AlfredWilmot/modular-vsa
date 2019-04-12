@@ -95,17 +95,21 @@
 	<transmission name="tran0">
 		<type>transmission_interface/SimpleTransmission</type>
 		<joint name="joint0">
-			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 		</joint>
-		<actuator name="motor0"/>
+		<actuator name="motor0">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</actuator>
 	</transmission>
 
 	<transmission name="tran1">
 		<type>transmission_interface/SimpleTransmission</type>
 		<joint name="joint1">
-			<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 		</joint>
-		<actuator name="motor1"/>
+		<actuator name="motor1">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</actuator>
 	</transmission>
 
 	<!-- 
@@ -120,7 +124,7 @@
 	-->
 	<gazebo>
 
-		<plugin name="ros_control" filename="libgazebo_ros_control.so" >
+		<plugin name="control" filename="libgazebo_ros_control.so" >
 			<robotNamespace>/SARA</robotNamespace>
 		</plugin>
 
