@@ -39,7 +39,7 @@
         respawn="false"
         output="screen">
 
-        <remap from="/joint_states" to="/SARA/joint_states"/>
+        <!-- <remap from="/joint_states" to="/SARA/joint_states"/> -->
 
     </node>
 

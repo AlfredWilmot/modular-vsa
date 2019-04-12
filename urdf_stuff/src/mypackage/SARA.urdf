@@ -132,7 +132,7 @@
 			<jointName>joint0, joint1</jointName>
 			<updateRate>100.0</updateRate>
 			<alwaysOn>true</alwaysOn>
-			<robotNamespace>/SARA</robotNamespace>
+			<!-- <robotNamespace>/SARA</robotNamespace> -->
 		</plugin>
 
 	</gazebo>
