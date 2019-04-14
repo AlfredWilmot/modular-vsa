@@ -1,0 +1,50 @@
+<launch>
+
+<!-- Load URDF model of segment into parameter server -->
+    <param
+        name="robot_description"
+        textfile="$(find sara_8dof_v1)/SARA.urdf" />
+
+<!-- Setup Gazebo with an empty world -->
+    <include
+        file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+<!-- Spawn segment into Gazebo, using URDF loaded into parameter server -->
+    <node	
+        name="spawn_urdf"	
+        pkg="gazebo_ros"	
+        type="spawn_model"
+		args="-param robot_description -urdf -model	SARA" />
+
+<!-- Load contents of controller urdf to ROS parameter server -->
+    <rosparam
+        file="$(find sara_8dof_v1)/config/segment_controller.yaml"
+        command="load" />
+
+<!-- spawning configured controller (ros_control will idle until controllers are spawned) -->
+    <node
+        name="controller_spawner"
+        pkg="controller_manager"
+        type="spawner"
+        respawn="false"
+        output="screen"
+        ns="/SARA"
+        args="joint_controller" />
+
+<!-- converts joints_states to tf for rviz and other ros packages -->
+    <node 
+        name="robot_state_publisher"
+        pkg="robot_state_publisher"
+        type="robot_state_publisher" 
+        respawn="false"
+        output="screen">
+
+        <!-- <remap from="/joint_states" to="/SARA/joint_states"/> -->
+
+    </node>
+
+</launch>
+
+
+
+<!-- Checkout for more infor about controller features, such as PIDs: http://gazebosim.org/tutorials/?tut=ros_control -->

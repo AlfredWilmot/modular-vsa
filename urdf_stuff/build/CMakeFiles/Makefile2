@@ -437,6 +437,24 @@ clean: mypackage/CMakeFiles/_catkin_empty_exported_target.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory sara_8dof_v1
+
+# Convenience name for "all" pass in the directory.
+sara_8dof_v1/all:
+
+.PHONY : sara_8dof_v1/all
+
+# Convenience name for "clean" pass in the directory.
+sara_8dof_v1/clean:
+
+.PHONY : sara_8dof_v1/clean
+
+# Convenience name for "preinstall" pass in the directory.
+sara_8dof_v1/preinstall:
+
+.PHONY : sara_8dof_v1/preinstall
+
+#=============================================================================
 # Directory level rules for directory sara_moveit_config
 
 # Convenience name for "all" pass in the directory.

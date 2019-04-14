@@ -6,4 +6,5 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(mypackage)
+subdirs(sara_8dof_v1)
 subdirs(sara_moveit_config)
