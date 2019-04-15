@@ -33,7 +33,7 @@
 
     <!-- Slow down gazebo sim to prevent erratic behaviour (https://answers.ros.org/question/43429/making-revolute-joint-stay-at-rest-if-no-effortwrench-is-applied/)-->
     <gazebo reference="${link_name}">
-        <dampingFactor>0.1</dampingFactor>
+        <dampingFactor>0.005</dampingFactor>
     </gazebo>
 
 
