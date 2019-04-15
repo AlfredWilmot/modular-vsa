@@ -295,6 +295,32 @@ _catkin_empty_exported_target/fast:
 	$(MAKE) -f mypackage/CMakeFiles/_catkin_empty_exported_target.dir/build.make mypackage/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
 
+#=============================================================================
+# Target rules for targets named media_files
+
+# Build rule for target.
+media_files: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 media_files
+.PHONY : media_files
+
+# fast build rule for target.
+media_files/fast:
+	$(MAKE) -f sara_8dof_v1/CMakeFiles/media_files.dir/build.make sara_8dof_v1/CMakeFiles/media_files.dir/build
+.PHONY : media_files/fast
+
+#=============================================================================
+# Target rules for targets named sara_8dof_v1_xacro_generated_to_devel_space_
+
+# Build rule for target.
+sara_8dof_v1_xacro_generated_to_devel_space_: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sara_8dof_v1_xacro_generated_to_devel_space_
+.PHONY : sara_8dof_v1_xacro_generated_to_devel_space_
+
+# fast build rule for target.
+sara_8dof_v1_xacro_generated_to_devel_space_/fast:
+	$(MAKE) -f sara_8dof_v1/CMakeFiles/sara_8dof_v1_xacro_generated_to_devel_space_.dir/build.make sara_8dof_v1/CMakeFiles/sara_8dof_v1_xacro_generated_to_devel_space_.dir/build
+.PHONY : sara_8dof_v1_xacro_generated_to_devel_space_/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -318,6 +344,8 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... _catkin_empty_exported_target"
+	@echo "... media_files"
+	@echo "... sara_8dof_v1_xacro_generated_to_devel_space_"
 .PHONY : help
 
 

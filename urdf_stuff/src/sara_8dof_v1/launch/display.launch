@@ -7,7 +7,7 @@
     default="True" />
   <param
     name="robot_description"
-    textfile="$(find sara_8dof_v1)/sara.urdf" />
+    textfile="$(find sara_8dof_v1)/SARA.urdf" />
   <param
     name="use_gui"
     value="$(arg gui)" />

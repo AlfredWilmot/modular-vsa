@@ -320,6 +320,9 @@ sara_moveit_config_BINARY_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Dri
 //Value Computed by CMake
 sara_moveit_config_SOURCE_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/src/sara_moveit_config
 
+//The directory containing a CMake configuration file for xacro.
+xacro_DIR:PATH=/opt/ros/kinetic/share/xacro/cmake
+
 
 ########################
 # INTERNAL cache entries

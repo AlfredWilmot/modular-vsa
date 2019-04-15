@@ -68,28 +68,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -99,17 +77,6 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -122,6 +89,17 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -132,6 +110,28 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -165,6 +165,36 @@ depend:
 	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+sara_8dof_v1/CMakeFiles/media_files.dir/rule:
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f CMakeFiles/Makefile2 sara_8dof_v1/CMakeFiles/media_files.dir/rule
+.PHONY : sara_8dof_v1/CMakeFiles/media_files.dir/rule
+
+# Convenience name for target.
+media_files: sara_8dof_v1/CMakeFiles/media_files.dir/rule
+
+.PHONY : media_files
+
+# fast build rule for target.
+media_files/fast:
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f sara_8dof_v1/CMakeFiles/media_files.dir/build.make sara_8dof_v1/CMakeFiles/media_files.dir/build
+.PHONY : media_files/fast
+
+# Convenience name for target.
+sara_8dof_v1/CMakeFiles/sara_8dof_v1_xacro_generated_to_devel_space_.dir/rule:
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f CMakeFiles/Makefile2 sara_8dof_v1/CMakeFiles/sara_8dof_v1_xacro_generated_to_devel_space_.dir/rule
+.PHONY : sara_8dof_v1/CMakeFiles/sara_8dof_v1_xacro_generated_to_devel_space_.dir/rule
+
+# Convenience name for target.
+sara_8dof_v1_xacro_generated_to_devel_space_: sara_8dof_v1/CMakeFiles/sara_8dof_v1_xacro_generated_to_devel_space_.dir/rule
+
+.PHONY : sara_8dof_v1_xacro_generated_to_devel_space_
+
+# fast build rule for target.
+sara_8dof_v1_xacro_generated_to_devel_space_/fast:
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build && $(MAKE) -f sara_8dof_v1/CMakeFiles/sara_8dof_v1_xacro_generated_to_devel_space_.dir/build.make sara_8dof_v1/CMakeFiles/sara_8dof_v1_xacro_generated_to_devel_space_.dir/build
+.PHONY : sara_8dof_v1_xacro_generated_to_devel_space_/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -172,12 +202,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install"
-	@echo "... edit_cache"
-	@echo "... install/strip"
+	@echo "... media_files"
 	@echo "... list_install_components"
-	@echo "... test"
 	@echo "... install/local"
+	@echo "... test"
 	@echo "... rebuild_cache"
+	@echo "... sara_8dof_v1_xacro_generated_to_devel_space_"
+	@echo "... install/strip"
+	@echo "... edit_cache"
 .PHONY : help
 
 
