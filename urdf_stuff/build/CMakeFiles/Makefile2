@@ -455,6 +455,24 @@ sara_8dof_v1/preinstall:
 .PHONY : sara_8dof_v1/preinstall
 
 #=============================================================================
+# Directory level rules for directory sara_8dof_moveit_config
+
+# Convenience name for "all" pass in the directory.
+sara_8dof_moveit_config/all:
+
+.PHONY : sara_8dof_moveit_config/all
+
+# Convenience name for "clean" pass in the directory.
+sara_8dof_moveit_config/clean:
+
+.PHONY : sara_8dof_moveit_config/clean
+
+# Convenience name for "preinstall" pass in the directory.
+sara_8dof_moveit_config/preinstall:
+
+.PHONY : sara_8dof_moveit_config/preinstall
+
+#=============================================================================
 # Directory level rules for directory sara_moveit_config
 
 # Convenience name for "all" pass in the directory.

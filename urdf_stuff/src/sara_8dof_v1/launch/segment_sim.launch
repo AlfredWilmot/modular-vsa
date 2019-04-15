@@ -18,7 +18,7 @@
 
 
 <!-- Setup the joint controllers -->
-    <!-- <include file = "$(find sara_8dof_v1)/launch/controllers.launch"/> -->
+    <include file = "$(find sara_8dof_v1)/launch/controllers.launch"/>
 
 </launch>
 

@@ -119,6 +119,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/gtest/cmake_install.cmake")
   include("/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/mypackage/cmake_install.cmake")
   include("/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_8dof_v1/cmake_install.cmake")
+  include("/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_8dof_moveit_config/cmake_install.cmake")
   include("/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_moveit_config/cmake_install.cmake")
 
 endif()

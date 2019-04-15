@@ -309,6 +309,12 @@ mypackage_BINARY_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segme
 mypackage_SOURCE_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/src/mypackage
 
 //Value Computed by CMake
+sara_8dof_moveit_config_BINARY_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_8dof_moveit_config
+
+//Value Computed by CMake
+sara_8dof_moveit_config_SOURCE_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/src/sara_8dof_moveit_config
+
+//Value Computed by CMake
 sara_8dof_v1_BINARY_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/sara_8dof_v1
 
 //Value Computed by CMake
@@ -319,9 +325,6 @@ sara_moveit_config_BINARY_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Dri
 
 //Value Computed by CMake
 sara_moveit_config_SOURCE_DIR:STATIC=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/src/sara_moveit_config
-
-//The directory containing a CMake configuration file for xacro.
-xacro_DIR:PATH=/opt/ros/kinetic/share/xacro/cmake
 
 
 ########################
@@ -427,7 +430,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: sara_8dof_v1
+    relative_path: SARA.urdf.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/SARA.srdf
+  CONFIG:
+    author_name: Alfred Wilmot
+    author_email: alfred.ingi.wilmot@gmail.com
+    generated_timestamp: 1555336610
