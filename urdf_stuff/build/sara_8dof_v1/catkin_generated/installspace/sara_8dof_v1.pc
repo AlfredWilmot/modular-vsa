@@ -1,0 +1,8 @@
+prefix=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/install
+
+Name: sara_8dof_v1
+Description: Description of sara_8dof_v1
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/install/lib 
+Requires: 

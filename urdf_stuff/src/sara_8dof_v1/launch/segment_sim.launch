@@ -1,0 +1,27 @@
+<launch>
+
+<!-- Update URDF based on latest XACRO, then load generated URDF to parameter server -->
+<param 
+    name="robot_description" 
+    command="xacro --inorder '$(find sara_8dof_v1)/SARA.urdf.xacro'" />
+
+<!-- Setup Gazebo with an empty world -->
+    <include
+        file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+<!-- Spawn segment into Gazebo, using URDF loaded into parameter server -->
+    <node	
+        name="spawn_urdf"	
+        pkg="gazebo_ros"	
+        type="spawn_model"
+		args="-param robot_description -urdf -model	SARA" />
+
+
+<!-- Setup the joint controllers -->
+    <include file = "$(find sara_8dof_v1)/launch/controllers.launch"/>
+
+</launch>
+
+
+
+<!-- Checkout for more infor about controller features, such as PIDs: http://gazebosim.org/tutorials/?tut=ros_control -->
