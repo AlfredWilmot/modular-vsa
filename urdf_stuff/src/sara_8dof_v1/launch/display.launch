@@ -5,10 +5,11 @@
   <arg
     name="gui"
     default="True" />
-  <param
-    name="robot_description"
-    textfile="$(find sara_8dof_v1)/SARA.urdf" />
-  <param
+  <!-- Update URDF based on latest XACRO, then load generated URDF to parameter server -->
+  <param 
+      name="robot_description" 
+      command="xacro --inorder '$(find sara_8dof_v1)/SARA.urdf.xacro'" />
+    <param
     name="use_gui"
     value="$(arg gui)" />
   <node
