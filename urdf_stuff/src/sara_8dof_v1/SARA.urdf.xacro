@@ -9,8 +9,8 @@
     <link name="${link_name}">
         <inertial>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-            <mass value="1.0"/>
-            <inertia ixx="0.04" ixy="0.04" ixz="0.04" iyy="0.04" iyz="0.04" izz="0.04"/>
+            <mass value="0.2"/>
+            <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>
         </inertial>
 
         <visual>
@@ -30,6 +30,13 @@
             </geometry>
         </collision>
     </link>
+
+    <!-- Slow down gazebo sim to prevent erratic behaviour (https://answers.ros.org/question/43429/making-revolute-joint-stay-at-rest-if-no-effortwrench-is-applied/)-->
+    <gazebo reference="${link_name}">
+        <dampingFactor>0.1</dampingFactor>
+    </gazebo>
+
+
     <!--*********************************************************************************-->
 </xacro:macro>
 

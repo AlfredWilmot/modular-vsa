@@ -1,6 +1,12 @@
 
 <launch>
 
+<!-- Load contents of controller yaml to ROS parameter server -->
+    <rosparam
+        file="$(find sara_8dof_v1)/config/segment_controller.yaml"
+        command="load" />
+
+
 <!-- spawning configured controller (ros_control will idle until controllers are spawned) -->
     <node
         name="controller_spawner"
@@ -22,5 +28,5 @@
         <!-- <remap from="/joint_states" to="/SARA/joint_states"/> -->
 
     </node>
-    
+
 </launch>
