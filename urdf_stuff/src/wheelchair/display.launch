@@ -5,9 +5,9 @@
   <arg
     name="gui"
     default="True" />
-  <param
-    name="robot_description"
-    textfile="$(find wheelchair)/robot.urdf" />
+  <param 
+    name="robot_description" 
+    command="xacro --inorder '$(find wheelchair)/robot.urdf.xacro'" />
   <param
     name="use_gui"
     value="$(arg gui)" />
