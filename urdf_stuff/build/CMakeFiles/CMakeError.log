@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0f274/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0f274.dir/build.make CMakeFiles/cmTC_0f274.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_c3d35/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c3d35.dir/build.make CMakeFiles/cmTC_c3d35.dir/build
 make[1]: Entering directory '/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0f274.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_0f274.dir/CheckSymbolExists.c.o   -c /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_0f274
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f274.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_0f274.dir/CheckSymbolExists.c.o  -o cmTC_0f274 -rdynamic 
-CMakeFiles/cmTC_0f274.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTC_c3d35.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_c3d35.dir/CheckSymbolExists.c.o   -c /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_c3d35
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3d35.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_c3d35.dir/CheckSymbolExists.c.o  -o cmTC_c3d35 -rdynamic 
+CMakeFiles/cmTC_c3d35.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_0f274.dir/build.make:97: recipe for target 'cmTC_0f274' failed
-make[1]: *** [cmTC_0f274] Error 1
+CMakeFiles/cmTC_c3d35.dir/build.make:97: recipe for target 'cmTC_c3d35' failed
+make[1]: *** [cmTC_c3d35] Error 1
 make[1]: Leaving directory '/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_0f274/fast' failed
-make: *** [cmTC_0f274/fast] Error 2
+Makefile:126: recipe for target 'cmTC_c3d35/fast' failed
+make: *** [cmTC_c3d35/fast] Error 2
 
 File /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +36,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ba3bc/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ba3bc.dir/build.make CMakeFiles/cmTC_ba3bc.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_30b81/fast"
+/usr/bin/make -f CMakeFiles/cmTC_30b81.dir/build.make CMakeFiles/cmTC_30b81.dir/build
 make[1]: Entering directory '/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ba3bc.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_ba3bc.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_ba3bc
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba3bc.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_ba3bc.dir/CheckFunctionExists.c.o  -o cmTC_ba3bc -rdynamic -lpthreads 
+Building C object CMakeFiles/cmTC_30b81.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_30b81.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_30b81
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30b81.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_30b81.dir/CheckFunctionExists.c.o  -o cmTC_30b81 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_ba3bc.dir/build.make:97: recipe for target 'cmTC_ba3bc' failed
-make[1]: *** [cmTC_ba3bc] Error 1
+CMakeFiles/cmTC_30b81.dir/build.make:97: recipe for target 'cmTC_30b81' failed
+make[1]: *** [cmTC_30b81] Error 1
 make[1]: Leaving directory '/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_ba3bc/fast' failed
-make: *** [cmTC_ba3bc/fast] Error 2
+Makefile:126: recipe for target 'cmTC_30b81/fast' failed
+make: *** [cmTC_30b81/fast] Error 2
 
 
