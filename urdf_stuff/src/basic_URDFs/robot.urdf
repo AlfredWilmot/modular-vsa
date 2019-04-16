@@ -1,0 +1,150 @@
+<?xml version="1.0" ?>
+<robot name="gummi">
+	<link name="base_link"/>
+	<joint name="set_worldaxis" type="fixed">
+		<origin rpy="1.570796326795 0 0" xyz="0.0 0.0 0.0"/>
+		<parent link="base_link"/>
+		<child link="base"/>
+		<axis xyz="0 0 0"/>
+		<limit effort="0" lower="-1" upper="1" velocity="0"/>
+	</joint>
+	<link name="seg_lnk0">
+		<inertial>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<mass value="0"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
+		<visual>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://basic_URDFs/meshes/seg_lnk0.stl"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+			</material>
+		</visual>
+		<collision>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://basic_URDFs/meshes/seg_lnk0.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="seg_lnk1">
+		<inertial>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<mass value="0"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
+		<visual>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://basic_URDFs/meshes/seg_lnk1.stl"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+			</material>
+		</visual>
+		<collision>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://basic_URDFs/meshes/seg_lnk1.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="seg_lnk2">
+		<inertial>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<mass value="0"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
+		<visual>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://basic_URDFs/meshes/seg_lnk2.stl"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+			</material>
+		</visual>
+		<collision>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://basic_URDFs/meshes/seg_lnk2.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="seg_lnk3">
+		<inertial>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<mass value="0"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
+		<visual>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://basic_URDFs/meshes/seg_lnk3.stl"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+			</material>
+		</visual>
+		<collision>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://basic_URDFs/meshes/seg_lnk3.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="seg_lnk4">
+		<inertial>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<mass value="0"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
+		<visual>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://basic_URDFs/meshes/seg_lnk4.stl"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+			</material>
+		</visual>
+		<collision>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="package://basic_URDFs/meshes/seg_lnk4.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<joint name="segment_joint0" type="revolute">
+		<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		<parent link="seg_lnk0"/>
+		<child link="seg_lnk1"/>
+		<axis xyz="1.0 -2.0743627559715638e-30 1.8970269176903173e-45"/>
+		<limit effort="0" lower="-0.7853981633974483" upper="0.7853981633974483" velocity="0"/>
+	</joint>
+	<joint name="segment_joint1" type="revolute">
+		<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		<parent link="seg_lnk1"/>
+		<child link="seg_lnk2"/>
+		<axis xyz="-1.1864184551925915e-15 -1.5216679704494057e-15 -1.0000000000000002"/>
+		<limit effort="0" lower="-0.7853981633974483" upper="0.7853981633974483" velocity="0"/>
+	</joint>
+	<joint name="segment_joint2" type="revolute">
+		<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		<parent link="seg_lnk2"/>
+		<child link="seg_lnk3"/>
+		<axis xyz="0.9999999999999996 1.3877787807812184e-17 -2.1273800334782824e-32"/>
+		<limit effort="0" lower="-0.7853981633974483" upper="0.7853981633974483" velocity="0"/>
+	</joint>
+	<joint name="segment_joint3" type="revolute">
+		<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		<parent link="seg_lnk3"/>
+		<child link="seg_lnk4"/>
+		<axis xyz="-1.1829793986230897e-15 -1.4797657031490033e-15 -0.9999999999999998"/>
+		<limit effort="0" lower="-0.7853981633974483" upper="0.7853981633974483" velocity="0"/>
+	</joint>
+</robot>
+
