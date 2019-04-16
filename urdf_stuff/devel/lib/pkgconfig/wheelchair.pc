@@ -1,0 +1,8 @@
+prefix=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/devel
+
+Name: wheelchair
+Description: Description of wheelchair
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/devel/lib 
+Requires: 

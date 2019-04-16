@@ -1,2 +1,2 @@
-mypackage:sara_8dof_moveit_config:sara_8dof_v1:sara_moveit_config
+mypackage:sara_8dof_moveit_config:sara_8dof_v1:sara_moveit_config:wheelchair
 -DCATKIN_DEVEL_PREFIX=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/devel -DCMAKE_INSTALL_PREFIX=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/install -G Unix Makefiles

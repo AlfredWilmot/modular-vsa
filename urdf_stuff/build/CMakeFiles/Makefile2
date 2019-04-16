@@ -491,6 +491,24 @@ sara_moveit_config/preinstall:
 .PHONY : sara_moveit_config/preinstall
 
 #=============================================================================
+# Directory level rules for directory wheelchair
+
+# Convenience name for "all" pass in the directory.
+wheelchair/all:
+
+.PHONY : wheelchair/all
+
+# Convenience name for "clean" pass in the directory.
+wheelchair/clean:
+
+.PHONY : wheelchair/clean
+
+# Convenience name for "preinstall" pass in the directory.
+wheelchair/preinstall:
+
+.PHONY : wheelchair/preinstall
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

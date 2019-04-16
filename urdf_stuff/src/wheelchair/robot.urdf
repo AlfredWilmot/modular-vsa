@@ -17,7 +17,7 @@
 		<visual>
 			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
 			<geometry>
-				<mesh filename="package://Wheelchair/meshes/base.stl"/>
+				<mesh filename="package://wheelchair/meshes/base.stl"/>
 			</geometry>
 			<material name="">
 				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
@@ -26,7 +26,7 @@
 		<collision>
 			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
 			<geometry>
-				<mesh filename="package://Wheelchair/meshes/base.stl"/>
+				<mesh filename="package://wheelchair/meshes/base.stl"/>
 			</geometry>
 		</collision>
 	</link>
@@ -39,7 +39,7 @@
 		<visual>
 			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
 			<geometry>
-				<mesh filename="package://Wheelchair/meshes/link1.stl"/>
+				<mesh filename="package://wheelchair/meshes/link1.stl"/>
 			</geometry>
 			<material name="">
 				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
@@ -48,7 +48,7 @@
 		<collision>
 			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
 			<geometry>
-				<mesh filename="package://Wheelchair/meshes/link1.stl"/>
+				<mesh filename="package://wheelchair/meshes/link1.stl"/>
 			</geometry>
 		</collision>
 	</link>
@@ -61,7 +61,7 @@
 		<visual>
 			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
 			<geometry>
-				<mesh filename="package://Wheelchair/meshes/link2.stl"/>
+				<mesh filename="package://wheelchair/meshes/link2.stl"/>
 			</geometry>
 			<material name="">
 				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
@@ -70,7 +70,7 @@
 		<collision>
 			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
 			<geometry>
-				<mesh filename="package://Wheelchair/meshes/link2.stl"/>
+				<mesh filename="package://wheelchair/meshes/link2.stl"/>
 			</geometry>
 		</collision>
 	</link>

@@ -7,7 +7,7 @@
     default="True" />
   <param
     name="robot_description"
-    textfile="$(find Wheelchair)/robot.urdf" />
+    textfile="$(find wheelchair)/robot.urdf" />
   <param
     name="use_gui"
     value="$(arg gui)" />
@@ -23,5 +23,5 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find Wheelchair)/urdf_.rviz" />
+    args="-d $(find wheelchair)/urdf_.rviz" />
 </launch>
