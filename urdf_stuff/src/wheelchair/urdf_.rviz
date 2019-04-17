@@ -79,37 +79,17 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        link0:
+        link0a:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link0b:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
         link1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link10:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link11:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link12:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link13:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link14:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -130,26 +110,6 @@ Visualization Manager:
           Show Trail: false
           Value: true
         link5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link6:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link7:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link8:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link9:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -173,20 +133,12 @@ Visualization Manager:
           Value: true
         chair_link2:
           Value: true
-        link0:
+        link0a:
+          Value: true
+        link0b:
           Value: true
         link1:
           Value: true
-        link10:
-          Value: false
-        link11:
-          Value: false
-        link12:
-          Value: false
-        link13:
-          Value: false
-        link14:
-          Value: false
         link2:
           Value: false
         link3:
@@ -194,14 +146,6 @@ Visualization Manager:
         link4:
           Value: false
         link5:
-          Value: false
-        link6:
-          Value: false
-        link7:
-          Value: false
-        link8:
-          Value: false
-        link9:
           Value: false
       Marker Scale: 0.400000006
       Name: TF
@@ -213,22 +157,14 @@ Visualization Manager:
           chair_base:
             chair_link1:
               chair_link2:
-                link0:
-                  link1:
-                    link2:
-                      link3:
-                        link4:
-                          link5:
-                            link6:
-                              link7:
-                                link8:
-                                  link9:
-                                    link10:
-                                      link11:
-                                        link12:
-                                          link13:
-                                            link14:
-                                              {}
+                link0a:
+                  link0b:
+                    link1:
+                      link2:
+                        link3:
+                          link4:
+                            link5:
+                              {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -256,16 +192,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.875102222
+      Distance: 1.29937255
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.480413079
-        Y: 0.565480053
-        Z: 0.595820844
+        X: 0.441082358
+        Y: 0.577335894
+        Z: 0.609517992
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
