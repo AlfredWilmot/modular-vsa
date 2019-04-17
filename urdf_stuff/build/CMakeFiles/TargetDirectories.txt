@@ -64,3 +64,10 @@
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/wheelchair/CMakeFiles/test.dir
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/wheelchair/CMakeFiles/install/local.dir
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/wheelchair/CMakeFiles/rebuild_cache.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/wheelchair_moveit_config/CMakeFiles/install.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/wheelchair_moveit_config/CMakeFiles/edit_cache.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/wheelchair_moveit_config/CMakeFiles/install/strip.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/wheelchair_moveit_config/CMakeFiles/list_install_components.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/wheelchair_moveit_config/CMakeFiles/test.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/wheelchair_moveit_config/CMakeFiles/install/local.dir
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/urdf_stuff/build/wheelchair_moveit_config/CMakeFiles/rebuild_cache.dir

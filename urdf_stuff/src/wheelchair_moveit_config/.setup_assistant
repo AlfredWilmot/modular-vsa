@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: wheelchair
+    relative_path: REACH.urdf.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/REACH.srdf
+  CONFIG:
+    author_name: Alfred Wilmot
+    author_email: alfred.ingi.wilmot@gmail.com
+    generated_timestamp: 1555529242
