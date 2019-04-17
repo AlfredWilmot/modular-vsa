@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1
+        - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 775
   - Class: rviz/Selection
@@ -59,21 +60,96 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        chair_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chair_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chair_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         link1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        link10:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link11:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link12:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link13:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link14:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link8:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link9:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -88,26 +164,71 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
-        base:
-          Value: true
+        All Enabled: false
         base_link:
+          Value: true
+        chair_base:
+          Value: true
+        chair_link1:
+          Value: true
+        chair_link2:
+          Value: true
+        link0:
           Value: true
         link1:
           Value: true
+        link10:
+          Value: false
+        link11:
+          Value: false
+        link12:
+          Value: false
+        link13:
+          Value: false
+        link14:
+          Value: false
         link2:
-          Value: true
-      Marker Scale: 1
+          Value: false
+        link3:
+          Value: false
+        link4:
+          Value: false
+        link5:
+          Value: false
+        link6:
+          Value: false
+        link7:
+          Value: false
+        link8:
+          Value: false
+        link9:
+          Value: false
+      Marker Scale: 0.400000006
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
         base_link:
-          base:
-            link1:
-              link2:
-                {}
+          chair_base:
+            chair_link1:
+              chair_link2:
+                link0:
+                  link1:
+                    link2:
+                      link3:
+                        link4:
+                          link5:
+                            link6:
+                              link7:
+                                link8:
+                                  link9:
+                                    link10:
+                                      link11:
+                                        link12:
+                                          link13:
+                                            link14:
+                                              {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -135,25 +256,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.5063591
+      Distance: 0.875102222
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.016722491
-        Y: -0.219938099
-        Z: 0.083751373
+        X: 0.480413079
+        Y: 0.565480053
+        Z: 0.595820844
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.650397956
+      Pitch: 0.715398312
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.69038224
+      Yaw: 4.71357203
     Saved: ~
 Window Geometry:
   Displays:
