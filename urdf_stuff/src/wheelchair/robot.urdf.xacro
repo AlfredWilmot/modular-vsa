@@ -297,7 +297,7 @@
 <xacro:L1S2 LinkID="13" JointID="9" parent="link11" is_manipulator_base="false"/>
 
 <!-- L1S2 [4]-->
-<xacro:L1S2 LinkID="20" JointID="14" parent="link17" is_manipulator_base="false"/>
+<xacro:L1S2 LinkID="20" JointID="14" parent="link18" is_manipulator_base="false"/>
 
 <!-- 
 		Gazebo plugins: 
