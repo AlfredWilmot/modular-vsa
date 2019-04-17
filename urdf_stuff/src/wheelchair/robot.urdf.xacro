@@ -190,7 +190,7 @@
 	</joint>
 	
     <xacro:segment_joints joint_num="b" parent_link="link0a" child_link="link0b">
-        <origin rpy="0.0 0.0 0.0" xyz="${joint_0_x} ${joint_0_y} ${joint_0_z}"/>
+        <origin rpy="0.0 0.0 0.0" xyz="${joint_0_x-0.07} ${joint_0_y+0.013} ${joint_0_z-0.023}"/>
         <axis xyz="-1.0 0.0 0.0"/>
     </xacro:segment_joints>	
     <xacro:segment_joints joint_num="0" parent_link="link0b" child_link="link1">
