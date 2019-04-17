@@ -7,7 +7,7 @@
     default="True" />
   <param 
     name="robot_description" 
-    command="xacro --inorder '$(find wheelchair)/robot.urdf.xacro'" />
+    command="xacro --inorder '$(find wheelchair)/REACH.urdf.xacro'" />
   <param
     name="use_gui"
     value="$(arg gui)" />

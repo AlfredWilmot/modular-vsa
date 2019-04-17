@@ -1,0 +1,32 @@
+
+<launch>
+
+<!-- Load contents of controller yaml to ROS parameter server -->
+    <rosparam
+        file="$(find wheelchair)/config/segment_controller.yaml"
+        command="load" />
+
+
+<!-- spawning configured controller (ros_control will idle until controllers are spawned) -->
+    <node
+        name="controller_spawner"
+        pkg="controller_manager"
+        type="spawner"
+        respawn="false"
+        output="screen"
+        ns="/REACH"
+        args="joint_controller" />
+
+<!-- converts joints_states to tf for rviz and other ros packages -->
+    <node 
+        name="robot_state_publisher"
+        pkg="robot_state_publisher"
+        type="robot_state_publisher" 
+        respawn="false"
+        output="screen">
+
+        <!-- <remap from="/joint_states" to="/SARA/joint_states"/> -->
+
+    </node>
+
+</launch>
