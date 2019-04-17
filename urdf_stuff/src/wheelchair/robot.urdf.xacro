@@ -251,18 +251,18 @@
 
 <!-- Third segment (test) -->
 
-	<!-- Segment #2 rigid link joints -->
+	<!-- Segment #3 rigid link joints -->
 
     <xacro:simple_link link_name="link6a" stl_name="rigid_link"/>
 	<xacro:simple_link link_name="link6b" stl_name="segment_base"/>
     <xacro:simple_link link_name="link7" stl_name="segment_link1"/>
     <xacro:simple_link link_name="link8" stl_name="segment_link2"/>
 
-	<!-- Segment #2 rigid link joints -->
+	<!-- Segment #3 rigid link joints -->
 
 	<xacro:rigid_link joint1="jointc" joint2="jointd" link1="link5" link2="link6a" link3="link6b"/>
 
-	<!-- Segmen #2 joints -->
+	<!-- Segmen #3 joints -->
 
     <xacro:segment_joints joint_num="4" parent_link="link6b" child_link="link7">
         <origin rpy="0.0 0.0 0.0" xyz="${joint_0_x} ${joint_0_y} ${joint_0_z}"/>
@@ -275,16 +275,18 @@
 
 
 <!-- Fourth segment (test) -->
-    <!-- <xacro:simple_link link_name="link9" stl_name="segment_base"/>
+
+	<xacro:simple_link link_name="link9" stl_name="segment_base"/>
     <xacro:simple_link link_name="link10" stl_name="segment_link1"/>
     <xacro:simple_link link_name="link11" stl_name="segment_link2"/>
 
 
-	<joint name="fourth_segment_base" type="fixed">
+	<joint name="third_segment_base" type="fixed">
 	    <origin rpy="0 0 0" xyz="-0.02661 ${joint_1_y-0.0145-0.005} -0.0153545"/>
 		<parent link="link8"/>
 		<child link="link9"/>
 	</joint>
+
     <xacro:segment_joints joint_num="6" parent_link="link9" child_link="link10">
         <origin rpy="0.0 0.0 0.0" xyz="${joint_0_x} ${joint_0_y} ${joint_0_z}"/>
         <axis xyz="-1.0 0.0 0.0"/>
@@ -292,13 +294,14 @@
     <xacro:segment_joints joint_num="7" parent_link="link10" child_link="link11">
         <origin rpy="0.0 0.0 0.0" xyz="${joint_1_x} ${joint_1_y} ${joint_1_z}"/>
         <axis xyz="0.0 0.0 1.0"/>
-    </xacro:segment_joints> -->
+    </xacro:segment_joints>
 
 <!-- Fifth segment (test) -->
-    <!-- <xacro:simple_link link_name="link12" stl_name="segment_base"/>
+
+    <xacro:simple_link link_name="link12" stl_name="segment_base"/>
     <xacro:simple_link link_name="link13" stl_name="segment_link1"/>
     <xacro:simple_link link_name="link14" stl_name="segment_link2"/>
-
+	
 
 	<joint name="fifth_segment_base" type="fixed">
 	    <origin rpy="0 0 0" xyz="-0.02661 ${joint_1_y-0.0145-0.005} -0.0153545"/>
@@ -312,7 +315,7 @@
     <xacro:segment_joints joint_num="9" parent_link="link13" child_link="link14">
         <origin rpy="0.0 0.0 0.0" xyz="${joint_1_x} ${joint_1_y} ${joint_1_z}"/>
         <axis xyz="0.0 0.0 1.0"/>
-    </xacro:segment_joints> -->
+    </xacro:segment_joints>
 
 
 	<!-- 
