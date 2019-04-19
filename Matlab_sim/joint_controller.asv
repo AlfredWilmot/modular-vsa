@@ -39,4 +39,4 @@ plot(theta_1, delta_R);
 legend("deta_l","delta_R");
 title("Approximately linear-response of cable-length variations");
 xlabel("desired joint angle offset from 0 degrees (deg)");
-ylabel("change in cable-length function output (mm)");
+ylabel("change in cablelength function output (mm)");
