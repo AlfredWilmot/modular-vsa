@@ -14,120 +14,43 @@
   //  Wire library help: https://forum.arduino.cc/index.php?topic=391746.0
   //                     
 
-/***********************/
-/* PROXIMAL JOINT PINS*/
-/*********************/
-/* L298N control pins (Set these LO to perform free-running stop) */
-const int EN_A_prox = 13;  // (pwm)
-const int EN_B_prox = 11;  // (pwm)
+/*******************************************************/
+/* Define digital IO pins being used on Arduino mirco */
+/*****************************************************/
 
 
-/* Pin pairs define motor rotation direction (Set pairs equal, if corresponding EN is HI, to perform hard-stop) */
-const int IN_1_prox = 12;
-const int IN_2_prox = A0;
-const int IN_3_prox = A1;
-const int IN_4_prox = A2;
+// Motor direction pins 
 
-const int EN_A_prox_DUTY = 0;
-const int EN_B_prox_DUTY = 0;
+const int proximal_motor_1a = 5;
+const int proximal_motor_1b = 6;
+const int proximal_motor_2a = 9;
+const int proximal_motor_2b = 10;
 
-/*********************/
-/* DISTAL JOINT PINS*/
-/*******************/
-const int EN_A_dist = A9;
-const int EN_B_dist = A10;
+const int distal_motor_1a = 7;
+const int distal_motor_1b = 8;
+const int distal_motor_2a = 12;
+const int distal_motor_2b = 11;
 
-const int IN_1_dist = 5;
-const int IN_2_dist = 6;
-const int IN_3_dist = 7;
-const int IN_4_dist = 8;
 
-const int EN_A_dist_DUTY = 0;
-const int EN_B_dist_DUTY = 0;
+// I-sense ADC pins 
+const int I_sense_1 = A3;
+const int I_sense_2 = A2;
+const int I_sense_3 = A1;
+const int I_sense_4 = A0;
 
 /* Joystick subscriber callback for controlling motors of one joint */
 void test_proximal_joint(const std_msgs::UInt16MultiArray& msg)
 {
+  digitalWrite(proximal_motor_1a, msg.data[0]);
+  digitalWrite(proximal_motor_1b, msg.data[1]);
+  digitalWrite(proximal_motor_2a, msg.data[2]);
+  digitalWrite(proximal_motor_2b, msg.data[3]);
 
-    int left_motor_dir   = msg.data[0];
-    int left_motor_duty  = msg.data[1];
-    int right_motor_dir  = msg.data[2];
-    int right_motor_duty = msg.data[3];
-    int toggle_joint     = msg.data[4];
+  digitalWrite(distal_motor_1a, msg.data[4]);
+  digitalWrite(distal_motor_1b, msg.data[5]);
+  digitalWrite(distal_motor_2a, msg.data[6]);
+  digitalWrite(distal_motor_2b, msg.data[7]);
 
-    if(toggle_joint)
-    {
-      /* Disable the other motor pair */
-      analogWrite(EN_A_prox, 0);
-      analogWrite(EN_B_prox, 0);
-      
-      if(right_motor_dir)
-      {
-        digitalWrite(IN_1_dist, HIGH);
-        digitalWrite(IN_2_dist, LOW);
-      }
-      else
-      {
-        digitalWrite(IN_1_dist, LOW);
-        digitalWrite(IN_2_dist, HIGH);
-      }
-
-      analogWrite(EN_A_dist, right_motor_duty);
-      
-      
-      
-      if(left_motor_dir)
-      {
-        digitalWrite(IN_3_dist, HIGH);
-        digitalWrite(IN_4_dist, LOW);
-      }
-      else
-      {
-        digitalWrite(IN_3_dist, LOW);
-        digitalWrite(IN_4_dist, HIGH);
-      }
-      
-      analogWrite(EN_B_dist, left_motor_duty);    
-        
-    }
-    else
-    {
-      /* Disable the other motor pair */
-      analogWrite(EN_A_dist, 0);
-      analogWrite(EN_B_dist, 0);
-      
-      if(right_motor_dir)
-      {
-        // FWD?
-        digitalWrite(IN_1_prox, HIGH);
-        digitalWrite(IN_2_prox, LOW);
-      }
-      else
-      {
-        //BKWD?
-        digitalWrite(IN_1_prox, LOW);
-        digitalWrite(IN_2_prox, HIGH);
-      }
-
-      analogWrite(EN_A_prox, right_motor_duty);
-
-
-
-      if(left_motor_dir)
-      {
-        // FWD?
-        digitalWrite(IN_3_prox, HIGH);
-        digitalWrite(IN_4_prox, LOW);
-      }
-      else
-      {
-        //BKWD?
-        digitalWrite(IN_3_prox, LOW);
-        digitalWrite(IN_4_prox, HIGH);
-      }
-
-      analogWrite(EN_B_prox, left_motor_duty);
-    }
 }
 
 
@@ -143,7 +66,6 @@ void loop() {
 
   // Distal Encoder 
   const int dstl_encdr_addr = 72; //0x48
-
 
   /* ROS declarations */
   ros::NodeHandle nh;
@@ -164,20 +86,34 @@ void loop() {
 
   /* Setup I2C BUS (default I2C pins?) */
   Wire.begin();
-
+  unsigned int raw_data = 0;
   
-  // PWM pins
-  pinMode(EN_A_prox, OUTPUT);
-  pinMode(EN_B_prox, OUTPUT);
 
   // Digital pins
-  pinMode(IN_1_prox, OUTPUT);
-  pinMode(IN_2_prox, OUTPUT);
-  pinMode(IN_3_prox, OUTPUT);
-  pinMode(IN_4_prox, OUTPUT);
+  pinMode(proximal_motor_1a, OUTPUT);
+  pinMode(proximal_motor_1b, OUTPUT);
+  pinMode(proximal_motor_2a, OUTPUT);
+  pinMode(proximal_motor_2b, OUTPUT);
 
-  //Serial.begin(9600);
-  unsigned int raw_data = 0;
+  pinMode(distal_motor_1a, OUTPUT);
+  pinMode(distal_motor_1b, OUTPUT);
+  pinMode(distal_motor_2a, OUTPUT);
+  pinMode(distal_motor_2b, OUTPUT);
+  
+
+  // Set all digital pin outputs to LOW to start with
+  digitalWrite(proximal_motor_1a, LOW);
+  digitalWrite(proximal_motor_1b, LOW);
+  digitalWrite(proximal_motor_2a, LOW);
+  digitalWrite(proximal_motor_2b, LOW);
+
+  digitalWrite(distal_motor_1a, LOW);
+  digitalWrite(distal_motor_1b, LOW);
+  digitalWrite(distal_motor_2a, LOW);
+  digitalWrite(distal_motor_2b, LOW);
+
+
+  
   
   while(1)
   {
@@ -202,6 +138,7 @@ void loop() {
     distal_encoder_packet.data = raw_data;
     dstl_encdr_pub.publish(&distal_encoder_packet);
 
+    /* Service any queued subscriber callbacks */
     nh.spinOnce();
 
     delay(10);

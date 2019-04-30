@@ -98,7 +98,7 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
 
         //Co-contract if trigger is pressed 
 
-        if(msg->axes[left_trigger] <= 0.0)
+        if(msg->axes[left_trigger] < 0.0)
         {
             motor_packet.data.at(0) = !motor_packet.data.at(0);
             motor_packet.data.at(1) = !motor_packet.data.at(1);   
@@ -115,7 +115,7 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
 
         //Co-contract if trigger is pressed 
 
-        if(msg->axes[left_trigger] <= 0.0)
+        if(msg->axes[left_trigger] < 0.0)
         {
             motor_packet.data.at(2) = !motor_packet.data.at(2);
             motor_packet.data.at(3) = !motor_packet.data.at(3);   
@@ -145,10 +145,10 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
 
         //Co-contract if trigger is pressed 
 
-        if(msg->axes[left_trigger] <= 0.0)
+        if(msg->axes[left_trigger] < 0.0)
         {
-            motor_packet.data.at(4) = !motor_packet.data.at(4);
-            motor_packet.data.at(5) = !motor_packet.data.at(5);   
+            motor_packet.data.at(6) = !motor_packet.data.at(6);
+            motor_packet.data.at(7) = !motor_packet.data.at(7);   
         }
 
     }
@@ -162,10 +162,10 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
 
         //Co-contract if trigger is pressed 
 
-        if(msg->axes[left_trigger] <= 0.0)
+        if(msg->axes[left_trigger] < 0.0)
         {
-            motor_packet.data.at(6) = !motor_packet.data.at(6);
-            motor_packet.data.at(7) = !motor_packet.data.at(7);   
+            motor_packet.data.at(4) = !motor_packet.data.at(4);
+            motor_packet.data.at(5) = !motor_packet.data.at(5);   
         }
     }
     else
