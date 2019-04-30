@@ -57,38 +57,38 @@ include arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.
 # Include the compile flags for this target's objects.
 include arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/flags.make
 
-arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o: arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/flags.make
-arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o: /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/joystick_msg_parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o"
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/arduino_antagonist_joint_controller && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o -c /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/joystick_msg_parser.cpp
+arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o: arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/flags.make
+arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o: /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/joystick_msg_parser_v2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o"
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/arduino_antagonist_joint_controller && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o -c /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/joystick_msg_parser_v2.cpp
 
-arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.i"
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/arduino_antagonist_joint_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/joystick_msg_parser.cpp > CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.i
+arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.i"
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/arduino_antagonist_joint_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/joystick_msg_parser_v2.cpp > CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.i
 
-arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.s"
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/arduino_antagonist_joint_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/joystick_msg_parser.cpp -o CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.s
+arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.s"
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build/arduino_antagonist_joint_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/joystick_msg_parser_v2.cpp -o CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.s
 
-arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o.requires:
+arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o.requires:
 
-.PHONY : arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o.requires
+.PHONY : arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o.requires
 
-arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o.provides: arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o.requires
-	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o.provides.build
-.PHONY : arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o.provides
+arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o.provides: arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o.requires
+	$(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o.provides.build
+.PHONY : arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o.provides
 
-arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o.provides.build: arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o
+arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o.provides.build: arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o
 
 
 # Object files for target joystick_msg_parser_node
 joystick_msg_parser_node_OBJECTS = \
-"CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o"
+"CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o"
 
 # External object files for target joystick_msg_parser_node
 joystick_msg_parser_node_EXTERNAL_OBJECTS =
 
-/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_antagonist_joint_controller/joystick_msg_parser_node: arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_antagonist_joint_controller/joystick_msg_parser_node: arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_antagonist_joint_controller/joystick_msg_parser_node: arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/build.make
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_antagonist_joint_controller/joystick_msg_parser_node: /opt/ros/kinetic/lib/libroscpp.so
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_antagonist_joint_controller/joystick_msg_parser_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -118,7 +118,7 @@ arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/buil
 
 .PHONY : arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/build
 
-arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/requires: arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o.requires
+arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/requires: arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o.requires
 
 .PHONY : arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/requires
 

@@ -555,32 +555,32 @@ std_msgs_generate_messages_py/fast:
 	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/std_msgs_generate_messages_py.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
-src/joystick_msg_parser.o: src/joystick_msg_parser.cpp.o
+src/joystick_msg_parser_v2.o: src/joystick_msg_parser_v2.cpp.o
 
-.PHONY : src/joystick_msg_parser.o
+.PHONY : src/joystick_msg_parser_v2.o
 
 # target to build an object file
-src/joystick_msg_parser.cpp.o:
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o
-.PHONY : src/joystick_msg_parser.cpp.o
+src/joystick_msg_parser_v2.cpp.o:
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o
+.PHONY : src/joystick_msg_parser_v2.cpp.o
 
-src/joystick_msg_parser.i: src/joystick_msg_parser.cpp.i
+src/joystick_msg_parser_v2.i: src/joystick_msg_parser_v2.cpp.i
 
-.PHONY : src/joystick_msg_parser.i
+.PHONY : src/joystick_msg_parser_v2.i
 
 # target to preprocess a source file
-src/joystick_msg_parser.cpp.i:
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.i
-.PHONY : src/joystick_msg_parser.cpp.i
+src/joystick_msg_parser_v2.cpp.i:
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.i
+.PHONY : src/joystick_msg_parser_v2.cpp.i
 
-src/joystick_msg_parser.s: src/joystick_msg_parser.cpp.s
+src/joystick_msg_parser_v2.s: src/joystick_msg_parser_v2.cpp.s
 
-.PHONY : src/joystick_msg_parser.s
+.PHONY : src/joystick_msg_parser_v2.s
 
 # target to generate assembly for a file
-src/joystick_msg_parser.cpp.s:
-	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.s
-.PHONY : src/joystick_msg_parser.cpp.s
+src/joystick_msg_parser_v2.cpp.s:
+	cd /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/build && $(MAKE) -f arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/build.make arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.s
+.PHONY : src/joystick_msg_parser_v2.cpp.s
 
 # Help Target
 help:
@@ -621,9 +621,9 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
-	@echo "... src/joystick_msg_parser.o"
-	@echo "... src/joystick_msg_parser.i"
-	@echo "... src/joystick_msg_parser.s"
+	@echo "... src/joystick_msg_parser_v2.o"
+	@echo "... src/joystick_msg_parser_v2.i"
+	@echo "... src/joystick_msg_parser_v2.s"
 .PHONY : help
 
 

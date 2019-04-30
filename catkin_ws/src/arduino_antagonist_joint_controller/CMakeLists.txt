@@ -23,5 +23,5 @@ include_directories(
 #  )
 
 #Creating joystick subscriber exe and then linking it with the relevant user-made and base libraries 
-add_executable(joystick_msg_parser_node src/joystick_msg_parser.cpp)
+add_executable(joystick_msg_parser_node src/joystick_msg_parser_v2.cpp)
 target_link_libraries(joystick_msg_parser_node ${catkin_LIBRARIES})

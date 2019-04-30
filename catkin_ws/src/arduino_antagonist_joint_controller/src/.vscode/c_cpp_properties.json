@@ -7,8 +7,7 @@
             },
             "includePath": [
                 "/opt/ros/kinetic/include",
-                "/usr/include",
-                "/opt/ros/kinetic/include/ros"
+                "/usr/include"
             ],
             "name": "Linux",
             "intelliSenseMode": "gcc-x64"

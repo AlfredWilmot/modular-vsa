@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/joystick_msg_parser.cpp
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/joystick_msg_parser_v2.cpp
 ros/ros.h
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/ros/ros.h
 sensor_msgs/Joy.h

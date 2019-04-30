@@ -93,7 +93,14 @@ void move_antagonist_pair(int pin_A1, int pin_B1, int pin_A2, int pin_B2, int _m
   
   while(sample_cycles > 0)
   {
-    Serial.println(analogRead(I_sense_1));
+    Serial.print(analogRead(I_sense_1));
+    Serial.print(" ");
+    Serial.print(analogRead(I_sense_2));
+    Serial.print(" ");
+    Serial.print(analogRead(I_sense_3));
+    Serial.print(" ");
+    Serial.println(analogRead(I_sense_4));
+    
     delay(_ms/max_sample_cycles);
     sample_cycles--;
   }
@@ -108,7 +115,14 @@ void move_antagonist_pair(int pin_A1, int pin_B1, int pin_A2, int pin_B2, int _m
   
   while(sample_cycles > 0)
   {
-    Serial.println(analogRead(I_sense_1));
+    Serial.print(analogRead(I_sense_1));
+    Serial.print(" ");
+    Serial.print(analogRead(I_sense_2));
+    Serial.print(" ");
+    Serial.print(analogRead(I_sense_3));
+    Serial.print(" ");
+    Serial.println(analogRead(I_sense_4));
+    
     delay(_ms/max_sample_cycles);
     sample_cycles--;
   }
@@ -122,24 +136,25 @@ void move_antagonist_pair(int pin_A1, int pin_B1, int pin_A2, int pin_B2, int _m
 }
 
 /* Sanity check of I-sense PCBs: move single motor and display I-sense-output at rate of 10Hz. and stop if threshold is exceeded */
-void check_single_I_sense(int pin_A, int pin_B)
+void check_single_I_sense(int pin_A, int pin_B, int _ms)
 {
-    digitalWrite(pin_A, LOW);
-    digitalWrite(pin_B, HIGH);
-
-    int max_cycles = 10;
+    digitalWrite(pin_A, HIGH);
+    digitalWrite(pin_B, LOW);
+    
+    int max_cycles = 100;
+    int cycle_count = max_cycles;
     
     while(max_cycles > 0)
     {
       Serial.println(analogRead(I_sense_1));
-      delay(100);
-      max_cycles--;
+      delay(_ms/max_cycles);
+      cycle_count--;
       
     }
   
-//    digitalWrite(pin_A, LOW);
-//    digitalWrite(pin_B, LOW);
-//    delay(1000);
+    digitalWrite(pin_A, LOW);
+    digitalWrite(pin_B, LOW);
+    delay(_ms/2);
 }
 
 
@@ -151,7 +166,7 @@ void check_single_I_sense(int pin_A, int pin_B)
 void loop() 
 {
 
-
+  check_single_I_sense(proximal_motor_1a, proximal_motor_1b, 1000);
  
     /* Slightly move each individual motor in either direction in OL fashion.*/
 //    move_single_motor(proximal_motor_1a,  proximal_motor_1b,  1000);
@@ -160,9 +175,9 @@ void loop()
 //    move_single_motor(distal_motor_2a,    distal_motor_2b,    1000);
 
     /* Slightly move each antagonist motor pair in OL fashion .*/
-    move_antagonist_pair(proximal_motor_1a,  proximal_motor_1b,  proximal_motor_2a, proximal_motor_2b, 1000);
-    move_antagonist_pair(distal_motor_1a,  distal_motor_1b,  distal_motor_2a, distal_motor_2b, 1000);
-    delay(500);
+//    move_antagonist_pair(proximal_motor_1a,  proximal_motor_1b,  proximal_motor_2a, proximal_motor_2b, 1000);
+//    move_antagonist_pair(distal_motor_1a,  distal_motor_1b,  distal_motor_2a, distal_motor_2b, 1000);
+//    delay(500);
 
 //    check_single_I_sense(proximal_motor_1a, proximal_motor_1b);
 //    Serial.println(analogRead(I_sense_1));

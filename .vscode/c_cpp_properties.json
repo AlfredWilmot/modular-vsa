@@ -3,7 +3,10 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/opt/ros/kinetic/include",
+                "/usr/include",
+                "/opt/ros/kinetic/include/ros"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

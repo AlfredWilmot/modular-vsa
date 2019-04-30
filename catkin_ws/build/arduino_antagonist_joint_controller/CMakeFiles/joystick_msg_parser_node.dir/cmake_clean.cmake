@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser.cpp.o"
+  "CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o"
   "/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_antagonist_joint_controller/joystick_msg_parser_node.pdb"
   "/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/devel/lib/arduino_antagonist_joint_controller/joystick_msg_parser_node"
 )
