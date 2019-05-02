@@ -21,22 +21,22 @@
 
 // Motor direction pins 
 
-const int proximal_motor_1a = 5;
-const int proximal_motor_1b = 6;
-const int proximal_motor_2a = 9;
-const int proximal_motor_2b = 10;
+const int proximal_motor_1a = 11;//5;
+const int proximal_motor_1b = 12;//6;
+const int proximal_motor_2a = 7;//9;
+const int proximal_motor_2b = 8;//10;
 
-const int distal_motor_1a = 7;
-const int distal_motor_1b = 8;
-const int distal_motor_2a = 12;
-const int distal_motor_2b = 11;
+const int distal_motor_1a = 9;//7;
+const int distal_motor_1b = 10;//8;
+const int distal_motor_2a = 6;//12;
+const int distal_motor_2b = 5;//11;
 
 
 // I-sense ADC pins 
-const int I_sense_1 = A3;
-const int I_sense_2 = A2;
-const int I_sense_3 = A1;
-const int I_sense_4 = A0;
+const int I_sense_1 = A0;
+const int I_sense_2 = A1;
+const int I_sense_3 = A2;
+const int I_sense_4 = A3;
 
 /* Joystick subscriber callback for controlling motors of one joint */
 void test_proximal_joint(const std_msgs::UInt16MultiArray& msg)
@@ -45,7 +45,7 @@ void test_proximal_joint(const std_msgs::UInt16MultiArray& msg)
   digitalWrite(proximal_motor_1b, msg.data[1]);
   digitalWrite(proximal_motor_2a, msg.data[2]);
   digitalWrite(proximal_motor_2b, msg.data[3]);
-
+//
   digitalWrite(distal_motor_1a, msg.data[4]);
   digitalWrite(distal_motor_1b, msg.data[5]);
   digitalWrite(distal_motor_2a, msg.data[6]);
@@ -61,6 +61,7 @@ void setup()
 
 void loop() {
 
+  
   // Proximal Encoder
   const int prxml_encdr_addr = 77; //0x4D
 
@@ -78,11 +79,26 @@ void loop() {
   ros::Publisher prxml_encdr_pub("proximal_encoder", &proximal_encoder_packet);
   ros::Publisher dstl_encdr_pub("distal_encoder", &distal_encoder_packet);
 
+  std_msgs::UInt16 I_sense_1_packet;
+  std_msgs::UInt16 I_sense_2_packet;
+  std_msgs::UInt16 I_sense_3_packet;
+  std_msgs::UInt16 I_sense_4_packet;
+  
+  ros::Publisher I_sense_pub_1("I_sense_1", &I_sense_1_packet);
+  ros::Publisher I_sense_pub_2("I_sense_2", &I_sense_2_packet);
+  ros::Publisher I_sense_pub_3("I_sense_3", &I_sense_3_packet);
+  ros::Publisher I_sense_pub_4("I_sense_4", &I_sense_4_packet);
+  
   /* Setup node and it's topics */
   nh.initNode();
   nh.subscribe(sub);
   nh.advertise(prxml_encdr_pub);
   nh.advertise(dstl_encdr_pub);
+
+  nh.advertise(I_sense_pub_1);
+  nh.advertise(I_sense_pub_2);
+  nh.advertise(I_sense_pub_3);
+  nh.advertise(I_sense_pub_4);
 
   /* Setup I2C BUS (default I2C pins?) */
   Wire.begin();
@@ -138,6 +154,20 @@ void loop() {
     distal_encoder_packet.data = raw_data;
     dstl_encdr_pub.publish(&distal_encoder_packet);
 
+
+
+    I_sense_1_packet.data = analogRead(I_sense_1);
+    I_sense_2_packet.data = analogRead(I_sense_2);
+    I_sense_3_packet.data = analogRead(I_sense_3);
+    I_sense_4_packet.data = analogRead(I_sense_4);
+    
+    I_sense_pub_1.publish(&I_sense_1_packet);
+    I_sense_pub_2.publish(&I_sense_2_packet);
+    I_sense_pub_3.publish(&I_sense_3_packet);
+    I_sense_pub_4.publish(&I_sense_4_packet);
+
+    
+  
     /* Service any queued subscriber callbacks */
     nh.spinOnce();
 

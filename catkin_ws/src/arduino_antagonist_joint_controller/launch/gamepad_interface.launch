@@ -26,4 +26,6 @@
 
     <node pkg="rosserial_python" type="message_info_service.py" name="rosserial_msg_info" />
 
+    <node pkg='rqt_plot' name='rqt_plot' type='rqt_plot' />
+
 </launch>
