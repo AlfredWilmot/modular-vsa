@@ -24,12 +24,17 @@
 const int proximal_motor_1a = 11;//5;
 const int proximal_motor_1b = 12;//6;
 const int proximal_motor_2a = 7;//9;
-const int proximal_motor_2b = 8;//10;
+const int proximal_motor_2b = 8;//10; 
 
 const int distal_motor_1a = 9;//7;
 const int distal_motor_1b = 10;//8;
 const int distal_motor_2a = 6;//12;
 const int distal_motor_2b = 5;//11;
+
+const int Enable_proximal_motor_1 = 23;
+const int Enable_proximal_motor_2 = 22;
+const int Enable_distal_motor_1   = 21;
+const int Enable_distal_motor_2   = 20;
 
 
 // I-sense ADC pins 
@@ -50,6 +55,11 @@ void test_proximal_joint(const std_msgs::UInt16MultiArray& msg)
   digitalWrite(distal_motor_1b, msg.data[5]);
   digitalWrite(distal_motor_2a, msg.data[6]);
   digitalWrite(distal_motor_2b, msg.data[7]);
+
+  analogWrite(Enable_proximal_motor_1, 255);
+  analogWrite(Enable_proximal_motor_2, 255);
+  analogWrite(Enable_distal_motor_1,   255);
+  analogWrite(Enable_distal_motor_2,   255);
 
 }
 
@@ -116,6 +126,12 @@ void loop() {
   pinMode(distal_motor_2a, OUTPUT);
   pinMode(distal_motor_2b, OUTPUT);
   
+  
+  pinMode(Enable_proximal_motor_1, OUTPUT);
+  pinMode(Enable_proximal_motor_2, OUTPUT);
+  pinMode(Enable_distal_motor_1,   OUTPUT);
+  pinMode(Enable_distal_motor_2,   OUTPUT);
+
 
   // Set all digital pin outputs to LOW to start with
   digitalWrite(proximal_motor_1a, LOW);
