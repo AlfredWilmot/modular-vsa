@@ -18,7 +18,7 @@ pi = 3.14159;
 
 active = [0,pi/2,0];
 %Defining workspace (necesarry given prismatic joint):
-activeWorkVol = [-50*mm, 15000*mm, -50*mm, 50*mm, -50*mm, 150*mm];
+activeWorkVol = [-1500*mm, 1500*mm, -1500*mm, 1500*mm, -800*mm, 1500*mm];
 homeWorkVol = activeWorkVol;
 %% Defining DH parameters (m):
 a_1 = 0; a_2 = 60*mm; a_3 = 40*mm; 
@@ -28,13 +28,21 @@ theta_1 = 0; theta_2 = 0; theta_3 = 0;
 %% Defining Links:
 L(1) = Link([theta_1 d_1 a_1 alpha_1 1]); % Just an offset from base.
 L(2) = Link([theta_2 d_2 a_2 alpha_2 0]);
-L(3) = Link([theta_3 d_3 a_2 alpha_3 0]);
+L(3) = Link([theta_3 d_3 80*mm alpha_3 0]);
 % L(4) = Link([theta_2 d_2 a_2 alpha_2 0]);
-% L(5) = Link([theta_3 d_3 a_2 alpha_3 0]);
+% L(5) = Link([theta_3 d_3 80*mm alpha_3 0]);
 % L(6) = Link([theta_2 d_2 a_2 alpha_2 0]);
-% L(7) = Link([theta_3 d_3 a_2 alpha_3 0]);
+% L(7) = Link([theta_3 d_3 80*mm alpha_3 0]);
 % L(8) = Link([theta_2 d_2 a_2 alpha_2 0]);
-% L(9) = Link([theta_3 d_3 a_2 alpha_3 0]);
+% L(9) = Link([theta_3 d_3 80*mm alpha_3 0]);
+% L(10) = Link([theta_2 d_2 a_2 alpha_2 0]);
+% L(11) = Link([theta_3 d_3 80*mm alpha_3 0]);
+% L(12) = Link([theta_2 d_2 a_2 alpha_2 0]);
+% L(13) = Link([theta_3 d_3 80*mm alpha_3 0]);
+% L(14) = Link([theta_2 d_2 a_2 alpha_2 0]);
+% L(15) = Link([theta_3 d_3 80*mm alpha_3 0]);
+% L(16) = Link([theta_2 d_2 a_2 alpha_2 0]);
+
 %% Defining joint_limits:
 q0 = [0,0];
 q1 = [pi/4, 3*pi/4];
@@ -45,8 +53,15 @@ q2 = [-pi/4, pi/4];
 % q6 = [-pi/4, pi/4];
 % q7 = [-pi/4, pi/4];
 % q8 = [-pi/4, pi/4];
+% q9 = [pi/4, 3*pi/4];
+% q10 = [-pi/4, pi/4];
+% q11 = [-pi/4, pi/4];
+% q12 = [-pi/4, pi/4];
+% q13 = [-pi/4, pi/4];
+% q14 = [-pi/4, pi/4];
+% q15 = [-pi/4, pi/4];
 
-my_q_lims = [q0; q1; q2]; %q3; q4; q5; q6; q7; q8];
+my_q_lims = [q0; q1; q2]; %q3; q4; q5; q6; q7; q8; q9; q10; q11; q12; q13; q14; q15];
 
 home = zeros(1, length(my_q_lims));
 
@@ -57,7 +72,7 @@ RR_seg = SerialLink(L, 'name', 'RR segment');
 just_a_plot = 0;
 proximal_torque_and_heatmap_plot = 0;
 wantScatterPlot = 1;
-
+robotName = "1-Segment (2R) Chain";
 
 %% Plotting 
 if(just_a_plot)
@@ -107,13 +122,11 @@ if(proximal_torque_and_heatmap_plot)
     
     for th1 = pi/4:one_deg:3*pi/4
         for th2 = -pi/4:one_deg:pi/4
-            for th3 = -pi/4:one_deg:pi/4
             %RR_seg.plot([0, th1, th2], 'workspace', activeWorkVol);
 
             % Update joint angles & compute resultant torques using jacobian.
             q(2) = th1;
             q(3) = th2; 
-            q(4) = th3;
             J = jacob0(RR_seg, q);
             joint_torques = (-J'*F)';
 
@@ -125,8 +138,7 @@ if(proximal_torque_and_heatmap_plot)
             Y = [Y, EE_pose.t(2)];
             Z = [Z, EE_pose.t(3)];
             proximal_joint_tau = [proximal_joint_tau, joint_torques(2)];
-            
-            end
+
         end
     end
 
@@ -135,9 +147,22 @@ if(proximal_torque_and_heatmap_plot)
     %axis([min(X), max(X), min(Y), max(Y), min(Z), max(Z)]);
     %axis('manual');
     c = colorbar;
-    c.Label.String = '\bf Nm';
-    title('\fontsize{10}Torque on proximal joint given 10kg at EE, for all possible joint configurations');
-end
+    c.Label.String = '\bf\fontsize{15} Proximal joint torque (Nm)';
+    
+    % Create zlabel
+    zlabel('\textbf{\textit{z-axis (m)}}','FontWeight','bold','FontSize',18,...
+        'FontName','Times',...
+        'Interpreter','latex');
+
+    % Create ylabel
+    ylabel('\textbf{\textit{y-axis (m)}}','FontSize',18,'FontName','Times',...
+        'Interpreter','latex');
+
+    % Create xlabel
+    xlabel('\textbf{\textit{x-axis (m)}}','FontSize',18,'FontName','Times',...
+        'Interpreter','latex');
+    
+    end
 
 %% Author: Ian Howard; Edited by Alfred Wilmot for serpentine segment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -175,12 +200,12 @@ if(wantScatterPlot)
     % plot3(x,y,z), where x, y and z are three vectors of the same length,
     % plots a line in 3-space through the points whose coordinates are the
     h = plot3(TP(1,:), TP(2,:), TP(3,:), 'r.');
-    set(h, 'LineWidth', 3);
+    set(h, 'LineWidth', 0.5);
     RR_seg.plot(home,  'noshadow', 'workspace', activeWorkVol);
     
-    robotName = "2-DOF Serpentine Segment";
     
-    h=title(sprintf('%s:  Working area', robotName));
+    
+    h=title(sprintf('%s:  Workspace', robotName));
     set(h, 'FontSize', 20);
     
     % axis labels
@@ -192,8 +217,6 @@ if(wantScatterPlot)
     % use interactive mode
     RR_seg.teach
     
-    input('Hit return to proceed');
-    close all
 end
 
 
