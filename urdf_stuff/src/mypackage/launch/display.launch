@@ -7,7 +7,7 @@
     default="True" />
   <param
     name="robot_description"
-    textfile="$(find mypackage)/robot.urdf" />
+    textfile="$(find mypackage)/SARA.urdf" />
   <param
     name="use_gui"
     value="$(arg gui)" />
