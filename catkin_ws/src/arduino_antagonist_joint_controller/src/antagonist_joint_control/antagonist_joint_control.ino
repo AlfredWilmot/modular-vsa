@@ -50,7 +50,7 @@ void test_proximal_joint(const std_msgs::UInt16MultiArray& msg)
   digitalWrite(proximal_motor_1b, msg.data[1]);
   digitalWrite(proximal_motor_2a, msg.data[2]);
   digitalWrite(proximal_motor_2b, msg.data[3]);
-
+//
   digitalWrite(distal_motor_1a, msg.data[5]);
   digitalWrite(distal_motor_1b, msg.data[4]);
   digitalWrite(distal_motor_2a, msg.data[6]);

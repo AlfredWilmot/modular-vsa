@@ -107,8 +107,8 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
     {
         //CW
 
-        motor_packet.data.at(0) = 0;
-        motor_packet.data.at(1) = 1;
+        motor_packet.data.at(0) = 1;
+        motor_packet.data.at(1) = 0;
         motor_packet.data.at(2) = 0;
         motor_packet.data.at(3) = 1;
 
@@ -116,16 +116,16 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
 
         if(msg->axes[left_trigger] < 0.0)
         {
-            motor_packet.data.at(2) = !motor_packet.data.at(0);
-            motor_packet.data.at(3) = !motor_packet.data.at(1);   
+            motor_packet.data.at(2) = !motor_packet.data.at(1);
+            motor_packet.data.at(3) = !motor_packet.data.at(0);   
         }
     }
     else if(msg->axes[d_pad_left_right] == -1.0)
     {
         //CCW
 
-        motor_packet.data.at(0) = 1;
-        motor_packet.data.at(1) = 0;
+        motor_packet.data.at(0) = 0;
+        motor_packet.data.at(1) = 1;
         motor_packet.data.at(2) = 1;
         motor_packet.data.at(3) = 0;
 
@@ -133,8 +133,8 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
 
         if(msg->axes[left_trigger] < 0.0)
         {
-            motor_packet.data.at(0) = !motor_packet.data.at(2);
-            motor_packet.data.at(1) = !motor_packet.data.at(3);   
+            motor_packet.data.at(0) = !motor_packet.data.at(3);
+            motor_packet.data.at(1) = !motor_packet.data.at(2);   
         }
     }
     else
@@ -154,8 +154,8 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
     if(msg->axes[d_pad_up_down] == 1.0)
     {
         //CW
-        motor_packet.data.at(4) = 0;
-        motor_packet.data.at(5) = 1;
+        motor_packet.data.at(4) = 1;
+        motor_packet.data.at(5) = 0;
         motor_packet.data.at(6) = 0;
         motor_packet.data.at(7) = 1;
 
@@ -163,16 +163,16 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
 
         if(msg->axes[left_trigger] < 0.0)
         {
-            motor_packet.data.at(4) = !motor_packet.data.at(6);
-            motor_packet.data.at(5) = !motor_packet.data.at(7);   
+            motor_packet.data.at(4) = !motor_packet.data.at(7);
+            motor_packet.data.at(5) = !motor_packet.data.at(6);   
         }
 
     }
     else if(msg->axes[d_pad_up_down] == -1.0)
     {
         //CCW
-        motor_packet.data.at(4) = 1;
-        motor_packet.data.at(5) = 0;
+        motor_packet.data.at(4) = 0;
+        motor_packet.data.at(5) = 1;
         motor_packet.data.at(6) = 1;
         motor_packet.data.at(7) = 0;
 
@@ -180,8 +180,8 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
 
         if(msg->axes[left_trigger] < 0.0)
         {
-            motor_packet.data.at(6) = !motor_packet.data.at(4);
-            motor_packet.data.at(7) = !motor_packet.data.at(5);   
+            motor_packet.data.at(6) = !motor_packet.data.at(5);
+            motor_packet.data.at(7) = !motor_packet.data.at(4);   
         }
     }
     else
