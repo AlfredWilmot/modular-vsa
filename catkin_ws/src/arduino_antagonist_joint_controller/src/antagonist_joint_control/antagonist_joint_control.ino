@@ -50,9 +50,9 @@ void test_proximal_joint(const std_msgs::UInt16MultiArray& msg)
   digitalWrite(proximal_motor_1b, msg.data[1]);
   digitalWrite(proximal_motor_2a, msg.data[2]);
   digitalWrite(proximal_motor_2b, msg.data[3]);
-//
-  digitalWrite(distal_motor_1a, msg.data[4]);
-  digitalWrite(distal_motor_1b, msg.data[5]);
+
+  digitalWrite(distal_motor_1a, msg.data[5]);
+  digitalWrite(distal_motor_1b, msg.data[4]);
   digitalWrite(distal_motor_2a, msg.data[6]);
   digitalWrite(distal_motor_2b, msg.data[7]);
 
@@ -172,10 +172,10 @@ void loop() {
 
 
 
-    I_sense_1_packet.data = analogRead(I_sense_1);
-    I_sense_2_packet.data = analogRead(I_sense_2);
-    I_sense_3_packet.data = analogRead(I_sense_3);
-    I_sense_4_packet.data = analogRead(I_sense_4);
+    I_sense_1_packet.data = analogRead(I_sense_1); //12mOhm shunt 
+    I_sense_2_packet.data = analogRead(I_sense_2); //25mOhm shunt
+    I_sense_3_packet.data = analogRead(I_sense_3); //12mOhn shunt
+    I_sense_4_packet.data = analogRead(I_sense_4); //12mOhm shunt
     
     I_sense_pub_1.publish(&I_sense_1_packet);
     I_sense_pub_2.publish(&I_sense_2_packet);

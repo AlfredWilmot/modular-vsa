@@ -14,7 +14,7 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg);
 static std_msgs::UInt16MultiArray motor_packet;
 static std_msgs::UInt16MultiArray previous_motor_packet;
 
-static int packet_length = 8; // packet is 8 elements long (two per motor in single segment).
+static int packet_length = 12; // packet is 8 elements long (two per motor in single segment) + 4 motor-duty values.
 
 /* motor msg publisher */
 static ros::Publisher motor_pub;
@@ -45,6 +45,22 @@ const int Y_btn             = 3;
 const int X_btn             = 2;
 const int B_btn             = 1;
 const int A_btn             = 0;
+
+
+
+
+/* global variables for the joint controller */
+
+// Encoder values.
+static int proximal_joint_value;
+static int distal_joint_value;
+
+// I-sense values.
+static int proximal_motorA_load;
+static int proximal_motorB_load;
+static int distal_motorA_load;
+static int distal_motorB_load;
+
 
 /* Subscribe to the xbox-360 joy-stick topic, 
    publish corresponding motor control msg to "/segment_motor_cmds" topic */
@@ -196,10 +212,30 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
         }
     }
 
-    // Only Publish the assembed motor-control data-packet if it is different from the previous one.
+    // Only Publish the assemlbed motor-control data-packet if it is different from the previous one.
     if(is_not_duplicate_packet)
     {
+
+        // set each motor duty to 100% for OL testing
+        motor_packet.data.at(8)  = 255;
+        motor_packet.data.at(9)  = 255;
+        motor_packet.data.at(10) = 255;
+        motor_packet.data.at(11) = 255;
+
         motor_pub.publish(motor_packet);
     }
+
+}
+
+/* An algorithm that generates motor commands by accounting for current and joint sensor data */
+void CL_control(const sensor_msgs::Joy& msg)
+{
+    /* Sanity test 1: "Hold initial position" */
+
+    // -> Sample the current joint angle.
+    // -> If the joint is perturbed, drive the motors such that the joint is verged to.
+    // -> Only use I-sense data to prevent over-loading the motors (identify an absoulte value for this).
+    // -> Fitler noise/ transients in I-sense data by ignoring values that massively deveiate from the previous value (hysteresis band).
+
 
 }
