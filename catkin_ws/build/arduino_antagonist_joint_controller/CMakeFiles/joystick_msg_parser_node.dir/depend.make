@@ -63,6 +63,7 @@ arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/
 arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o: /opt/ros/kinetic/include/std_msgs/MultiArrayDimension.h
 arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o: /opt/ros/kinetic/include/std_msgs/MultiArrayLayout.h
+arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o: /opt/ros/kinetic/include/std_msgs/UInt16.h
 arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o: /opt/ros/kinetic/include/std_msgs/UInt16MultiArray.h
 arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o: /opt/ros/kinetic/include/std_msgs/UInt8.h
 arduino_antagonist_joint_controller/CMakeFiles/joystick_msg_parser_node.dir/src/joystick_msg_parser_v2.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
