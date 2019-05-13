@@ -76,7 +76,8 @@ void loop() {
   const int prxml_encdr_addr = 77; //0x4D
 
   // Distal Encoder 
-  const int dstl_encdr_addr = 72; //0x48
+  //const int dstl_encdr_addr = 72; //0x48
+  const int dstl_encdr_addr = 79; //0x4F
 
   /* ROS declarations */
   ros::NodeHandle nh;

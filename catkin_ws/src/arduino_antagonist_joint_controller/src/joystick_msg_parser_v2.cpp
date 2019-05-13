@@ -7,10 +7,25 @@
 #include <iostream>
 #include <unistd.h>
 
-/* Subscriber callback for Open-Loop control */
+/*------------------------*/
+/* Function declarations */
+/*----------------------*/
+
+//Subscriber callback for Open-Loop control
 void OL_control(const sensor_msgs::JoyConstPtr& msg);
 
+// Functions to directly control joint using D-pad & co-contract with left-trigger.
+void proximal_joint_cmds(const sensor_msgs::JoyConstPtr msg);
+void distal_joint_cmds(const sensor_msgs::JoyConstPtr msg);
+
+// Prevent duplicate control packets from being sent to MCU, and also prevents expired packages from persisting.
+void filter_duplicate_packets();
+
+
+/*------------*/
 /* motor msg */
+/*----------*/
+
 static std_msgs::UInt16MultiArray motor_packet;
 static std_msgs::UInt16MultiArray previous_motor_packet;
 
@@ -20,8 +35,9 @@ static int packet_length = 12; // packet is 8 elements long (two per motor in si
 static ros::Publisher motor_pub;
 
 
-
+/*-----------------------------------------*/
 /* defining gamepad button/ axis indicies */
+/*---------------------------------------*/
 
 // AXIS (-1.0, 1.0):
 const int d_pad_up_down         = 7; // U = +1.0, D = -1.0
@@ -48,8 +64,9 @@ const int A_btn             = 0;
 
 
 
-
+/*--------------------------------------------*/
 /* global variables for the joint controller */
+/*------------------------------------------*/
 
 // Encoder values.
 static int proximal_joint_value;
@@ -97,11 +114,9 @@ int main(int argc, char **argv)
 
 
 
-/* A controller that uses Right-joyStick, as well as LT & RT for tension control of either joint */
-void OL_control(const sensor_msgs::JoyConstPtr& msg)
-{   
-
-    /* Define Proximal joint movement */
+/* Define Proximal joint movement */
+void proximal_joint_cmds(const sensor_msgs::JoyConstPtr msg)
+{
 
     if(msg->axes[d_pad_left_right] == 1.0)
     {
@@ -146,10 +161,11 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
         motor_packet.data.at(2) = 0;
         motor_packet.data.at(3) = 0;         
     }
-    
-    
-    
-    /* Define Distal joint movement */
+}
+
+/* Define Distal joint movement */
+void distal_joint_cmds(const sensor_msgs::JoyConstPtr msg)
+{
 
     if(msg->axes[d_pad_up_down] == 1.0)
     {
@@ -193,11 +209,11 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
         motor_packet.data.at(6) = 0;
         motor_packet.data.at(7) = 0;   
     }
+}
 
 
-
-
-
+void filter_duplicate_packets()
+{
     /* Filtering out duplicate joy messages */
 
     bool is_not_duplicate_packet = false;
@@ -215,19 +231,41 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
     // Only Publish the assemlbed motor-control data-packet if it is different from the previous one.
     if(is_not_duplicate_packet)
     {
-
-        // set each motor duty to 100% for OL testing
-        motor_packet.data.at(8)  = 255;
-        motor_packet.data.at(9)  = 255;
-        motor_packet.data.at(10) = 255;
-        motor_packet.data.at(11) = 255;
-
         motor_pub.publish(motor_packet);
-    }
+    }    
+}
+
+/* A controller that uses Right-joyStick, as well as LT & RT for tension control of either joint */
+void OL_control(const sensor_msgs::JoyConstPtr& msg)
+{   
+    // Control joints with D-pad (& left trigger)
+    proximal_joint_cmds(msg);
+    distal_joint_cmds(msg);
+    
+    // set each motor duty to 100% for OL testing
+    motor_packet.data.at(8)  = 255;
+    motor_packet.data.at(9)  = 255;
+    motor_packet.data.at(10) = 255;
+    motor_packet.data.at(11) = 255;
+
+    // Keep it clean!
+    filter_duplicate_packets();
 
 }
 
-/* An algorithm that generates motor commands by accounting for current and joint sensor data */
+
+// TODO:
+
+// -> Use a gamepad btn to cycle throught co-contractions (adjusts I-sense threshold)
+
+// NOTES:
+// -> Idle I-sense reading (no I-draw) ~ 580
+// -> Define arbitrary ranges for three distinct co-contraction values:
+//      * 500
+//      * 350
+//      * 200
+
+
 void CL_control(const sensor_msgs::Joy& msg)
 {
     /* Sanity test 1: "Hold initial position" */
