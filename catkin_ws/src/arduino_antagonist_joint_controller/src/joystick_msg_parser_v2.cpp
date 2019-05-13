@@ -18,6 +18,7 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg);
 
 //Closed-loop control for maintaining current position
 void CL_control();
+void reset_all_motors();
 
 // Functions to directly control joint using D-pad & co-contract with left-trigger.
 int proximal_joint_cmds(const sensor_msgs::JoyConstPtr msg);
@@ -28,6 +29,26 @@ int filter_duplicate_packets();
 
 // Control motors directly (send duty, and direction: loosen/ tighten)
 int motor_override(int duty, std::string motor_name, int contract_tendon);
+
+
+// cycles through the array of /joy msg indicies to check if btns or axes are in use.
+int check_btns(int *gamepad_btns_to_check, const sensor_msgs::JoyConstPtr msg)
+{
+
+    int array_length = sizeof(gamepad_btns_to_check)/sizeof(*gamepad_btns_to_check);
+    
+    ROS_INFO("Checking for %d buttons.\n", array_length);
+
+    for(size_t i = 0; i < array_length; i++)
+    {
+        if(msg->buttons.at(i) != 0)
+        {
+            return 1;
+        }
+    }
+
+    return 0;
+}
 
 /*------------*/
 /* motor msg */
@@ -102,7 +123,7 @@ void grab_distal_motorB_load(const std_msgs::UInt16ConstPtr msg);
 
 // Various experimental states controlled by gamepad toggle-switches.
 bool CL_control_mode_is_active = false;
-
+bool D_pad_in_use = false;
 
 
 /*------------*/
@@ -143,19 +164,22 @@ int main(int argc, char **argv)
     motor_pub = nh.advertise<std_msgs::UInt16MultiArray>("segment_motor_cmds", 1);
 
 
-    ros::spin();
+    ros::Rate loop_rate(50); //10Hz loop rate
 
-    // ros::Rate loop_rate(50); //10Hz loop rate
-
-    // while(ros::ok())
-    // {
+    while(ros::ok())
+    {
         
+        if(CL_control_mode_is_active && !D_pad_in_use) // if gamepad is not in use, and the CL control mode has been activated, run CL control to hold current position.
+        {
+            CL_control();
+        }
+
         /* Service any subscriber callbacks (publishing parsed data takes place within callback) */
-        // ros::spinOnce;
+        ros::spinOnce();
 
         /* Enforces loop period to the designated rate (only works properly if all processes preceeding sleep() have a lower latency than 1/loop_rate). */
-        // loop_rate.sleep();
-    // }
+        loop_rate.sleep();
+    }
     
 
     return 0; // exit when roscore dies
@@ -279,6 +303,10 @@ int motor_override(int duty, std::string motor_name, int contract_tendon)
             motor_packet.data.at(4) = 0;
             motor_packet.data.at(5) = 1;           
         }
+
+        // set motor speed
+        motor_packet.data.at(8) = duty;
+
     }
     else if (std::strcmp(motor_name.c_str(), "proximal_motor_B") == 0) 
     {
@@ -294,6 +322,10 @@ int motor_override(int duty, std::string motor_name, int contract_tendon)
             motor_packet.data.at(6) = 1;
             motor_packet.data.at(7) = 0;          
         }
+
+        // set motor speed
+        motor_packet.data.at(10) = duty;
+
     }
     else if (std::strcmp(motor_name.c_str(), "distal_motor_A") == 0) 
     {
@@ -309,6 +341,10 @@ int motor_override(int duty, std::string motor_name, int contract_tendon)
             motor_packet.data.at(0) = 0;
             motor_packet.data.at(1) = 1;          
         }
+
+        // set motor speed
+        motor_packet.data.at(9) = duty;
+
     }
     else if (std::strcmp(motor_name.c_str(), "distal_motor_B") == 0) 
     {
@@ -324,6 +360,9 @@ int motor_override(int duty, std::string motor_name, int contract_tendon)
             motor_packet.data.at(2) = 1;
             motor_packet.data.at(3) = 0;          
         }
+
+        // set motor speed
+        motor_packet.data.at(11) = duty;
     }
     else 
     {   
@@ -341,6 +380,7 @@ int motor_override(int duty, std::string motor_name, int contract_tendon)
 /* Filtering out duplicate joy messages */
 int filter_duplicate_packets()
 {
+
     bool is_not_duplicate_packet = false;
 
     for(int i=0; i<packet_length; i++)
@@ -356,7 +396,7 @@ int filter_duplicate_packets()
     // Only Publish the assemlbed motor-control data-packet if it is different from the previous one.
     if(is_not_duplicate_packet)
     {
-        return 0; // indicates new packet is not a dulicate.
+        return 0; // indicates new packet is not a duplicate.
     }
     else
     {
@@ -366,8 +406,16 @@ int filter_duplicate_packets()
 }
 
 
+/* Put all motors into brake mode */
+void reset_all_motors()
+{
+    for(int i=0; i<packet_length; i++)
+    {   
+       motor_packet.data.at(i) = 0;
+    }
 
-
+    motor_pub.publish(motor_packet);
+}
 
 /*--------------------------------*/
 /* Subscriber callback functions */
@@ -425,27 +473,21 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
     if (msg->buttons[xbox_btn]) 
     {
         CL_control_mode_is_active = !CL_control_mode_is_active;
+        reset_all_motors();
     }
     
-
-
     // See if operator is using the gamepad (if so, disable CL control, and update reference joint position).
     if(proximal_joint_cmds(msg) || distal_joint_cmds(msg))
     {
-        // set each motor duty to 80% for OL testing (255 = 100%)
-        motor_packet.data.at(8)  = 204;
-        motor_packet.data.at(9)  = 204;
-        motor_packet.data.at(10) = 204;
-        motor_packet.data.at(11) = 204;
+        D_pad_in_use = true;
+        ROS_INFO("D-pad in Use!\n");
     }
-    else if(CL_control_mode_is_active) // if gamepad is not in use, and the CL control mode has been activated, run CL control to hold current position.
+    else
     {
-        CL_control();
+        D_pad_in_use = false;
+        ROS_INFO("Look, no hands!\n");
     }
     
-
-
-
     // Keep it clean!
     if(filter_duplicate_packets() == 0)
     {
@@ -503,6 +545,8 @@ void CL_control()
     
     int proximal_err  = initial_proximal_joint_value  - proximal_joint_value;
 
+    ROS_INFO("Proximal Err: %d\n", proximal_err);
+
     // If error is within hysteresis band, ignore it.
     if ( (hysteresis_band - abs(proximal_err) > 0) ) 
     {
@@ -543,7 +587,7 @@ void CL_control()
     }
     
 
-
+    motor_pub.publish(motor_packet);
 
     // int distal_err    = initial_distal_joint_value    - distal_joint_value;
   
