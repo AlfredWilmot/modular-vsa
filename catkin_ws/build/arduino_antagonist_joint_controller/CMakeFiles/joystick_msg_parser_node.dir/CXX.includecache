@@ -17,6 +17,8 @@ std_msgs/UInt8.h
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/std_msgs/UInt8.h
 std_msgs/Bool.h
 /home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/std_msgs/Bool.h
+string.h
+/home/alfie/Desktop/Modular-2-DOF-Cable-Driven-Segment/catkin_ws/src/arduino_antagonist_joint_controller/src/string.h
 iostream
 -
 unistd.h

@@ -48,18 +48,18 @@ void test_proximal_joint(const std_msgs::UInt16MultiArray& msg)
 {
   digitalWrite(proximal_motor_1a, msg.data[0]);
   digitalWrite(proximal_motor_1b, msg.data[1]);
-  digitalWrite(proximal_motor_2a, msg.data[2]);
-  digitalWrite(proximal_motor_2b, msg.data[3]);
+  digitalWrite(proximal_motor_2a, msg.data[3]);
+  digitalWrite(proximal_motor_2b, msg.data[2]);
 //
   digitalWrite(distal_motor_1a, msg.data[5]);
   digitalWrite(distal_motor_1b, msg.data[4]);
-  digitalWrite(distal_motor_2a, msg.data[6]);
-  digitalWrite(distal_motor_2b, msg.data[7]);
+  digitalWrite(distal_motor_2a, msg.data[7]);
+  digitalWrite(distal_motor_2b, msg.data[6]);
 
-  analogWrite(Enable_proximal_motor_1, 255);
-  analogWrite(Enable_proximal_motor_2, 255);
-  analogWrite(Enable_distal_motor_1,   255);
-  analogWrite(Enable_distal_motor_2,   255);
+  analogWrite(Enable_proximal_motor_1, msg.data[8]);
+  analogWrite(Enable_proximal_motor_2, msg.data[9]);
+  analogWrite(Enable_distal_motor_1,   msg.data[10]);
+  analogWrite(Enable_distal_motor_2,   msg.data[11]);
 
 }
 
