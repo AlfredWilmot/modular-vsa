@@ -462,16 +462,24 @@ void CL_control()
 
 
 
-    /*----------------------------*/
-    /* Proximal joint controller */
-    /*--------------------------*/
+
 
     float P = 2;
     int hysteresis_band = 25;
     
-    int proximal_err  = initial_proximal_joint_value  - proximal_joint_value;
+    /* Generate error terms */
+    int proximal_err    = initial_proximal_joint_value  - proximal_joint_value;
+    int distal_err      = initial_distal_joint_value    - distal_joint_value;
+
 
     ROS_INFO("Proximal Err: %d\n", proximal_err);
+    ROS_INFO("Distal Err: %d\n", distal_err);
+
+
+
+    /*----------------------------*/
+    /* Proximal joint controller */
+    /*--------------------------*/
 
     // If error is within hysteresis band, ignore it.
     if ( (hysteresis_band - abs(proximal_err) > 0) ) 
@@ -511,12 +519,70 @@ void CL_control()
     }
     else
     {
-    // keep segment steady
-        reset_all_motors();
+        // keep proximal joint steady
+        motor_packet.data.at(4) = 0;
+        motor_packet.data.at(5) = 0;
+        motor_packet.data.at(6) = 0;
+        motor_packet.data.at(7) = 0;
     }
     
     
-    ROS_INFO("Corrective term: %1.2f\n", corrective_term);
+    ROS_INFO("Proximal corrective term: %1.2f\n", corrective_term);
+
+
+
+    /*----------------------------*/
+    /* Distal joint controller */
+    /*--------------------------*/
+
+    // If error is within hysteresis band, ignore it.
+    if ( (hysteresis_band - abs(distal_err) > 0) ) 
+    {
+        distal_err = 0;
+    }
+
+
+    corrective_term = P * float(distal_err);
+    
+    // tilt proximal joint upwards ("up" depends on orientation of magnet in holder)
+    if (corrective_term < 0.0) 
+    {
+
+        corrective_term = abs(corrective_term + hysteresis_band); //compensate hysteresis offset.
+
+        if(corrective_term >= 255)
+        {
+            corrective_term = 255; // saturate to 255.
+        }
+        tilt_distal_joint_right();
+        ROS_INFO("GO RIGHT!");
+    }
+    else if(corrective_term > 0.0)
+    {
+    // tilt proximal joint downwards
+
+        corrective_term = abs(corrective_term - hysteresis_band);
+
+        if(corrective_term >= 255)
+        {
+            corrective_term = 255; // saturate to 255.
+        }
+
+        tilt_distal_joint_left();
+        ROS_INFO("GO LEFT!");
+    }
+    else
+    {
+        // keep distal joint steady
+        motor_packet.data.at(0) = 0;
+        motor_packet.data.at(1) = 0;
+        motor_packet.data.at(2) = 0;
+        motor_packet.data.at(3) = 0;
+    }
+    
+    
+    ROS_INFO("Distal corrective term: %1.2f\n", corrective_term);
+
 
     motor_pub.publish(motor_packet);
 
