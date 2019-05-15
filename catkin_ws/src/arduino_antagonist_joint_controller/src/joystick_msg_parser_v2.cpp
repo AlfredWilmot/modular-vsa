@@ -22,9 +22,6 @@ void distal_joint_cmds(const sensor_msgs::JoyConstPtr msg);
 // Prevent duplicate control packets from being sent to MCU, and also prevents expired packages from persisting.
 int filter_duplicate_packets();
 
-// Control motors directly (send duty, and direction: loosen/ tighten)
-int motor_override(int duty, std::string motor_name, int contract_tendon);
-
 /*------------*/
 /* motor msg */
 /*----------*/
@@ -121,39 +118,56 @@ int main(int argc, char **argv)
 void proximal_joint_cmds(const sensor_msgs::JoyConstPtr msg)
 {
 
-    if(msg->axes[d_pad_left_right] == 1.0)
+    if(msg->axes[d_pad_up_down] == 1.0)
     {
-        //CW
-        motor_override(204, "distal_motor_A", 1);
-        motor_override(204, "distal_motor_B", 0);
+        //proximal joint: up
+        motor_packet.data.at(4) = 1;
+        motor_packet.data.at(5) = 0;
+        motor_packet.data.at(6) = 1;
+        motor_packet.data.at(7) = 0;
 
         //Co-contract if trigger is pressed 
         if(msg->axes[left_trigger] < 0.0)
         {
-            motor_packet.data.at(2) = !motor_packet.data.at(0);
-            motor_packet.data.at(3) = !motor_packet.data.at(1);   
+            motor_packet.data.at(4) = 0;
+            motor_packet.data.at(5) = 1;
         }
+        //Co-release if right trigger is pressed 
+        else if(msg->axes[right_trigger] < 0.0)
+        {
+            motor_packet.data.at(0) = 0;
+            motor_packet.data.at(1) = 1;
+        }
+
     }
-    else if(msg->axes[d_pad_left_right] == -1.0)
+    else if(msg->axes[d_pad_up_down] == -1.0)
     {
-        //CCW
-        motor_override(204, "distal_motor_A", 0);
-        motor_override(204, "distal_motor_B", 1);
+        //proximal joint: down
+        motor_packet.data.at(4) = 0;
+        motor_packet.data.at(5) = 1;
+        motor_packet.data.at(6) = 0;
+        motor_packet.data.at(7) = 1;
 
         //Co-contract if trigger is pressed 
         if(msg->axes[left_trigger] < 0.0)
         {
-            motor_packet.data.at(0) = !motor_packet.data.at(2);
-            motor_packet.data.at(1) = !motor_packet.data.at(3);   
+            motor_packet.data.at(6) = 1;
+            motor_packet.data.at(7) = 0;  
+        }
+        //Co-release if right trigger is pressed 
+        else if(msg->axes[right_trigger] < 0.0)
+        {
+            motor_packet.data.at(4) = 1;
+            motor_packet.data.at(5) = 0;
         }
     }
     else
     {
         //Brake motor if D-pad is not pressed 
-        motor_packet.data.at(0) = 0;
-        motor_packet.data.at(1) = 0;
-        motor_packet.data.at(2) = 0;
-        motor_packet.data.at(3) = 0;         
+        motor_packet.data.at(4) = 0;
+        motor_packet.data.at(5) = 0;
+        motor_packet.data.at(6) = 0;
+        motor_packet.data.at(7) = 0;         
     }
 }
 
@@ -161,120 +175,60 @@ void proximal_joint_cmds(const sensor_msgs::JoyConstPtr msg)
 void distal_joint_cmds(const sensor_msgs::JoyConstPtr msg)
 {
 
-    if(msg->axes[d_pad_up_down] == 1.0)
+    if(msg->axes[d_pad_left_right] == 1.0)
     {
-        //CW
-        motor_override(204, "proximal_motor_A", 1);
-        motor_override(204, "proximal_motor_B", 0);
+        //distal_joint: left
+        motor_packet.data.at(0) = 1;
+        motor_packet.data.at(1) = 0;
+        motor_packet.data.at(2) = 1;
+        motor_packet.data.at(3) = 0;
 
-        //Co-contract if trigger is pressed 
+        //Co-contract if left trigger is pressed 
         if(msg->axes[left_trigger] < 0.0)
         {
-            motor_packet.data.at(4) = !motor_packet.data.at(6);
-            motor_packet.data.at(5) = !motor_packet.data.at(7);   
+            motor_packet.data.at(0) = 0;
+            motor_packet.data.at(1) = 1;
+        }
+        //Co-release if right trigger is pressed 
+        else if(msg->axes[right_trigger] < 0.0)
+        {
+            motor_packet.data.at(2) = 0;
+            motor_packet.data.at(3) = 1;
         }
 
     }
-    else if(msg->axes[d_pad_up_down] == -1.0)
+    else if(msg->axes[d_pad_left_right] == -1.0)
     {
-        //CCW
-        motor_override(204, "proximal_motor_A", 0);
-        motor_override(204, "proximal_motor_B", 1);
+        //distal joint: right
+        motor_packet.data.at(0) = 0;
+        motor_packet.data.at(1) = 1;
+        motor_packet.data.at(2) = 0;
+        motor_packet.data.at(3) = 1;
 
         //Co-contract if trigger is pressed 
         if(msg->axes[left_trigger] < 0.0)
         {
-            motor_packet.data.at(6) = !motor_packet.data.at(4);
-            motor_packet.data.at(7) = !motor_packet.data.at(5);   
+            motor_packet.data.at(2) = 1;
+            motor_packet.data.at(3) = 0;  
+        }
+        //Co-release if right trigger is pressed 
+        else if(msg->axes[right_trigger] < 0.0)
+        {
+            motor_packet.data.at(0) = 1;
+            motor_packet.data.at(1) = 0;
         }
     }
     else
     {
         //Brake motor if D-pad is not pressed 
 
-        motor_packet.data.at(4) = 0;
-        motor_packet.data.at(5) = 0;
-        motor_packet.data.at(6) = 0;
-        motor_packet.data.at(7) = 0;   
+        motor_packet.data.at(0) = 0;
+        motor_packet.data.at(1) = 0;
+        motor_packet.data.at(2) = 0;
+        motor_packet.data.at(3) = 0;   
     }
 }
 
-/* Direct control of individual motor */
-int motor_override(int duty, std::string motor_name, int contract_tendon)
-{
-
-    if(std::strcmp(motor_name.c_str(), "proximal_motor_A") == 0)
-    {
-        if(contract_tendon)
-        {
-            // CW = tighten
-            motor_packet.data.at(4) = 1;
-            motor_packet.data.at(5) = 0;
-        }
-        else
-        {
-             // CCW = loosen
-            motor_packet.data.at(4) = 0;
-            motor_packet.data.at(5) = 1;           
-        }
-    }
-    else if (std::strcmp(motor_name.c_str(), "proximal_motor_B") == 0) 
-    {
-        if(contract_tendon)
-        {
-            // CCW = tighten
-            motor_packet.data.at(6) = 0;
-            motor_packet.data.at(7) = 1;
-        }
-        else
-        {
-             // CW = loosen
-            motor_packet.data.at(6) = 1;
-            motor_packet.data.at(7) = 0;          
-        }
-    }
-    else if (std::strcmp(motor_name.c_str(), "distal_motor_A") == 0) 
-    {
-        if(contract_tendon)
-        {
-            // CCW = tighten
-            motor_packet.data.at(0) = 1;
-            motor_packet.data.at(1) = 0;
-        }
-        else
-        {
-             // CW = loosen
-            motor_packet.data.at(0) = 0;
-            motor_packet.data.at(1) = 1;          
-        }
-    }
-    else if (std::strcmp(motor_name.c_str(), "distal_motor_B") == 0) 
-    {
-        if(contract_tendon)
-        {
-            // CCW = tighten
-            motor_packet.data.at(2) = 0;
-            motor_packet.data.at(3) = 1;
-        }
-        else
-        {
-             // CW = loosen
-            motor_packet.data.at(2) = 1;
-            motor_packet.data.at(3) = 0;          
-        }
-    }
-    else 
-    {   
-        ROS_INFO("motor ID for overried not recognized.\n");
-        return -1; //indicate badness
-    }
-
-    ROS_INFO("%s: Co-contracting (%d), with %3.1f%% duty\n", motor_name.c_str(), contract_tendon, ((float(duty))/255)*100);
-    
-    return 0; //indicate goodness
-     
-
-}
 
 /* Filtering out duplicate joy messages */
 int filter_duplicate_packets()
@@ -321,9 +275,6 @@ void OL_control(const sensor_msgs::JoyConstPtr& msg)
     {
         motor_pub.publish(motor_packet);
     }
-
-    motor_override(204, "distal_motor_A", 1);
-
 }
 
 

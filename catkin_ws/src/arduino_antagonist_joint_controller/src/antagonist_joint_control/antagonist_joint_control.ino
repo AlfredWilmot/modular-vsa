@@ -21,20 +21,22 @@
 
 // Motor direction pins 
 
-const int proximal_motor_1a = 11;//5;
-const int proximal_motor_1b = 12;//6;
-const int proximal_motor_2a = 7;//9;
-const int proximal_motor_2b = 8;//10; 
+// Right-hand-side motor: tilt distal joitn left [5= HIGH, 6 = LOW]
+const int distal_right_motor_pinA = 5; 
+const int distal_right_motor_pinB = 6;
 
-const int distal_motor_1a = 9;//7;
-const int distal_motor_1b = 10;//8;
-const int distal_motor_2a = 6;//12;
-const int distal_motor_2b = 5;//11;
+// Left-hand motor: tilt distal joint left [7= HIGH, 8= LOW]
+const int distal_left_motor_pinA = 7; 
+const int distal_left_motor_pinB = 8;
 
-const int Enable_proximal_motor_1 = 23;
-const int Enable_proximal_motor_2 = 22;
-const int Enable_distal_motor_1   = 21;
-const int Enable_distal_motor_2   = 20;
+
+// bottom motor: tilt proximal joint up [9=HIGH, 10=LOW]
+const int proximal_bottom_motor_pinA = 9; 
+const int proximal_bottom_motor_pinB = 10;
+
+// top motor: tilt proximal joint up [9=HIGH, 10=LOW]
+const int proximal_top_motor_pinA = 12; 
+const int proximal_top_motor_pinB = 11;
 
 
 // I-sense ADC pins 
@@ -46,21 +48,16 @@ const int I_sense_4 = A3;
 /* Joystick subscriber callback for controlling motors of one joint */
 void test_proximal_joint(const std_msgs::UInt16MultiArray& msg)
 {
-  digitalWrite(proximal_motor_1a, msg.data[0]);
-  digitalWrite(proximal_motor_1b, msg.data[1]);
-  digitalWrite(proximal_motor_2a, msg.data[3]);
-  digitalWrite(proximal_motor_2b, msg.data[2]);
+  digitalWrite(distal_right_motor_pinA, msg.data[0]);
+  digitalWrite(distal_right_motor_pinB, msg.data[1]);
+  digitalWrite(distal_left_motor_pinA, msg.data[2]);
+  digitalWrite(distal_left_motor_pinB, msg.data[3]);
 //
-  digitalWrite(distal_motor_1a, msg.data[5]);
-  digitalWrite(distal_motor_1b, msg.data[4]);
-  digitalWrite(distal_motor_2a, msg.data[7]);
-  digitalWrite(distal_motor_2b, msg.data[6]);
-
-  analogWrite(Enable_proximal_motor_1, msg.data[8]);
-  analogWrite(Enable_proximal_motor_2, msg.data[9]);
-  analogWrite(Enable_distal_motor_1,   msg.data[10]);
-  analogWrite(Enable_distal_motor_2,   msg.data[11]);
-
+  digitalWrite(proximal_bottom_motor_pinA, msg.data[4]);
+  digitalWrite(proximal_bottom_motor_pinB, msg.data[5]);
+  digitalWrite(proximal_top_motor_pinA, msg.data[6]);
+  digitalWrite(proximal_top_motor_pinB, msg.data[7]);
+//
 }
 
 
@@ -117,33 +114,28 @@ void loop() {
   
 
   // Digital pins
-  pinMode(proximal_motor_1a, OUTPUT);
-  pinMode(proximal_motor_1b, OUTPUT);
-  pinMode(proximal_motor_2a, OUTPUT);
-  pinMode(proximal_motor_2b, OUTPUT);
+  pinMode(distal_right_motor_pinA, OUTPUT);
+  pinMode(distal_right_motor_pinB, OUTPUT);
+  pinMode(distal_left_motor_pinA, OUTPUT);
+  pinMode(distal_left_motor_pinB, OUTPUT);
 
-  pinMode(distal_motor_1a, OUTPUT);
-  pinMode(distal_motor_1b, OUTPUT);
-  pinMode(distal_motor_2a, OUTPUT);
-  pinMode(distal_motor_2b, OUTPUT);
+  pinMode(proximal_bottom_motor_pinA, OUTPUT);
+  pinMode(proximal_bottom_motor_pinB, OUTPUT);
+  pinMode(proximal_top_motor_pinA, OUTPUT);
+  pinMode(proximal_top_motor_pinB, OUTPUT);
   
-  
-  pinMode(Enable_proximal_motor_1, OUTPUT);
-  pinMode(Enable_proximal_motor_2, OUTPUT);
-  pinMode(Enable_distal_motor_1,   OUTPUT);
-  pinMode(Enable_distal_motor_2,   OUTPUT);
 
 
   // Set all digital pin outputs to LOW to start with
-  digitalWrite(proximal_motor_1a, LOW);
-  digitalWrite(proximal_motor_1b, LOW);
-  digitalWrite(proximal_motor_2a, LOW);
-  digitalWrite(proximal_motor_2b, LOW);
+  digitalWrite(distal_right_motor_pinA, LOW);
+  digitalWrite(distal_right_motor_pinB, LOW);
+  digitalWrite(distal_left_motor_pinA, LOW);
+  digitalWrite(distal_left_motor_pinB, LOW);
 
-  digitalWrite(distal_motor_1a, LOW);
-  digitalWrite(distal_motor_1b, LOW);
-  digitalWrite(distal_motor_2a, LOW);
-  digitalWrite(distal_motor_2b, LOW);
+  digitalWrite(proximal_bottom_motor_pinA, LOW);
+  digitalWrite(proximal_bottom_motor_pinB, LOW);
+  digitalWrite(proximal_top_motor_pinA, LOW);
+  digitalWrite(proximal_top_motor_pinB, LOW);
 
 
   
