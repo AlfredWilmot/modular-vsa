@@ -1,10 +1,9 @@
 # Modular VSA
 
+A 3D-printed robot utilizing variable-stiffness-actuators (VSAs), see below for more information:
+
 <table>
   <!-- This is a HTML comment! -->
-  <caption>
-  A 3D-printed robot utilizing variable-stiffness-actuators (VSAs)
-  </caption>
   <col width="50%">
   <col width="50%">
   <tr>
