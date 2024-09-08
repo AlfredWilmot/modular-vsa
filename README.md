@@ -1,22 +1,38 @@
-# Modular-2-DOF-Cable-Driven-Segment
+# Modular VSA
 
-Dissertation project for the final year of my Robotics undergraduate degree, published in TAROS 2021:
-
-[3D Printed Mechanically Modular Two-Degree-Of-Freedom Robotic Segment Utilizing Variable-Stiffness Actuators](https://link.springer.com/chapter/10.1007/978-3-030-89177-0_24)
-
- <table>
+<table>
+  <!-- This is a HTML comment! -->
+  <caption>
+  A 3D-printed robot utilizing variable-stiffness-actuators (VSAs)
+  </caption>
+  <col width="50%">
+  <col width="50%">
   <tr>
-    <th> Publication </th>
-    <th> Poster </th>
+    <th><font size=5>Publication</font></th>
+    <th><font size=5>Poster</font></th>
   </tr>
   <tr>
-    <td>
-      <a href="https://youtu.be/8nxKKBM5YlE">
-        <img src="https://img.youtube.com/vi/8nxKKBM5YlE/0.jpg" alt="HTML tutorial" style="width:450px;">
-      </a> 
-    </td>
-    <td>
-      <img src="https://github.com/AlfredWilmot/Modular-2-DOF-Cable-Driven-Segment/blob/master/pics/Project_poster.png" width="250">
-    </td>
+    <tr>
+    <th>
+      <a href="https://doi.org/10.1007/978-3-030-89177-0_24"><img src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-3-030-89177-0_24/MediaObjects/512727_1_En_24_Fig4_HTML.png"></a>
+      <a href="https://doi.org/10.1007/978-3-030-89177-0_24">
+        <font size=3>https://doi.org/10.1007/978-3-030-89177-0_24</font>
+      </a>
+    </th>
+    <th rowspan="3">
+      <a href="pics/Project_poster.png"><img src="pics/Project_poster.png"></a>
+        <font size=3>(click image to expand)</font>
+    </th>
   </tr>
-</table> 
+  <tr>
+    <th><font size=5>Presentation</font></th>
+  </tr>
+  <tr>
+    <th>
+      <a href="https://youtu.be/8nxKKBM5YlE"><img src="https://img.youtube.com/vi/8nxKKBM5YlE/0.jpg"></a>
+      <a href="https://doi.org/10.1007/978-3-030-89177-0_24">
+        <font size=3>https://youtu.be/8nxKKBM5YlE</font>
+      </a>
+    </th>
+  </tr>
+</table>
